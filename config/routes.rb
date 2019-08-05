@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :borrows
   resources :borrowers
   resources :items
   # Home
