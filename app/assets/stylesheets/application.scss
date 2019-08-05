@@ -1,0 +1,142 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+// Custom Megstrap Styling //
+
+.container-fluid {
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
+
+@media screen { 
+
+  // Reset //
+  * {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  // Base-Level //
+
+  html {
+    height: 100%;
+    width: 100%;
+    font-size: 62.5%;
+  }
+
+  body {
+    height: 100%;
+    // background-color: $main-color;
+    // color: $main-text;
+    // font-family: $main-font;
+  }
+
+  .wrapper {
+    margin: 3rem 0;
+    padding: 1.5% 3%;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    // background: $light-shade;
+    // -moz-box-shadow: 0 0 2rem $dark-shade;
+    // -webkit-box-shadow: 0 0 2rem $dark-shade;
+    // box-shadow: 0 0 2rem $dark-shade;
+  }
+
+  p {
+    font-size: 3rem;
+    line-height: 3.6rem;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: 6rem;
+    margin-bottom: 1.8rem;
+  }
+
+  h2 {
+    font-size: 3.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1.2rem;
+  }
+
+  a {
+    // color: $accent-text;
+    font-weight: 900;
+    text-decoration: none;
+  }
+
+  a:hover {
+    // color: $highlight-text;
+    text-decoration: none;
+  }
+
+  // Navbar //
+
+  nav {
+    padding: 0 8rem;
+    display: flex;
+    flex-shrink: 0;
+    // border-bottom: 0.5rem solid $dark-shade;
+    font-size: 1.8rem;
+  }
+
+  // Buttons //
+
+  a.btn {
+    font-size: 2rem;
+    font-weight: 900;
+    padding: 1.2rem 5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    // background-color: $dark-accent;
+    // color: $light-shade;
+    text-decoration: none;
+    // border: 0.2rem solid $dark-accent;
+    border-radius: 0.5rem;
+    -moz-transition-duration: 0.15s;
+    -webkit-transition-duration: 0.15s;
+    transition-duration: 0.15s;
+  }
+
+  a.btn:hover {
+    // background-color: $highlight-text;
+    // border: 0.2rem solid $light-accent;
+  }
+
+  // Footer //
+  #page-content {
+    flex: 1 0 auto;
+  }
+
+  #sticky-footer {
+    flex-shrink: none;
+  }
+
+}

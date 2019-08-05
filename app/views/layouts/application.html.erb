@@ -1,15 +1,58 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BorrowBuddy</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <title><%= @title %></title>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="d-flex flex-column">
+    <div id="page-content"> <%# Add for sticky footer %>
+      <div class="container-fluid"> <%# Start navbar %>
+        <header>
+          <nav class="nav flex-row">
+            <li class="nav-item">
+              <a class="nav-link" href="<%= root_path %>">Home</a>
+            </li>
+          </nav>
+        </header>
+      </div> <%# End navbar %>
+
+      <div class="container-fluid wrapper"> <%# Start body %>      
+        <div class="row">
+          <%# Flash message for errors %>
+          <% if flash[:alert] %>
+            <div class="col-12 justify-content-center alert alert-dark" role="alert">
+              <%= flash[:alert] %>
+            </div>
+          <% end %>
+          <% if flash[:notice] %>
+            <div class="col-12 justify-content-center alert alert-info" role="alert">
+              <%= flash[:notice] %>
+            </div>
+          <% end %>
+        </div>
+
+        <%= yield %>
+      </div> <%# End body %>
+    </div> <%# Add for sticky footer %>
+
+    <div class="container-fluid d-flex flex-column"> <%# Start footer %>
+      <div id="stick-footer"> <%# Add for sticky footer %>
+        <footer class="row branding">
+          <div class="col">
+          <small>&copy; 2019 <strong>BorrowBuddy</strong></small>
+          </div>
+        </footer>
+      </div> <%# Add for sticky footer %>
+    </div> <%# End footer %>
+
   </body>
 </html>
