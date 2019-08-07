@@ -8,8 +8,6 @@ Rails.application.routes.draw do
     resources :recipients, only: [:index]
     resources :items, only: [:index]
   end
-
-  get "/lender/:id", to: "lenders#show", as: "lender"
   
   resources :items, except: [:index] do
     resources :recipients
