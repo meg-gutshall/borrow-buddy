@@ -8,20 +8,26 @@
 
 require 'faker'
 
+Lender.destroy_all
+Item.destroy_all
+Recipient.destroy_all
+Borrow.destroy_all
+
+
 # Lender objects
-meg = Lender.create(
+meg = Lender.create!(
   email: "meg@meg.com",
   password: "password"
 )
 
-pip = Lender.create(
+pip = Lender.create!(
   email: "pip@pip.com",
   password: "password"
 )
 
 # Item objects
 3.times do
-  Item.create(
+  Item.create!(
     lender_id: 1,
     name: Faker::Book.title,
     category: "book"
@@ -29,7 +35,7 @@ pip = Lender.create(
 end
 
 2.times do
-  Item.create(
+  Item.create!(
     lender_id: 1,
     name: Faker::Music.album,
     category: "album"
@@ -37,7 +43,7 @@ end
 end
 
 4.times do
-  Item.create(
+  Item.create!(
     lender_id: 2,
     name: Faker::Game.title,
     category: "game"
@@ -46,7 +52,7 @@ end
 
 # Recipient objects
 7.times do
-  Recipient.create(
+  Recipient.create!(
     name: Faker::Name.first_name,
     email: Faker::Internet.free_email,
     phone: Faker::PhoneNumber.cell_phone
@@ -54,7 +60,7 @@ end
 end
 
 # Borrow objects
-Borrow.create(
+Borrow.create!(
   recipient_id: Recipient.find(2),
   item_id: Item.find(3),
   days_borrowed: Faker::Number.between(1, 17),
@@ -62,7 +68,7 @@ Borrow.create(
   returned: true
 )
 
-Borrow.create(
+Borrow.create!(
   recipient_id: Recipient.find(5),
   item_id: Item.find(6),
   days_borrowed: Faker::Number.between(1, 17),
@@ -70,7 +76,7 @@ Borrow.create(
   returned: true
 )
 
-Borrow.create(
+Borrow.create!(
   recipient_id: Recipient.find(1),
   item_id: Item.find(1),
   days_borrowed: Faker::Number.between(1, 17),
@@ -78,7 +84,7 @@ Borrow.create(
   returned: Faker::Boolean.boolean
 )
 
-Borrow.create(
+Borrow.create!(
   recipient_id: Recipient.find(2),
   item_id: Item.find(2),
   days_borrowed: Faker::Number.between(1, 17),
@@ -86,7 +92,7 @@ Borrow.create(
   returned: Faker::Boolean.boolean
 )
 
-Borrow.create(
+Borrow.create!(
   recipient_id: Recipient.find(3),
   item_id: Item.find(3),
   days_borrowed: Faker::Number.between(1, 17),
@@ -94,7 +100,7 @@ Borrow.create(
   returned: Faker::Boolean.boolean
 )
 
-Borrow.create(
+Borrow.create!(
   recipient_id: Recipient.find(4),
   item_id: Item.find(4),
   days_borrowed: Faker::Number.between(1, 17),
@@ -102,7 +108,7 @@ Borrow.create(
   returned: Faker::Boolean.boolean
 )
 
-Borrow.create(
+Borrow.create!(
   recipient_id: Recipient.find(5),
   item_id: Item.find(5),
   days_borrowed: Faker::Number.between(1, 17),
@@ -110,7 +116,7 @@ Borrow.create(
   returned: Faker::Boolean.boolean
 )
 
-Borrow.create(
+Borrow.create!(
   recipient_id: Recipient.find(6),
   item_id: Item.find(6),
   days_borrowed: Faker::Number.between(1, 17),
@@ -118,7 +124,7 @@ Borrow.create(
   returned: Faker::Boolean.boolean
 )
 
-Borrow.create(
+Borrow.create!(
   recipient_id: Recipient.find(7),
   item_id: Item.find(7),
   days_borrowed: Faker::Number.between(1, 17),
@@ -126,7 +132,7 @@ Borrow.create(
   returned: Faker::Boolean.boolean
 )
 
-Borrow.create(
+Borrow.create!(
   recipient_id: Recipient.find(6),
   item_id: Item.find(8),
   days_borrowed: Faker::Number.between(1, 17),
@@ -134,7 +140,7 @@ Borrow.create(
   returned: Faker::Boolean.boolean
 )
 
-Borrow.create(
+Borrow.create!(
   recipient_id: Recipient.find(1),
   item_id: Item.find(9),
   days_borrowed: Faker::Number.between(1, 17),
