@@ -1,1 +1,14 @@
 <h1>HOME PAGE</h1>
+
+<h3>Session & Registration Links</h3>
+<%= link_to "Lender Login", new_lender_session_path %>
+<%= link_to "Lender Logout", destroy_lender_session_path, method: :delete %>
+<%= link_to "Create New Lender", new_lender_registration_path %>
+
+<h2>Links</h2>
+<% if !!current_lender %>
+  <%= link_to "Lender Profile", lender_path(current_lender) %>
+  <%= link_to "Borrows", borrows_path %>
+  <%= link_to "Items", items_path %>
+  <%= link_to "Recipient", recipients_path %>
+<% end %>
