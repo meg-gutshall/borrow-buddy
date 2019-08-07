@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   # Home
   root to: 'application#home'
 
+  devise_for :lenders, sign_out_via: [:delete]
+
   scope :lender do
-    devise_for :lenders, path: ""
     resources :borrows
     resources :recipients, only: [:index]
     resources :items, only: [:index]
