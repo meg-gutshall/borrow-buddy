@@ -12,6 +12,16 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :item_id %>
+    <%= form.text_field :item_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :recipient_id %>
+    <%= form.text_field :recipient_id %>
+  </div>
+
+  <div class="field">
     <%= form.label :days_borrowed %>
     <%= form.number_field :days_borrowed %>
   </div>
@@ -24,16 +34,6 @@
   <div class="field">
     <%= form.label :returned %>
     <%= form.check_box :returned %>
-  </div>
-
-  <div class="field">
-    <%= form.label :recipient_id %>
-    <%= form.text_field :recipient_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :item_id %>
-    <%= form.text_field :item_id %>
   </div>
 
   <div class="actions">

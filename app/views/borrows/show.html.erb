@@ -1,4 +1,12 @@
 <p>
+  <strong>Item:</strong>
+  <%= @borrow.item.name %>
+</p>
+
+<p>
+  <strong>Recipient:</strong>
+  <%= @borrow.recipient.name %>
+</p>
 
 <p>
   <strong>Days borrowed:</strong>
@@ -13,16 +21,6 @@
 <p>
   <strong>Returned:</strong>
   <%= @borrow.returned %>
-</p>
-
-<p>
-  <strong>Recipient:</strong>
-  <%= @borrow.recipient_id %>
-</p>
-
-<p>
-  <strong>Item:</strong>
-  <%= @borrow.item_id %>
 </p>
 
 <%= link_to 'Edit', edit_borrow_path(@borrow) %> |

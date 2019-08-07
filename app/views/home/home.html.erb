@@ -7,8 +7,7 @@
 
 <h2>Links</h2>
 <% if !!current_lender %>
-  <%= link_to "Lender Profile", lender_path(current_lender) %>
-  <%= link_to "Borrows", borrows_path %>
-  <%= link_to "Items", items_path %>
-  <%= link_to "Recipient", recipients_path %>
+  <%= link_to "My Borrows", borrows_path %>
+  <%= link_to "My Items", items_path %>
+  <%= link_to "My Recipients", recipients_path %>
 <% end %>
