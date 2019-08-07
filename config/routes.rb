@@ -5,18 +5,18 @@ Rails.application.routes.draw do
   scope :lender do
     devise_for :lenders, path: ""
     resources :borrows
-    resources :recipients, except: [:show]
-    resources :items, except: [:show]
+    resources :recipients, only: [:index]
+    resources :items, only: [:index]
   end
 
   get "/lender/:id", to: "lenders#show", as: "lender"
   
-  resources :items, only: [:show] do
+  resources :items, except: [:index] do
     resources :recipients
     resources :borrows
   end
 
-  resources :recipients, only: [:show] do
+  resources :recipients, except: [:index] do
     resources :items
     resources :borrows
   end
