@@ -18,9 +18,9 @@ ActiveRecord::Schema.define(version: 2019_08_05_224037) do
   create_table "borrows", force: :cascade do |t|
     t.bigint "recipient_id"
     t.bigint "item_id"
-    t.integer "days_borrowed"
-    t.integer "reminders_sent"
-    t.boolean "returned"
+    t.integer "days_borrowed", default: 1
+    t.integer "reminders_sent", default: 0
+    t.boolean "returned", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["item_id"], name: "index_borrows_on_item_id"
