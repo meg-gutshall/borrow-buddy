@@ -5,6 +5,11 @@
 <table>
   <thead>
     <tr>
+      <th>Days borrowed</th>
+      <th>Reminders sent</th>
+      <th>Returned</th>
+      <th>Recipient</th>
+      <th>Item</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,6 +17,11 @@
   <tbody>
     <% @borrows.each do |borrow| %>
       <tr>
+        <td><%= borrow.days_borrowed %></td>
+        <td><%= borrow.reminders_sent %></td>
+        <td><%= borrow.returned %></td>
+        <td><%= borrow.recipient_id %></td>
+        <td><%= borrow.item_id %></td>
         <td><%= link_to 'Show', borrow %></td>
         <td><%= link_to 'Edit', edit_borrow_path(borrow) %></td>
         <td><%= link_to 'Destroy', borrow, method: :delete, data: { confirm: 'Are you sure?' } %></td>

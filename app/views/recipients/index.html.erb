@@ -5,6 +5,9 @@
 <table>
   <thead>
     <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,6 +15,9 @@
   <tbody>
     <% @recipients.each do |recipient| %>
       <tr>
+        <td><%= recipient.name %></td>
+        <td><%= recipient.email %></td>
+        <td><%= recipient.phone %></td>
         <td><%= link_to 'Show', recipient %></td>
         <td><%= link_to 'Edit', edit_recipient_path(recipient) %></td>
         <td><%= link_to 'Destroy', recipient, method: :delete, data: { confirm: 'Are you sure?' } %></td>

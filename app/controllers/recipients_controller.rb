@@ -2,13 +2,11 @@ class RecipientsController < ApplicationController
   before_action :set_recipient, only: [:show, :edit, :update, :destroy]
 
   # GET /recipients
-  # GET /recipients.json
   def index
     @recipients = Recipient.all
   end
 
   # GET /recipients/1
-  # GET /recipients/1.json
   def show
   end
 
@@ -22,53 +20,39 @@ class RecipientsController < ApplicationController
   end
 
   # POST /recipients
-  # POST /recipients.json
   def create
     @recipient = Recipient.new(recipient_params)
 
-    respond_to do |format|
-      if @recipient.save
-        format.html { redirect_to @recipient, notice: 'Recipient was successfully created.' }
-        format.json { render :show, status: :created, location: @recipient }
-      else
-        format.html { render :new }
-        format.json { render json: @recipient.errors, status: :unprocessable_entity }
-      end
+    if @recipient.save
+      redirect_to @recipient, notice: 'Recipient was successfully created.'
+    else
+      render :new
     end
   end
 
   # PATCH/PUT /recipients/1
-  # PATCH/PUT /recipients/1.json
   def update
-    respond_to do |format|
-      if @recipient.update(recipient_params)
-        format.html { redirect_to @recipient, notice: 'Recipient was successfully updated.' }
-        format.json { render :show, status: :ok, location: @recipient }
-      else
-        format.html { render :edit }
-        format.json { render json: @recipient.errors, status: :unprocessable_entity }
-      end
+    if @recipient.update(recipient_params)
+      redirect_to @recipient, notice: 'Recipient was successfully updated.'
+    else
+      render :edit
     end
   end
 
   # DELETE /recipients/1
-  # DELETE /recipients/1.json
   def destroy
     @recipient.destroy
-    respond_to do |format|
-      format.html { redirect_to recipients_url, notice: 'Recipient was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to recipients_url, notice: 'Recipient was successfully destroyed.'
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    # Use callbacks to share common setup or constraints between actions
     def set_recipient
-      @recipient = Recipient.find(params[:id])
+      @recipient = Recipient.find_by(id: params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # Never trust parameters from the scary internet, only allow the white list through
     def recipient_params
-      params.fetch(:recipient, {})
+      params.require(:recipient).permit(:name, :email, :phone)
     end
 end
