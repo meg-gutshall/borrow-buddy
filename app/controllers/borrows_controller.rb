@@ -1,4 +1,5 @@
 class BorrowsController < ApplicationController
+  before_action :authenticate_lender!
   before_action :set_borrow, only: [:show, :edit, :update, :destroy]
 
   # GET /borrows

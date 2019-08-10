@@ -1,4 +1,5 @@
 class RecipientsController < ApplicationController
+  before_action :authenticate_lender!
   before_action :set_recipient, only: [:show, :edit, :update, :destroy]
 
   # GET /recipients
