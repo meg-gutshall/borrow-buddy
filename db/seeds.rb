@@ -61,88 +61,88 @@ end
 
 # Borrow objects
 Borrow.create!(
-  recipient_id: Recipient.find(2),
-  item_id: Item.find(3),
+  recipient_id: 2,
+  item_id: 3,
   days_borrowed: Faker::Number.between(1, 17),
   reminders_sent: Faker::Number.between(1, 3),
   returned: true
 )
 
 Borrow.create!(
-  recipient_id: Recipient.find(5),
-  item_id: Item.find(6),
+  recipient_id: 5,
+  item_id: 6,
   days_borrowed: Faker::Number.between(1, 17),
   reminders_sent: Faker::Number.between(1, 3),
   returned: true
 )
 
 Borrow.create!(
-  recipient_id: Recipient.find(1),
-  item_id: Item.find(1),
+  recipient_id: 1,
+  item_id: 1,
   days_borrowed: Faker::Number.between(1, 17),
   reminders_sent: Faker::Number.between(1, 3),
   returned: Faker::Boolean.boolean
 )
 
 Borrow.create!(
-  recipient_id: Recipient.find(2),
-  item_id: Item.find(2),
+  recipient_id: 2,
+  item_id: 2,
   days_borrowed: Faker::Number.between(1, 17),
   reminders_sent: Faker::Number.between(1, 3),
   returned: Faker::Boolean.boolean
 )
 
 Borrow.create!(
-  recipient_id: Recipient.find(3),
-  item_id: Item.find(3),
+  recipient_id: 3,
+  item_id: 3,
   days_borrowed: Faker::Number.between(1, 17),
   reminders_sent: Faker::Number.between(1, 3),
   returned: Faker::Boolean.boolean
 )
 
 Borrow.create!(
-  recipient_id: Recipient.find(4),
-  item_id: Item.find(4),
+  recipient_id: 4,
+  item_id: 4,
   days_borrowed: Faker::Number.between(1, 17),
   reminders_sent: Faker::Number.between(1, 3),
   returned: Faker::Boolean.boolean
 )
 
 Borrow.create!(
-  recipient_id: Recipient.find(5),
-  item_id: Item.find(5),
+  recipient_id: 5,
+  item_id: 5,
   days_borrowed: Faker::Number.between(1, 17),
   reminders_sent: Faker::Number.between(1, 3),
   returned: Faker::Boolean.boolean
 )
 
 Borrow.create!(
-  recipient_id: Recipient.find(6),
-  item_id: Item.find(6),
+  recipient_id: 6,
+  item_id: 6,
   days_borrowed: Faker::Number.between(1, 17),
   reminders_sent: Faker::Number.between(1, 3),
   returned: Faker::Boolean.boolean
 )
 
 Borrow.create!(
-  recipient_id: Recipient.find(7),
-  item_id: Item.find(7),
+  recipient_id: 7,
+  item_id: 7,
   days_borrowed: Faker::Number.between(1, 17),
   reminders_sent: Faker::Number.between(1, 3),
   returned: Faker::Boolean.boolean
 )
 
 Borrow.create!(
-  recipient_id: Recipient.find(6),
-  item_id: Item.find(8),
+  recipient_id: 6,
+  item_id: 8,
   days_borrowed: Faker::Number.between(1, 17),
   reminders_sent: Faker::Number.between(1, 3),
   returned: Faker::Boolean.boolean
 )
 
 Borrow.create!(
-  recipient_id: Recipient.find(1),
-  item_id: Item.find(9),
+  recipient_id: 1,
+  item_id: 9,
   days_borrowed: Faker::Number.between(1, 17),
   reminders_sent: Faker::Number.between(1, 3),
   returned: Faker::Boolean.boolean
