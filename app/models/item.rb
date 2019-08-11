@@ -7,7 +7,6 @@ class Item < ApplicationRecord
   validates_associated :borrows
   validates :name, :category, presence: true
 
-  def self.current_lender_items(lender)
-    includes(:lenders).where(lenders: { id: lender.id })
-  end
+  scope :lender_scope, -> (current) { joins(:lender).where("lender_id = ?", current.id) }
+
 end

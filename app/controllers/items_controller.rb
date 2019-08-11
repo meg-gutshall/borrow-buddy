@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
 
   # GET /items
   def index
-    @items = Item.current_lender_items(current_lender)
+    @items = Item.lender_scope(current_lender)
   end
 
   # GET /items/1

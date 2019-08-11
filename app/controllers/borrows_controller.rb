@@ -4,7 +4,7 @@ class BorrowsController < ApplicationController
 
   # GET /borrows
   def index
-    @borrows = Borrow.all
+    @borrows = Borrow.lender_scope(current_lender)
   end
 
   # GET /borrows/1

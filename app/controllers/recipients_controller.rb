@@ -4,7 +4,7 @@ class RecipientsController < ApplicationController
 
   # GET /recipients
   def index
-    @recipients = Recipient.all
+    @recipients = Recipient.lender_scope(current_lender)
   end
 
   # GET /recipients/1
