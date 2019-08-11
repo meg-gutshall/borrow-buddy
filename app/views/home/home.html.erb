@@ -5,6 +5,8 @@
 <%= link_to "Lender Logout", destroy_lender_session_path, method: :delete %>
 <%= link_to "Create New Lender", new_lender_registration_path %>
 <br>
+<%= link_to "Lender Login in with Google", lender_google_oauth2_omniauth_authorize_path %>
+<br>
 
 <h2>Links</h2>
 <% if !!current_lender %>

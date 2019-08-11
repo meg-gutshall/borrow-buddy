@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # Home
   root to: 'application#home'
 
-  devise_for :lenders, sign_out_via: [:delete]
+  devise_for :lenders, controllers: { omniauth_callbacks: 'lenders/omniauth_callbacks' }
 
   scope :lender do
     resources :borrows
