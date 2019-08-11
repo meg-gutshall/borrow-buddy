@@ -32,7 +32,7 @@ gem 'jbuilder', '~> 2.5'
 # Security engine for Rails apps
 gem 'devise', '~> 4.2'
 # Use omniauth for third-party login
-gem 'omniauth', '~> 1.9'
+gem 'omniauth-google-oauth2', '~> 0.7.0'
 
 ## Styling ##
 # Use bootstrap gem for styling
@@ -52,6 +52,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry', '~> 0.12.2'
 end
 
 group :development do
