@@ -14,6 +14,18 @@
  *= require_self
  */
 
+// Colors //
+$white: #ffffff;
+$black: #000000;
+$light-accent: #ddf89a;
+$light-shade: #e7f8fb;
+$main-color: #85c7d3;
+$dark-shade: #378593;
+$dark-accent: #ad8fda;
+$main-text: #001d22;
+$accent-text: #2c0d59;
+$highlight-text: #435b07;
+
 // Custom Megstrap Styling //
 
 .container-fluid {
@@ -47,8 +59,8 @@
 
   body {
     height: 100%;
-    // background-color: $main-color;
-    // color: $main-text;
+    background-color: $main-color;
+    color: $main-text;
     // font-family: $main-font;
   }
 
@@ -59,10 +71,10 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    // background: $light-shade;
-    // -moz-box-shadow: 0 0 2rem $dark-shade;
-    // -webkit-box-shadow: 0 0 2rem $dark-shade;
-    // box-shadow: 0 0 2rem $dark-shade;
+    background: $light-shade;
+    -moz-box-shadow: 0 0 2rem $dark-shade;
+    -webkit-box-shadow: 0 0 2rem $dark-shade;
+    box-shadow: 0 0 2rem $dark-shade;
   }
 
   p {
@@ -87,13 +99,13 @@
   }
 
   a {
-    // color: $accent-text;
+    color: $accent-text;
     font-weight: 900;
     text-decoration: none;
   }
 
   a:hover {
-    // color: $highlight-text;
+    color: $highlight-text;
     text-decoration: none;
   }
 
@@ -103,7 +115,7 @@
     padding: 0 8rem;
     display: flex;
     flex-shrink: 0;
-    // border-bottom: 0.5rem solid $dark-shade;
+    border-bottom: 0.5rem solid $dark-shade;
     font-size: 1.8rem;
   }
 
@@ -115,10 +127,10 @@
     padding: 1.2rem 5rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
-    // background-color: $dark-accent;
-    // color: $light-shade;
+    background-color: $dark-accent;
+    color: $light-shade;
     text-decoration: none;
-    // border: 0.2rem solid $dark-accent;
+    border: 0.2rem solid $dark-accent;
     border-radius: 0.5rem;
     -moz-transition-duration: 0.15s;
     -webkit-transition-duration: 0.15s;
@@ -126,8 +138,8 @@
   }
 
   a.btn:hover {
-    // background-color: $highlight-text;
-    // border: 0.2rem solid $light-accent;
+    background-color: $highlight-text;
+    border: 0.2rem solid $light-accent;
   }
 
   // Footer //
