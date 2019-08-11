@@ -1,4 +1,4 @@
-class CreateBorrows < ActiveRecord::Migration[6.0]
+class CreateBorrows < ActiveRecord::Migration[5.0]
   def change
     create_table :borrows do |t|
       t.belongs_to :recipient
