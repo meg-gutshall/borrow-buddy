@@ -54,6 +54,6 @@ class BorrowsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through
     def borrow_params
-      params.require(:borrow).permit(:days_borrowed, :reminders_sent, :returned, :recipient_id, :item_id)
+      params.require(:borrow).permit(:days_borrowed, :reminders_sent, :returned, :lender_id, :recipient_id, :item_id)
     end
 end
