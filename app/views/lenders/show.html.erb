@@ -1,0 +1,16 @@
+<p>
+  <strong>Email:</strong>
+  <%= current_lender.email %>
+</p>
+
+<p>
+  <strong>Google Login?:</strong>
+  <% if current_lender.provider %>
+    <%= "Yes" %>
+  <% else %>
+    <%= "No" %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_lender_registration_path %> |
+<%= link_to 'Back', root_path %>

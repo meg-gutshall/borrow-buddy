@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     resources :recipients, only: [:index]
     resources :items, only: [:index]
   end
+
+  resources :lenders, only: [:show]
   
   resources :items, except: [:index] do
     resources :recipients
