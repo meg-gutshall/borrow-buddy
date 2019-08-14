@@ -5,5 +5,11 @@ class Item < ApplicationRecord
   validates :name, presence: true
 
   scope :lender_scope, -> (current) { joins(:borrows).where("lender_id = ?", current.id) }
+  scope :abc_name, -> { order(:name) }
+
+  # Add argument?
+  def self.sort_by_category
+    order(:category, :name)
+  end
 
 end

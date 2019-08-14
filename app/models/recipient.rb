@@ -7,5 +7,6 @@ class Recipient < ApplicationRecord
   # validates :phone, format: { with: /\A[(]\d{3}[)] \d{3}-\d{4}\z/ }, allow_blank: true
 
   scope :lender_scope, -> (current) { joins(:borrows).where("lender_id = ?", current.id) }
+  scope :abc_name, -> { order(:name) }
 
 end

@@ -10,5 +10,6 @@ class Borrow < ApplicationRecord
   validates :reminders_sent, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   scope :lender_scope, -> (current) { joins(:lender).where("lender_id = ?", current.id) }
+  scope :hide_returned, -> { where(returned: false) }
 
 end
