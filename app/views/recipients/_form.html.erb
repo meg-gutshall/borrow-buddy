@@ -1,15 +1,8 @@
 <%= form_with(model: recipient, local: true) do |form| %>
-  <% if recipient.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(recipient.errors.count, "error") %> prohibited this recipient from being saved:</h2>
+  <%= render partial: "partials/form_errors", locals: { object: @recipient } %>
 
       <ul>
         <% recipient.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="field">
     <%= form.label :name %>

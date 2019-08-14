@@ -1,15 +1,8 @@
 <%= form_with(model: borrow, local: true) do |form| %>
-  <% if borrow.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(borrow.errors.count, "error") %> prohibited this borrow from being saved:</h2>
+  <%= render partial: "partials/form_errors", locals: { object: @borrow } %>
 
       <ul>
         <% borrow.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="field">
     <%= form.label :lender_id %>
