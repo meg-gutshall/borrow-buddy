@@ -1,23 +1,51 @@
 <%= form_for @borrow do |borrow_form| %>
   <%= render partial: "partials/form_errors", locals: { object: @borrow } %>
 
-  <%= borrow_form.label :lender_id %>
-  <%= borrow_form.text_field :lender_id %><br>
+  <%= borrow_form.hidden_field(:lender_id, :value => current_lender.id) %>
 
-  <%= borrow_form.label :item_id %>
-  <%= borrow_form.text_field :item_id %><br>
+  <p>Select a Borrower from Your List:</p>
+  <%= borrow_form.collection_select :recipient_id, Recipient.lender_scope(current_lender), :id, :name, include_blank: 'Select One' %><br><br>
 
-  <%= borrow_form.label :recipient_id %>
-  <%= borrow_form.text_field :recipient_id %><br>
+  <p>-Or-</p>
+  
+  <p>Create a New Borrower:</p>
+  <%= borrow_form.fields_for :recipient, @borrow.build_recipient do |recipient_attributes| %>
+    <%= recipient_attributes.label "Borrower Name:" %>
+    <%= recipient_attributes.text_field :name %><br>
 
-  <%= borrow_form.label :days_borrowed %>
+    <%= recipient_attributes.label "Borrower Email:" %>
+    <%= recipient_attributes.text_field :email %><br>
+
+    <%= recipient_attributes.label "Borrower Phone:" %>
+    <%= recipient_attributes.text_field :phone %><br><br>
+  <% end %>
+
+  <p>Select an Item from Your List:</p>
+  <%= borrow_form.collection_select :item_id, Item.lender_scope(current_lender), :id, :name, include_blank: 'Select One' %><br><br>
+
+  <p>-Or-</p>
+  
+  <p>Create a New Item:</p>
+  <%= borrow_form.fields_for :item, @borrow.build_item do |item_attributes| %>
+    <%= item_attributes.label "Item Name:" %>
+    <%= item_attributes.text_field :name %><br>
+
+    <%= item_attributes.label "Item Category:" %>
+    <%= item_attributes.text_field :category %><br><br>
+  <% end %>
+
+  <p>About This Loan</p>
+  <%= borrow_form.label "Number of Days Borrowed:" %>
   <%= borrow_form.number_field :days_borrowed %><br>
 
-  <%= borrow_form.label :reminders_sent %>
+  <%= borrow_form.label "Number of Reminders Sent to the Borrower:" %>
   <%= borrow_form.number_field :reminders_sent %><br>
 
-  <%= borrow_form.label :returned %>
-  <%= borrow_form.check_box :returned %><br>
+  <%= borrow_form.label "Has the borrowed item been returned?" %>
+  <%= borrow_form.label "Yes" %>
+  <%= borrow_form.radio_button :returned, "Yes" %>
+  <%= borrow_form.label "No" %>
+  <%= borrow_form.radio_button :returned, "No" %><br><br>
 
   <%= borrow_form.submit %><br><br>
 <% end %>

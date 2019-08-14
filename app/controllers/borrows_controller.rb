@@ -14,6 +14,8 @@ class BorrowsController < ApplicationController
   # GET /borrows/new
   def new
     @borrow = Borrow.new
+    @borrow.build_recipient
+    @borrow.build_item
   end
 
   # GET /borrows/1/edit
@@ -22,6 +24,7 @@ class BorrowsController < ApplicationController
 
   # POST /borrows
   def create
+    binding.pry
     @borrow = Borrow.new(borrow_params)
 
     if @borrow.save
@@ -54,6 +57,6 @@ class BorrowsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through
     def borrow_params
-      params.require(:borrow).permit(:days_borrowed, :reminders_sent, :returned, :lender_id, :recipient_id, :item_id)
+      params.require(:borrow).permit(:days_borrowed, :reminders_sent, :returned, :lender_id, :item_id, :recipient_id, recipient_attributes: [:name, :email, :phone], item_attributes: [:name, :category])
     end
 end
