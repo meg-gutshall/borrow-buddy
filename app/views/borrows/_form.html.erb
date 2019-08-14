@@ -1,40 +1,23 @@
-<%= form_with(model: borrow, local: true) do |form| %>
+<%= form_for @borrow do |borrow_form| %>
   <%= render partial: "partials/form_errors", locals: { object: @borrow } %>
 
-      <ul>
-        <% borrow.errors.full_messages.each do |message| %>
+  <%= borrow_form.label :lender_id %>
+  <%= borrow_form.text_field :lender_id %><br>
 
-  <div class="field">
-    <%= form.label :lender_id %>
-    <%= form.text_field :lender_id %>
-  </div>
+  <%= borrow_form.label :item_id %>
+  <%= borrow_form.text_field :item_id %><br>
 
-  <div class="field">
-    <%= form.label :item_id %>
-    <%= form.text_field :item_id %>
-  </div>
+  <%= borrow_form.label :recipient_id %>
+  <%= borrow_form.text_field :recipient_id %><br>
 
-  <div class="field">
-    <%= form.label :recipient_id %>
-    <%= form.text_field :recipient_id %>
-  </div>
+  <%= borrow_form.label :days_borrowed %>
+  <%= borrow_form.number_field :days_borrowed %><br>
 
-  <div class="field">
-    <%= form.label :days_borrowed %>
-    <%= form.number_field :days_borrowed %>
-  </div>
+  <%= borrow_form.label :reminders_sent %>
+  <%= borrow_form.number_field :reminders_sent %><br>
 
-  <div class="field">
-    <%= form.label :reminders_sent %>
-    <%= form.number_field :reminders_sent %>
-  </div>
+  <%= borrow_form.label :returned %>
+  <%= borrow_form.check_box :returned %><br>
 
-  <div class="field">
-    <%= form.label :returned %>
-    <%= form.check_box :returned %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= borrow_form.submit %><br><br>
 <% end %>

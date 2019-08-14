@@ -1,25 +1,14 @@
-<%= form_with(model: recipient, local: true) do |form| %>
+<%= form_for @recipient do |recipient_form| %>
   <%= render partial: "partials/form_errors", locals: { object: @recipient } %>
 
-      <ul>
-        <% recipient.errors.full_messages.each do |message| %>
+  <%= recipient_form.label :name %>
+  <%= recipient_form.text_field :name %><br>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+  <%= recipient_form.label :email %>
+  <%= recipient_form.text_field :email %><br>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
+  <%= recipient_form.label :phone %>
+  <%= recipient_form.text_field :phone %><br>
 
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= recipient_form.submit %><br><br>
 <% end %>
