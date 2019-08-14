@@ -28,7 +28,6 @@ pip = Lender.create!(
 # Item objects
 3.times do
   Item.create!(
-    lender_id: 1,
     name: Faker::Book.title,
     category: "book"
   )
@@ -36,7 +35,6 @@ end
 
 2.times do
   Item.create!(
-    lender_id: 1,
     name: Faker::Music.album,
     category: "album"
   )
@@ -44,7 +42,6 @@ end
 
 4.times do
   Item.create!(
-    lender_id: 2,
     name: Faker::Game.title,
     category: "game"
   )
@@ -61,6 +58,7 @@ end
 
 # Borrow objects
 Borrow.create!(
+  lender_id: 1,
   recipient_id: 2,
   item_id: 3,
   days_borrowed: Faker::Number.between(1, 17),
@@ -69,6 +67,7 @@ Borrow.create!(
 )
 
 Borrow.create!(
+  lender_id: 2,
   recipient_id: 5,
   item_id: 6,
   days_borrowed: Faker::Number.between(1, 17),
@@ -77,6 +76,7 @@ Borrow.create!(
 )
 
 Borrow.create!(
+  lender_id: 1,
   recipient_id: 1,
   item_id: 1,
   days_borrowed: Faker::Number.between(1, 17),
@@ -85,6 +85,7 @@ Borrow.create!(
 )
 
 Borrow.create!(
+  lender_id: 1,
   recipient_id: 2,
   item_id: 2,
   days_borrowed: Faker::Number.between(1, 17),
@@ -93,6 +94,7 @@ Borrow.create!(
 )
 
 Borrow.create!(
+  lender_id: 1,
   recipient_id: 3,
   item_id: 3,
   days_borrowed: Faker::Number.between(1, 17),
@@ -101,6 +103,7 @@ Borrow.create!(
 )
 
 Borrow.create!(
+  lender_id: 1,
   recipient_id: 4,
   item_id: 4,
   days_borrowed: Faker::Number.between(1, 17),
@@ -109,6 +112,7 @@ Borrow.create!(
 )
 
 Borrow.create!(
+  lender_id: 1,
   recipient_id: 5,
   item_id: 5,
   days_borrowed: Faker::Number.between(1, 17),
@@ -117,6 +121,7 @@ Borrow.create!(
 )
 
 Borrow.create!(
+  lender_id: 2,
   recipient_id: 6,
   item_id: 6,
   days_borrowed: Faker::Number.between(1, 17),
@@ -125,6 +130,7 @@ Borrow.create!(
 )
 
 Borrow.create!(
+  lender_id: 2,
   recipient_id: 7,
   item_id: 7,
   days_borrowed: Faker::Number.between(1, 17),
@@ -133,6 +139,7 @@ Borrow.create!(
 )
 
 Borrow.create!(
+  lender_id: 2,
   recipient_id: 6,
   item_id: 8,
   days_borrowed: Faker::Number.between(1, 17),
@@ -141,6 +148,7 @@ Borrow.create!(
 )
 
 Borrow.create!(
+  lender_id: 2,
   recipient_id: 1,
   item_id: 9,
   days_borrowed: Faker::Number.between(1, 17),
