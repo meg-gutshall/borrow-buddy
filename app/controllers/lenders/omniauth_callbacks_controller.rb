@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Lenders::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  before_action :skip_oauth_redirect, only: [:google_oauth2]
+  before_action :skip_oauth_redirect, only: [:google_oauth2, :passthru]
 
   def google_oauth2
     @lender = Lender.from_omniauth(request.env['omniauth.auth'])
@@ -19,9 +19,9 @@ class Lenders::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # https://github.com/plataformatec/devise#omniauth
 
   # GET|POST /resource/auth/twitter
-  # def passthru
-  #   super
-  # end
+  def passthru
+    super
+  end
 
   # GET|POST /users/auth/twitter/callback
   # def failure
@@ -30,7 +30,7 @@ class Lenders::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   private
     def skip_oauth_redirect
-      if params[:authenticity_token].present?
+      if params[:access_token].present?
         redirect_to root_path, alert: "You are already signed in."
       end
     end
