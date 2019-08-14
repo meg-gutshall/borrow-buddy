@@ -6,6 +6,8 @@ class Lenders::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def google_oauth2
     @lender = Lender.from_omniauth(request.env['omniauth.auth'])
 
+    # Blocker for Google Omniauth
+
     if @lender.persisted?
       flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: 'Google'
       sign_in_and_redirect @lender, event: :authentication
