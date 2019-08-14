@@ -4,6 +4,6 @@ class Item < ApplicationRecord
 
   validates :name, :category, presence: true
 
-  scope :lender_scope, -> (current) { joins(:lender).where("lender_id = ?", current.id) }
+  scope :lender_scope, -> (current) { joins(:borrows).where("lender_id = ?", current.id) }
 
 end
