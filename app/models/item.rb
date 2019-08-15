@@ -11,6 +11,8 @@ class Item < ApplicationRecord
   # Add argument?
   def self.sort_by_category
     order(:category, :name)
+  def name_with_category
+    "#{name} (#{category})"
   end
 
 end
