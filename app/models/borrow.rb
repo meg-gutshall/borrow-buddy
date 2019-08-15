@@ -13,12 +13,12 @@ class Borrow < ApplicationRecord
   scope :hide_returned, -> { where(returned: false) }
 
   def recipient_attributes=(attributes)
-    self.recipient = Recipient.find_or_create_by(attributes) if !attributes['name'].empty?
+    self.recipient = Recipient.where('lower(name) = ?', attributes['name'].downcase).find_or_create_by(name: attributes['name']) if !attributes['name'].empty?
     self.recipient.update(attributes)
   end
 
   def item_attributes=(attributes)
-    self.item = Item.find_or_create_by(attributes) if !attributes['name'].empty?
+    self.item = Item.where('lower(name) = ?', attributes['name'].downcase).find_or_create_by(name: attributes['name']) if !attributes['name'].empty?
     self.item.update(attributes)
   end
 
