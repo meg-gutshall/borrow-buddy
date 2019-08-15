@@ -24,7 +24,6 @@ class BorrowsController < ApplicationController
 
   # POST /borrows
   def create
-    binding.pry
     @borrow = Borrow.new(borrow_params)
 
     if @borrow.save
