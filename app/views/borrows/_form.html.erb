@@ -9,7 +9,7 @@
   <p>-Or-</p>
   
   <p>Create a New Borrower:</p>
-  <%= borrow_form.fields_for :recipient, @borrow.build_recipient do |recipient_attributes| %>
+  <%= borrow_form.fields_for :recipient do |recipient_attributes| %>
     <%= recipient_attributes.label "Borrower Name:" %>
     <%= recipient_attributes.text_field :name %><br>
 
@@ -26,7 +26,7 @@
   <p>-Or-</p>
   
   <p>Create a New Item:</p>
-  <%= borrow_form.fields_for :item, @borrow.build_item do |item_attributes| %>
+  <%= borrow_form.fields_for :item do |item_attributes| %>
     <%= item_attributes.label "Item Name:" %>
     <%= item_attributes.text_field :name %><br>
 
@@ -43,9 +43,9 @@
 
   <%= borrow_form.label "Has the borrowed item been returned?" %>
   <%= borrow_form.label "Yes" %>
-  <%= borrow_form.radio_button :returned, "Yes" %>
+  <%= borrow_form.radio_button :returned, :true %>
   <%= borrow_form.label "No" %>
-  <%= borrow_form.radio_button :returned, "No" %><br><br>
+  <%= borrow_form.radio_button :returned, :false, checked: true %><br><br>
 
   <%= borrow_form.submit %><br><br>
 <% end %>
