@@ -5,8 +5,6 @@ class Lender < ApplicationRecord
   
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2]
 
-  # ! Solution: Hide Google login button when someone is logged in via Devise
-
   def self.from_omniauth(access_token)
     # binding.pry
     data = access_token.info
