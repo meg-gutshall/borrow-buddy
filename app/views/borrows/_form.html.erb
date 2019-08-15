@@ -4,7 +4,7 @@
   <%= borrow_form.hidden_field(:lender_id, :value => current_lender.id) %>
 
   <p>Select a Borrower from Your List:</p>
-  <%= borrow_form.collection_select :recipient_id, Recipient.lender_scope(current_lender), :id, :name, include_blank: 'Select One' %><br><br>
+  <%= borrow_form.collection_select :recipient_id, Recipient.form_collection(current_lender), :id, :name, include_blank: 'Select One' %><br><br>
 
   <p>-Or-</p>
   
@@ -21,7 +21,7 @@
   <% end %>
 
   <p>Select an Item from Your List:</p>
-  <%= borrow_form.collection_select :item_id, Item.lender_scope(current_lender), :id, :name, include_blank: 'Select One' %><br><br>
+  <%= borrow_form.collection_select :item_id, Item.form_collection(current_lender), :id, :name, include_blank: 'Select One' %><br><br>
 
   <p>-Or-</p>
   
