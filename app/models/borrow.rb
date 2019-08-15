@@ -22,8 +22,6 @@ class Borrow < ApplicationRecord
     self.item.update(attributes)
   end
 
-  def item
-    Item.find_by(id: self.item_id)
-  end
+  # TODO: Add daily increase method for days_borrowed attribute
 
 end
