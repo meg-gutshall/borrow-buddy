@@ -4,21 +4,19 @@ Rails.application.routes.draw do
 
   devise_for :lenders, controllers: { omniauth_callbacks: 'lenders/omniauth_callbacks' }
 
-  scope :lender do
+  resources :lenders, only: [:show] do
     resources :borrows
-    resources :recipients, only: [:index]
-    resources :items, only: [:index]
+    resources :recipients, except: [:show]
+    resources :items, except: [:show]
   end
-
-  resources :lenders, only: [:show]
   
-  resources :items, except: [:index] do
-    resources :recipients
+  resources :recipients, only: [:show] do
+    resources :items
     resources :borrows
   end
 
-  resources :recipients, except: [:index] do
-    resources :items
+  resources :items, only: [:show] do
+    resources :recipients
     resources :borrows
   end
 
