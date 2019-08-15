@@ -26,6 +26,6 @@
   </div>
 <% end %>
 
-<%= link_to "Sign up with Google", omniauth_authorize_path(resource_name, "google_oauth2") %><br>
+<%= hide_omniauth_signup %><br>
 
 <%= link_to "Log in", new_session_path(resource_name) %><br>
