@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Lenders::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  before_action :skip_oauth_redirect, only: [:google_oauth2]
 
   def google_oauth2
     @lender = Lender.from_omniauth(request.env['omniauth.auth'])
@@ -28,13 +27,8 @@ class Lenders::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   #   super
   # end
 
-  private
-    def skip_oauth_redirect
-      if params[:authenticity_token].present?
-        redirect_to root_path, alert: "You are already signed in."
-      end
-    end
-
+  # protected
+  
   # The path used when OmniAuth fails
   # def after_omniauth_failure_path_for(scope)
   #   super(scope)
