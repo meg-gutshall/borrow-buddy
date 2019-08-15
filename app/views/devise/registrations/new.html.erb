@@ -1,31 +1,23 @@
-<h2>Sign up</h2>
+<h1>Sign up</h1>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+  <%= f.label :email %>
+  <%= f.email_field :email, autofocus: true, autocomplete: "email" %><br>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
+  <%= f.label :password %>
+  <%= f.password_field :password, autocomplete: "new-password" %>
+  <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+  <% end %><br>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation, autocomplete: "new-password" %><br><br>
 
-  <div class="actions">
-    <%= f.submit "Create Account" %>
-  </div>
+  <%= f.submit "Create Account" %><br><br>
 <% end %>
 
 <%= hide_omniauth_signup %><br>
 
-<%= link_to "Log in", new_session_path(resource_name) %><br>
+<%= link_to "Log in", new_lender_session_path %><br>
