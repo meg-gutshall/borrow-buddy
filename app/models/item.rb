@@ -8,9 +8,11 @@ class Item < ApplicationRecord
   scope :abc_name, -> { order(:name) }
   scope :form_collection, -> (current) { joins(:borrows).where("lender_id = ?", current.id).distinct.order(:name) }
 
-  # Add argument?
-  def self.sort_by_category
-    order(:category, :name)
+  # Select category from dropdown
+  def self.filter_by_category(current)
+    joins(:borrows).where("lender_id = ?", current.id).where("category = ?", params[:cat]).order(:name)
+  end
+
   def name_with_category
     "#{name} (#{category})"
   end
