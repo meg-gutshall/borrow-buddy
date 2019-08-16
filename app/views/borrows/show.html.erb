@@ -19,8 +19,8 @@
 </p>
 
 <p>
-  <strong>Returned:</strong>
-  <%= @borrow.returned %>
+  <strong>Item returned:</strong>
+  <%= boolean_display(@borrow.returned) %>
 </p>
 
 <%# ! Add yes or no helper method %>
