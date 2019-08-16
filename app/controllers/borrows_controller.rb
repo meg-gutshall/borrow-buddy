@@ -14,8 +14,16 @@ class BorrowsController < ApplicationController
   # GET /borrows/new
   def new
     @borrow = current_lender.borrows.build
-    @borrow.build_recipient
-    @borrow.build_item
+    if params[:item_id]
+      @item = Item.find_by(id: params[:item_id])
+      @borrow.build_recipient
+    elsif params[:recipient_id]
+      @recipient = Recipient.find_by(id: params[:recipient_id])
+      @borrow.build_item
+    else
+      @borrow.build_recipient
+      @borrow.build_item
+    end
   end
 
   # GET /borrows/1/edit
@@ -27,7 +35,15 @@ class BorrowsController < ApplicationController
     @borrow = current_lender.borrows.build(borrow_params)
 
     if @borrow.save
-      redirect_to lender_borrow_path(current_lender, @borrow), notice: 'Borrow was successfully created.'
+      if params[:item_id]
+        @item = Item.find_by(id: params[:item_id])
+        redirect_to item_path(@item), notice: 'Borrow was successfully created.'
+      elsif params[:recipient_id]
+        @recipient = Recipient.find_by(id: params[:recipient_id])
+        redirect_to recipient_path(@recipient), notice: 'Borrow was successfully created.'
+      else
+        redirect_to lender_borrow_path(current_lender, @borrow), notice: 'Borrow was successfully created.'
+      end
     else
       render :new
     end
