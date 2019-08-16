@@ -8,5 +8,5 @@
   <%= @item.category %>
 </p>
 
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+<%= link_to 'Edit', edit_lender_item_path(current_lender, @item) %>
+<%= link_to 'Back', lender_items_path(current_lender) %>

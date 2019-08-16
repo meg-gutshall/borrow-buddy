@@ -23,7 +23,5 @@
   <%= boolean_display(@borrow.returned) %>
 </p>
 
-<%# ! Add yes or no helper method %>
-
-<%= link_to 'Edit', edit_borrow_path(@borrow) %> |
-<%= link_to 'Back', borrows_path %>
+<%= link_to 'Edit', edit_lender_borrow_path(current_lender, @borrow) %>
+<%= link_to 'Back', lender_borrows_path(current_lender) %>

@@ -13,5 +13,5 @@
   <%= @recipient.phone %>
 </p>
 
-<%= link_to 'Edit', edit_recipient_path(@recipient) %> |
-<%= link_to 'Back', recipients_path %>
+<%= link_to 'Edit', edit_lender_recipient_path(current_lender, @recipient) %>
+<%= link_to 'Back', lender_recipients_path(current_lender) %>

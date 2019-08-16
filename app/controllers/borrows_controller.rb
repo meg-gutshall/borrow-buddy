@@ -27,7 +27,7 @@ class BorrowsController < ApplicationController
     @borrow = current_lender.borrows.build(borrow_params)
 
     if @borrow.save
-      redirect_to @borrow, notice: 'Borrow was successfully created.'
+      redirect_to lender_borrow_path(current_lender, @borrow), notice: 'Borrow was successfully created.'
     else
       render :new
     end
@@ -36,7 +36,7 @@ class BorrowsController < ApplicationController
   # PATCH/PUT /borrows/1
   def update
     if @borrow.update(borrow_params)
-      redirect_to @borrow, notice: 'Borrow was successfully updated.'
+      redirect_to lender_borrow_path(current_lender, @borrow), notice: 'Borrow was successfully updated.'
     else
       render :edit
     end
@@ -45,7 +45,7 @@ class BorrowsController < ApplicationController
   # DELETE /borrows/1
   def destroy
     @borrow.destroy
-    redirect_to borrows_url, notice: 'Borrow was successfully destroyed.'
+    redirect_to lender_borrows_path(current_lender), notice: 'Borrow was successfully destroyed.'
   end
 
   private
