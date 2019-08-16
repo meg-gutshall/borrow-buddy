@@ -13,7 +13,7 @@ class BorrowsController < ApplicationController
 
   # GET /borrows/new
   def new
-    @borrow = Borrow.new
+    @borrow = current_lender.borrows.build
     @borrow.build_recipient
     @borrow.build_item
   end
@@ -24,7 +24,7 @@ class BorrowsController < ApplicationController
 
   # POST /borrows
   def create
-    @borrow = Borrow.new(borrow_params)
+    @borrow = current_lender.borrows.build(borrow_params)
 
     if @borrow.save
       redirect_to @borrow, notice: 'Borrow was successfully created.'

@@ -1,8 +1,6 @@
 <%= form_for @borrow do |borrow_form| %>
   <%= render partial: "partials/form_errors", locals: { object: @borrow } %>
 
-  <%= borrow_form.hidden_field(:lender_id, :value => current_lender.id) %>
-
   <%= borrow_form.hidden_field(:recipient_id, :value => @recipient.id) %>
 
   <p>Select an Item from Your List:</p>
