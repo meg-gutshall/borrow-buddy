@@ -1,6 +1,6 @@
-<h1>All Borrows</h1>
+<h1>Current Borrows</h1>
 
-<%= link_to 'View Only Current Borrows', lender_current_borrows_path(current_lender) %>
+<%= link_to 'View All Borrows', lender_borrows_path(current_lender) %>
 <%= link_to 'View Only Returned Borrows', lender_returned_borrows_path(current_lender) %><br>
 
 <%= render 'borrows_index' %>
