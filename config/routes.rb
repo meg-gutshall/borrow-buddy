@@ -6,18 +6,18 @@ Rails.application.routes.draw do
 
   resources :lenders, only: [:show] do
     resources :borrows
-    resources :recipients, except: [:show]
-    resources :items, except: [:show]
+    resources :recipients
+    resources :items
   end
   
   resources :recipients, only: [:show] do
-    resources :items
-    resources :borrows
+    resources :items, only: [:index]
+    resources :borrows, only: [:index]
   end
 
   resources :items, only: [:show] do
-    resources :recipients
-    resources :borrows
+    resources :recipients, only: [:index]
+    resources :borrows, only: [:index]
   end
 
 end
