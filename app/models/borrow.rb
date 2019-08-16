@@ -21,6 +21,10 @@ class Borrow < ApplicationRecord
     self.item.update(attributes)  # TODO: Unless attributes are empty
   end
 
-  # TODO: Add daily increase method for days_borrowed attribute
+  def self.inc_days
+    where(returned: false).map do |borrow|
+      borrow.update(days_borrowed: borrow.days_borrowed += 1)
+    end
+  end
 
 end
