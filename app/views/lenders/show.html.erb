@@ -5,11 +5,7 @@
 
 <p>
   <strong>Google Login?:</strong>
-  <% if current_lender.provider %>
-    <%= "Yes" %>
-  <% else %>
-    <%= "No" %>
-  <% end %>
+  <%= current_lender.provider ? "Yes" : "No" %>
 </p>
 
 <br>
