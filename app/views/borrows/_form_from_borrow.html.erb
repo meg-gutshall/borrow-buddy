@@ -1,4 +1,4 @@
-<%= form_for @borrow do |borrow_form| %>
+<%= form_for ([current_lender, @borrow]) do |borrow_form| %>
   <%= render partial: "partials/form_errors", locals: { object: @borrow } %>
 
   <p>Select a Borrower from Your List:</p>

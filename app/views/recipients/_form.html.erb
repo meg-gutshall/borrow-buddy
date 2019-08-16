@@ -1,4 +1,4 @@
-<%= form_for @recipient do |recipient_form| %>
+<%= form_for ([current_lender, @recipient]) do |recipient_form| %>
   <%= render partial: "partials/form_errors", locals: { object: @recipient } %>
 
   <%= recipient_form.label :name %>
