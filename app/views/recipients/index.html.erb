@@ -16,7 +16,7 @@
         <td><%= recipient.name %></td>
         <td><%= recipient.email %></td>
         <td><%= recipient.phone %></td>
-        <td><%= link_to 'Show', recipient %></td>
+        <td><%= link_to 'Show', lender_recipient_path(current_lender, recipient) %></td>
         <td><%= link_to 'Edit', edit_lender_recipient_path(current_lender, recipient) %></td>
         <td><%= link_to 'Destroy', lender_recipient_path(current_lender, recipient), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
