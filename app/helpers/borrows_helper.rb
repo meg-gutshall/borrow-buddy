@@ -1,8 +1,4 @@
 module BorrowsHelper
-  
-  def boolean_display(attribute)
-    attribute == true ? "Yes" : "No"
-  end
 
   def borrow_origin
     if params[:item_id]

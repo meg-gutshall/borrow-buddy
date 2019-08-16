@@ -11,5 +11,9 @@ module ApplicationHelper
       link_to "Sign up with Google", lender_google_oauth2_omniauth_authorize_path
     end
   end
+    
+  def boolean_display(attribute)
+    attribute == true ? "Yes" : "No"
+  end
 
 end
