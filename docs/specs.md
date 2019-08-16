@@ -22,7 +22,9 @@
   - Borrow: validates the presence and integer numericality of `days_borrowed` and `reminders_sent` (which have default values at `1` and `0` respectively) as well as the boolean value of `returned` through the use of inclusion
   - Item: validates the presence of `name`
   - Recipient: validates the presence of `name` and the format of `email` with the option to leave the field blank
-- [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
+- [x] Include a class level ActiveRecord scope method
+  - `Borrow.lender_scope(current_lender).hide_returned`, URL: `borrows/current_borrows`
+  - `Borrow.lender_scope(current_lender).show_returned`, URL: `borrows/returned_borrows`
 - [x] Include signup (Devise)
 - [x] Include login (Devise)
 - [x] Include logout (Devise)
