@@ -16,16 +16,25 @@
   - A lender has many recipients through borrows
 - [x] Include at least one many-to-many relationship
   - Items have many recipients, recipients have many items (through borrows)
-- [ ] The "through" part of the `has_many, through:` includes at least one user submittable attribute, that is to say, some attribute other than its foreign keys that can be submitted by the app's user (attribute_name e.g. ingredients.quantity)
-- [ ] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
+- [x] The "through" part of the `has_many, through:` includes at least one user-submittable attribute, that is to say, some attribute other than its foreign keys that can be submitted by the app's user
+  - The borrow model includes `days_borrowed`, `reminders_sent`, and `returned` as user-submittable attributes
+- [x] Include reasonable validations for simple model objects
+  - Borrow: validates the presence and integer numericality of `days_borrowed` and `reminders_sent` (which have default values at `1` and `0` respectively) as well as the boolean value of `returned` through the use of inclusion
+  - Item: validates the presence of `name`
+  - Recipient: validates the presence of `name` and the format of `email` with the option to leave the field blank
 - [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
 - [x] Include signup (Devise)
 - [x] Include login (Devise)
 - [x] Include logout (Devise)
 - [x] Include third party signup/login (Devise with Google OmniAuth 2)
-- [ ] Include nested resource show or index (URL e.g. users/2/recipes)
-- [ ] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
-- [ ] Include form display of validation errors (form URL e.g. /recipes/new)
+- [x] Include nested resource show or index (URL e.g. users/2/recipes)
+  - Nesting for borrows index and show routes: `lenders/:lender_id/borrows`, `recipients/:recipient_id/borrows`, `items/:item_id/borrows`, and `lenders/:lender_id/borrows/:id`
+  - Nesting for recipients index and show routes: `lenders/:lender_id/recipients`, `items/:item_id/recipients`, and `lenders/:lender_id/recipients/:id`
+  - Nesting for items index and show routes: `lenders/:lender_id/items`, `recipients/:recipient_id/items`, and `lenders/:lender_id/items/:id`
+- [x] Include nested resource "new" form
+  - Nesting for borrows new routes: `lenders/:lender_id/borrows/new`, `recipients/:recipient_id/borrows/new`, and `items/:item_id/borrows/new`
+- [x] Include form display of validation errors
+  - Can be found in `/views/partials/_form_errors.html.erb`
 
 ## Confirm
 
