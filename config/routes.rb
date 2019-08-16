@@ -12,12 +12,12 @@ Rails.application.routes.draw do
   
   resources :recipients, only: [:show] do
     resources :items, only: [:index]
-    resources :borrows, only: [:index]
+    resources :borrows, only: [:index, :new, :create]
   end
 
   resources :items, only: [:show] do
     resources :recipients, only: [:index]
-    resources :borrows, only: [:index]
+    resources :borrows, only: [:index, :new, :create]
   end
 
 end
