@@ -38,7 +38,7 @@
         <td><%= borrow.item.category %></td>
         <td><%= borrow.days_borrowed %></td>
         <td><%= borrow.reminders_sent %></td>
-        <td><%= borrow.returned %></td>
+        <td><%= boolean_display(borrow.returned) %></td>
         <td><%= link_to 'Show', lender_borrow_path(current_lender, borrow) %></td>
         <td><%= link_to 'Edit', edit_lender_borrow_path(current_lender, borrow) %></td>
         <td><%= link_to 'Destroy', lender_borrow_path(current_lender, borrow), method: :delete, data: { confirm: 'Are you sure?' } %></td>
