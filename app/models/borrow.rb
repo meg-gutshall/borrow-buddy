@@ -10,6 +10,7 @@ class Borrow < ApplicationRecord
 
   scope :lender_scope, -> (current) { joins(:lender).where("lender_id = ?", current.id) }
   scope :hide_returned, -> { where(returned: false) }
+  scope :show_returned, -> { where(returned: true) }
 
   def recipient_attributes=(attributes)
     self.recipient = Recipient.where("lower(name) = ?", attributes[:name].downcase).find_or_create_by(name: attributes[:name]) if !attributes[:name].empty?
