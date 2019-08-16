@@ -11,6 +11,14 @@ class BorrowsController < ApplicationController
   def show
   end
 
+  def current_borrows
+    @borrows = Borrow.lender_scope(current_lender).hide_returned
+  end
+
+  def returned_borrows
+    @borrows = Borrow.lender_scope(current_lender).show_returned
+  end
+
   # GET /borrows/new
   def new
     @borrow = current_lender.borrows.build
