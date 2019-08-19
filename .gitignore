@@ -32,3 +32,6 @@ yarn-debug.log*
 
 # dotenv
 .env
+
+# Mac files
+.DS_Store
