@@ -1,20 +1,28 @@
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-md">
   <a class="navbar-brand" href="<%= root_path %>">
     <%= image_tag("bb-white.png", size: "40x40", alt: "Borrow Buddy Logo") %>
   </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarAlign">
-    <div class="navbar-nav mr-auto">
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
       <% if !!current_lender %>
-        <a class="nav-item nav-link" href="<%= lender_borrows_path(current_lender) %>">My Borrows</a>
-        <a class="nav-item nav-link" href="<%= lender_items_path(current_lender) %>">My Items</a>
-        <a class="nav-item nav-link" href="<%= lender_recipients_path(current_lender) %>">My Recipients</a>
+        <li class="nav-item">
+          <a class="nav-link" href="<%= lender_borrows_path(current_lender) %>">My Borrows</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<%= lender_items_path(current_lender) %>">My Items</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<%= lender_recipients_path(current_lender) %>">My Recipients</a>
+        </li>
       <% end %>
-    </div>
-    <span class="navbar-align" id="nav-right">
-      <%= link_to "Lender Logout", destroy_lender_session_path, method: :delete %>
+    </ul>
+    <span class="navbar-text" id="nav-right">
+      <% if !!current_lender %>
+        <%= link_to "Lender Logout", destroy_lender_session_path, method: :delete %>
+      <% end %>
     </span>
   </div>
 </nav>
