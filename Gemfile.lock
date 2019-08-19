@@ -282,7 +282,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.4.2)
   bootstrap (~> 4.3)
-  bootstrap_form (~> 4.2)
+  bootstrap_form (>= 4.2.0)
   byebug
   capybara (>= 2.15)
   database_cleaner (~> 1.7)
