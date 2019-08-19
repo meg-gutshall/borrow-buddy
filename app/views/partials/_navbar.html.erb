@@ -2,6 +2,10 @@
   <a class="navbar-brand" href="<%= root_path %>">
     <%= image_tag("bb-white.png", size: "40x40", alt: "Borrow Buddy Logo") %>
   </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarAlign">
   <% if !!current_lender %>
     <li class="nav-item">
       <a class="nav-link" href="<%= lender_borrows_path(current_lender) %>">My Borrows</a>
