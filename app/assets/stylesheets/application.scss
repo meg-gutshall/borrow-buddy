@@ -52,6 +52,7 @@ $highlight-text: #78a014;
 @media screen { 
 
   // Reset //
+  
   * {
     list-style: none;
     margin: 0;
@@ -69,8 +70,9 @@ $highlight-text: #78a014;
   body {
     height: 100%;
     background-color: $main-color;
+    font-family: $main-font;
+    font-size: 1.8rem;
     color: $main-text;
-    // font-family: $main-font;
   }
 
   .wrapper {
@@ -87,29 +89,27 @@ $highlight-text: #78a014;
   }
 
   p {
-    font-size: 3rem;
-    line-height: 3.6rem;
+    line-height: 2rem;
     margin-bottom: 1rem;
   }
 
   h1 {
-    font-size: 6rem;
-    margin-bottom: 1.8rem;
-  }
-
-  h2 {
-    font-size: 3.8rem;
+    font-family: $heading-font;
+    font-weight: 700;
+    font-size: 5rem;
     margin-bottom: 1.5rem;
   }
 
-  h3 {
-    font-size: 2.5rem;
+  h2 {
+    font-family: $heading-font;
+    font-weight: 700;
+    font-size: 3.2rem;
     margin-bottom: 1.2rem;
   }
 
   a {
     color: $accent-text;
-    font-weight: 900;
+    font-weight: 700;
     text-decoration: none;
   }
 
@@ -124,6 +124,7 @@ $highlight-text: #78a014;
     padding: 0 8rem;
     display: flex;
     flex-shrink: 0;
+    font-size: 2.4rem;
     border-bottom: 0.5rem solid $dark-shade;
     font-size: 1.8rem;
   }
@@ -152,6 +153,7 @@ $highlight-text: #78a014;
   }
 
   // Footer //
+
   #page-content {
     flex: 1 0 auto;
   }
