@@ -128,6 +128,13 @@ $highlight-text: #78a014;
     font-size: 2.4rem;
     border-bottom: 0.5rem solid $dark-shade;
   }
+
+  a.nav-link, span#nav-right > a {
+    color: $white;
+  }
+
+  a.nav-link:hover, span#nav-right > a:hover {
+    color: $darker-shade;
   }
 
   // Buttons //
