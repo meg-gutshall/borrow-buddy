@@ -1,37 +1,25 @@
-<%= form_for([@item, @borrow]) do |borrow_form| %>
+<%= bootstrap_form_for([@item, @borrow], layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9") do |borrow_form| %>
   <%= render partial: "partials/form_errors", locals: { object: @borrow } %>
 
   <%= borrow_form.hidden_field(:item_id, :value => params[:item_id]) %>
 
-  <p>Select a Borrower from Your List:</p>
-  <%= borrow_form.collection_select :recipient_id, Recipient.form_collection(current_lender), :id, :name, include_blank: 'Select One' %><br><br>
-
-  <p>-Or-</p>
+  <%= borrow_form.collection_select :recipient_id, Recipient.form_collection(current_lender), :id, :name, { label: "Select a Borrower from Your List:" } %>
   
-  <p>Create a New Borrower:</p>
+  <%= borrow_form.label "Or Create a New Borrower:" %><br>
   <%= borrow_form.fields_for :recipient do |recipient_attributes| %>
-    <%= recipient_attributes.label "Borrower Name:" %>
-    <%= recipient_attributes.text_field :name %><br>
+    <%= recipient_attributes.text_field :name, label: "Borrower Name:", label_col: "col-sm-2 offset-md-1", control_col: "col-sm-9" %>
+    <%= recipient_attributes.text_field :email, label: "Borrower Email:", label_col: "col-sm-2 offset-md-1", control_col: "col-sm-9" %>
+    <%= recipient_attributes.text_field :phone, label: "Borrower Phone:", label_col: "col-sm-2 offset-md-1", control_col: "col-sm-9" %>
+  <% end %><br>
 
-    <%= recipient_attributes.label "Borrower Email:" %>
-    <%= recipient_attributes.text_field :email %><br>
+  <%= borrow_form.label "About This Loan" %><br>
+  <%= borrow_form.number_field :days_borrowed, label: "Number of Days Borrowed:", label_col: "col-sm-3", control_col: "col-sm-9" %>
+  <%= borrow_form.number_field :reminders_sent, label: "Number of Reminders Sent to the Borrower:", label_col: "col-sm-3", control_col: "col-sm-9" %>
 
-    <%= recipient_attributes.label "Borrower Phone:" %>
-    <%= recipient_attributes.text_field :phone %><br><br>
+  <%= borrow_form.form_group :returned, label: { text: "Has the borrowed item been returned?" } do %>
+    <%= borrow_form.radio_button :returned, :true, label: "Yes", inline: true %>
+    <%= borrow_form.radio_button :returned, :false, label: "No", inline: true, checked: true %><br>
   <% end %>
-
-  <p>About This Loan</p>
-  <%= borrow_form.label "Number of Days Borrowed:" %>
-  <%= borrow_form.number_field :days_borrowed %><br>
-
-  <%= borrow_form.label "Number of Reminders Sent to the Borrower:" %>
-  <%= borrow_form.number_field :reminders_sent %><br>
-
-  <%= borrow_form.label "Has the borrowed item been returned?" %>
-  <%= borrow_form.label "Yes" %>
-  <%= borrow_form.radio_button :returned, :true %>
-  <%= borrow_form.label "No" %>
-  <%= borrow_form.radio_button :returned, :false, checked: true %><br><br>
 
   <%= borrow_form.submit %><br><br>
 <% end %>
