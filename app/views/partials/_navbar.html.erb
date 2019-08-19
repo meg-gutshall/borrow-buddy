@@ -6,18 +6,15 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarAlign">
-  <% if !!current_lender %>
-    <li class="nav-item">
-      <a class="nav-link" href="<%= lender_borrows_path(current_lender) %>">My Borrows</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="<%= lender_items_path(current_lender) %>">My Items</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="<%= lender_recipients_path(current_lender) %>">My Recipients</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="<%= destroy_lender_session_path %>" action="delete">Log Out</a>
-    </li>
-  <% end %>
+    <div class="navbar-nav mr-auto">
+      <% if !!current_lender %>
+        <a class="nav-item nav-link" href="<%= lender_borrows_path(current_lender) %>">My Borrows</a>
+        <a class="nav-item nav-link" href="<%= lender_items_path(current_lender) %>">My Items</a>
+        <a class="nav-item nav-link" href="<%= lender_recipients_path(current_lender) %>">My Recipients</a>
+      <% end %>
+    </div>
+    <span class="navbar-align" id="nav-right">
+      <%= link_to "Lender Logout", destroy_lender_session_path, method: :delete %>
+    </span>
+  </div>
 </nav>
