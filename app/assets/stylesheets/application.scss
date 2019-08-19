@@ -121,12 +121,13 @@ $highlight-text: #78a014;
   // Navbar //
 
   nav {
-    padding: 0 8rem;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
     display: flex;
     flex-shrink: 0;
     font-size: 2.4rem;
     border-bottom: 0.5rem solid $dark-shade;
-    font-size: 1.8rem;
+  }
   }
 
   // Buttons //
