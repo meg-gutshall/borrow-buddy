@@ -165,6 +165,17 @@ $highlight-text: #78a014;
     border: 0.2rem solid $light-accent;
   }
 
+  // Cards //
+
+  .card {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  h1.card-title {
+    font-size: 3.8rem;
+  }
+
   // Footer //
 
   #page-content {
