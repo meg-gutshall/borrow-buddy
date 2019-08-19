@@ -5,13 +5,7 @@ class ApplicationController < ActionController::Base
   end
 
   private
-    # Returns the current lender or 'nil' if none exists
-    # def current_lender
-    #   Lender.find_by(id: session[:lender_id])
-    # end
-
-    # Returns true or 'nil' if there is no current lender
-    # def logged_in?
-    #   !!current_lender
-    # end
+    def after_sign_in_path_for(resource)
+      lender_borrows_path(current_lender)
+    end
 end
