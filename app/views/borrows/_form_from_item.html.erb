@@ -3,7 +3,7 @@
 
   <%= borrow_form.hidden_field(:item_id, :value => params[:item_id]) %>
 
-  <%= borrow_form.collection_select :recipient_id, Recipient.form_collection(current_lender), :id, :name, { label: "Select a Borrower from Your List:" } %>
+  <%= borrow_form.collection_select :recipient_id, Recipient.form_collection(current_lender), :id, :name, { label: "Select a Borrower from Your List:", prompt: "Select One" } %>
   
   <%= borrow_form.label "Or Create a New Borrower:" %><br>
   <%= borrow_form.fields_for :recipient do |recipient_attributes| %>

@@ -1,7 +1,7 @@
 <%= bootstrap_form_for([current_lender, @borrow], layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9") do |borrow_form| %>
   <%= render partial: "partials/form_errors", locals: { object: @borrow } %>
 
-  <%= borrow_form.collection_select :recipient_id, Recipient.form_collection(current_lender), :id, :name, { label: "Select a Borrower from Your List:" } %>
+  <%= borrow_form.collection_select :recipient_id, Recipient.form_collection(current_lender), :id, :name, { label: "Select a Borrower from Your List:", prompt: "Select One" } %>
   
   <%= borrow_form.label "Or Create a New Borrower:" %><br>
   <%= borrow_form.fields_for :recipient do |recipient_attributes| %>
@@ -10,7 +10,7 @@
     <%= recipient_attributes.text_field :phone, label: "Borrower Phone:", label_col: "col-sm-2 offset-md-1", control_col: "col-sm-9" %>
   <% end %><br>
 
-  <%= borrow_form.collection_select :item_id, Item.form_collection(current_lender), :id, :name_with_category, { label: "Select an Item from Your List:" } %>
+  <%= borrow_form.collection_select :item_id, Item.form_collection(current_lender), :id, :name_with_category, { label: "Select an Item from Your List:", prompt: "Select One" } %>
 
   <%= borrow_form.label "Or Create a New Item:" %><br>
   <%= borrow_form.fields_for :item do |item_attributes| %>
