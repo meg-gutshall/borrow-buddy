@@ -1,3 +1,6 @@
+// Google Fonts //
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Merriweather+Sans&display=swap');
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -14,6 +17,10 @@
  *= require_self
  *= require rails_bootstrap_forms
  */
+
+ // Fonts //
+$main-font: 'Merriweather', serif;
+$heading-font: 'Merriweather Sans', sans-serif;
 
 // Colors //
 $white: #ffffff;
