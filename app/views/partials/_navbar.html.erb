@@ -1,7 +1,7 @@
-<nav class="nav flex-row">
-  <li class="nav-item">
-    <a class="nav-link" href="<%= root_path %>">Home</a>
-  </li>
+<nav class="navbar navbar-expand-lg">
+  <a class="navbar-brand" href="<%= root_path %>">
+    <%= image_tag("bb-white.png", size: "40x40", alt: "Borrow Buddy Logo") %>
+  </a>
   <% if !!current_lender %>
     <li class="nav-item">
       <a class="nav-link" href="<%= lender_borrows_path(current_lender) %>">My Borrows</a>
