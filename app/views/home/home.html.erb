@@ -1,16 +1,31 @@
-<h1>Welcome to BorrowBuddy!</h1>
+<div class="row">
+  <div class="col text-center">
+    <h1>Welcome to BorrowBuddy!</h1>
+  </div>
+</div>
 
-<h3>Session & Registration Links</h3>
-<%= link_to "Lender Login", new_lender_session_path %>
-<%= link_to "Lender Logout", destroy_lender_session_path, method: :delete %>
-<%= link_to "Create New Lender", new_lender_registration_path %>
-<br>
-<%= hide_omniauth_login %>
-
-<h2>Links</h2>
-<% if !!current_lender %>
-  <%= link_to "My Borrows", lender_borrows_path(current_lender) %>
-  <%= link_to "My Items", lender_items_path(current_lender) %>
-  <%= link_to "My Recipients", lender_recipients_path(current_lender) %>
-  <%= link_to "Lender Profile", lender_path(current_lender) %>
-<% end %>
+<div class="row align-items-center">
+  <div class="col-md-5 col-12">
+    <div class="card text-center">
+      <div class="card-body">
+        <h1 class="card-title">Sign In</h1>
+        <p class="card-text">Welcome back! Choose a sign in method below:</p>
+        <a href="<%= new_lender_session_path %>" class="card-link">Lender Login with Borrow Buddy</a>
+        <%= hide_omniauth_login %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-2 col-12 text-center">
+    <%= image_tag("bb-color.png", class: "img-fluid", alt: "Borrow Buddy Logo") %>
+  </div>
+  <div class="col-md-5 col-12">
+    <div class="card text-center">
+      <div class="card-body">
+        <h1 class="card-title">Register</h1>
+        <p class="card-text">Welcome to the app! Choose a registration method below:</p>
+        <a href="<%= new_lender_registration_path %>" class="card-link">Lender Signup with Borrow Buddy</a>
+        <%= hide_omniauth_signup %>
+      </div>
+    </div>
+  </div>
+</div>
