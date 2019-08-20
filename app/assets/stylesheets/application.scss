@@ -45,6 +45,9 @@ $highlight-text: #78a014;
   margin-left: auto;
 }
 
+select.form-control, input.form-control {
+  font-size: 1.6rem;
+}
 
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
@@ -163,6 +166,47 @@ $highlight-text: #78a014;
   a.btn:hover {
     background-color: $highlight-text;
     border: 0.2rem solid $light-accent;
+  }
+
+  // Forms //
+
+  .form-group {
+    margin-bottom: 0;
+  }
+  
+  label.col-form-label {
+    font-size: 1.6rem;
+  }
+
+  h1.form-body-heading{
+    font-size: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h2.form-body-heading{
+    font-size: 2.2rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  input.btn {
+    font-size: inherit;
+  }
+
+  input.submit-btn {
+    margin-top: 2rem;
+    background: $main-color;
+    color: $darker-shade;
+    font-family: $heading-font;
+    font-weight: 700;
+  }
+
+  input.submit-btn:hover {
+    background: $accent-text;
+    color: $white;
+    font-family: $heading-font;
+    font-weight: 700;
   }
 
   // Cards //

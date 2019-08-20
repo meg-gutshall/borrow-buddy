@@ -1,31 +1,89 @@
-<%= bootstrap_form_for([current_lender, @borrow], layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9") do |borrow_form| %>
+<%= form_for([current_lender, @borrow]) do |borrow_form| %>
+  
   <%= render partial: "partials/form_errors", locals: { object: @borrow } %>
 
-  <%= borrow_form.collection_select :recipient_id, Recipient.form_collection(current_lender), :id, :name, { label: "Select a Borrower from Your List:", prompt: "Select One" } %>
-  
-  <%= borrow_form.label "Or Create a New Borrower:" %><br>
-  <%= borrow_form.fields_for :recipient do |recipient_attributes| %>
-    <%= recipient_attributes.text_field :name, label: "Borrower Name:", label_col: "col-sm-2 offset-md-1", control_col: "col-sm-9" %>
-    <%= recipient_attributes.text_field :email, label: "Borrower Email:", label_col: "col-sm-2 offset-md-1", control_col: "col-sm-9" %>
-    <%= recipient_attributes.text_field :phone, label: "Borrower Phone:", label_col: "col-sm-2 offset-md-1", control_col: "col-sm-9" %>
-  <% end %><br>
+  <div class="form-group row">
+    <h1 class="form-body-heading">Set the Borrower</h1>
+  </div>
 
-  <%= borrow_form.collection_select :item_id, Item.form_collection(current_lender), :id, :name_with_category, { label: "Select an Item from Your List:", prompt: "Select One" } %>
+  <div class="form-group row">
+    <h2 class="form-body-heading">Select a Borrower from Your List:</h2>
+  </div>
 
-  <%= borrow_form.label "Or Create a New Item:" %><br>
-  <%= borrow_form.fields_for :item do |item_attributes| %>
-    <%= item_attributes.text_field :name, label: "Item Name:", label_col: "col-sm-2 offset-md-1", control_col: "col-sm-9" %>
-    <%= item_attributes.text_field :category, label: "Item Category:", label_col: "col-sm-2 offset-md-1", control_col: "col-sm-9" %>
-  <% end %><br>
+  <div class="form-group row">
+    <%= borrow_form.label "Borrower Name:", for: "borrow_recipient_id", class: "col-md-3" %>
+    <%= borrow_form.collection_select :recipient_id, Recipient.form_collection(current_lender), :id, :name, { include_blank: "Select One" }, { class: "form-control col-md-9" } %>
+  </div>
 
-  <%= borrow_form.label "About This Loan" %><br>
-  <%= borrow_form.number_field :days_borrowed, label: "Number of Days Borrowed:", label_col: "col-sm-3", control_col: "col-sm-9" %>
-  <%= borrow_form.number_field :reminders_sent, label: "Number of Reminders Sent to the Borrower:", label_col: "col-sm-3", control_col: "col-sm-9" %>
+  <div class="form-group row">
+    <h2 class="form-body-heading">Or Create a New Borrower</h2>
+  </div>
 
-  <%= borrow_form.form_group :returned, label: { text: "Has the borrowed item been returned?" } do %>
-    <%= borrow_form.radio_button :returned, :true, label: "Yes", inline: true %>
-    <%= borrow_form.radio_button :returned, :false, label: "No", inline: true, checked: true %><br>
-  <% end %>
+  <div class="form-group row">
+    <%= borrow_form.fields_for :recipient do |recipient_attributes| %>
+      <%= recipient_attributes.label "Borrower Name:", class: "col-md-3 offset-md-1" %>
+      <%= recipient_attributes.text_field :name, { class: "form-control col-md-8" } %>
+      <%= recipient_attributes.label "Borrower Email:", class: "col-md-3 offset-md-1" %>
+      <%= recipient_attributes.text_field :email, { class: "form-control col-md-8" } %>
+      <%= recipient_attributes.label "Borrower Phone:", class: "col-md-3 offset-md-1" %>
+      <%= recipient_attributes.text_field :phone, { class: "form-control col-md-8" } %>
+    <% end %>
+  </div>
 
-  <%= borrow_form.submit %><br><br>
+  <div class="form-group row">
+    <h1 class="form-body-heading">Set the Item</h1>
+  </div>
+
+  <div class="form-group row">
+    <h2 class="form-body-heading">Select an Item from Your List:</h2>
+  </div>
+
+  <div class="form-group row">
+    <%= borrow_form.label "Item Name:", for: "borrow_item_id", class: "col-md-3" %>
+    <%= borrow_form.collection_select :item_id, Item.form_collection(current_lender), :id, :name_with_category, { include_blank: "Select One" }, { class: "form-control col-md-9" } %>
+  </div>
+
+  <div class="form-group row">
+    <h2 class="form-body-heading">Or Create a New Item</h2>
+  </div>
+
+  <div class="form-group row">
+    <%= borrow_form.fields_for :item do |item_attributes| %>
+      <%= item_attributes.label "Item Name:", class: "col-md-3 offset-md-1" %>
+      <%= item_attributes.text_field :name, { class: "form-control col-md-8" } %>
+      <%= item_attributes.label "Item Category:", class: "col-md-3 offset-md-1" %>
+      <%= item_attributes.text_field :category, { class: "form-control col-md-8" } %>
+    <% end %>
+  </div>
+
+  <div class="form-group row">
+    <h1 class="form-body-heading">About This Loan</h1>
+  </div>
+
+  <div class="row">
+    <div class="form-group row col-12 col-sm-6">
+      <%= borrow_form.label "Number of Days Borrowed:" %>
+      <%= borrow_form.number_field :days_borrowed, { class: "form-control" } %>
+    </div>
+    <div class="form-group row col-12 col-sm-6">
+      <%= borrow_form.label "Number of Reminders Sent:" %>
+      <%= borrow_form.number_field :reminders_sent, { class: "form-control" } %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="form-check form-check-inline">
+      <%= borrow_form.label "Has the borrowed item been returned?" %>
+    </div>
+    <div class="form-check form-check-inline">
+      <%= borrow_form.radio_button :returned, :true, { class: "form-check-input" } %>
+      <%= borrow_form.label "Yes", { class: "form-check-label", for: "borrow_returned_true" } %>
+    </div>
+    <div class="form-check form-check-inline">
+      <%= borrow_form.radio_button :returned, :false, { class: "form-check-input", checked: true } %>
+      <%= borrow_form.label "No", { class: "form-check-label", for: "borrow_returned_false" } %>
+    </div>
+  </div>
+
+  <%= borrow_form.submit "Create Borrow", class: "btn submit-btn" %><br><br>
 <% end %>
