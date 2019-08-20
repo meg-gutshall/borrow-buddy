@@ -3,6 +3,8 @@ class Borrow < ApplicationRecord
   belongs_to :item
   belongs_to :recipient
 
+  validates_associated :item
+  validates_associated :recipient
   validates :days_borrowed, :reminders_sent, presence: true
   validates :returned, inclusion: { in: [true, false] }
   validates :days_borrowed, numericality: { only_integer: true, greater_than: 0 }
