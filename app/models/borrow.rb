@@ -14,14 +14,25 @@ class Borrow < ApplicationRecord
   scope :hide_returned, -> { where(returned: false) }
   scope :show_returned, -> { where(returned: true) }
 
-  def recipient_attributes=(attributes)
-    self.recipient = Recipient.where("lower(name) = ?", attributes[:name].downcase).find_or_create_by(name: attributes[:name]) if !attributes[:name].empty?
-    self.recipient.update(attributes)  # TODO: Unless attributes are empty
+  def recipient_attributes=(recipient_attributes)
+    if !recipient_attributes[:name].empty?
+      self.recipient = Recipient.where("lower(name) = ?", recipient_attributes[:name].downcase).find_or_create_by(name: recipient_attributes[:name])
+      self.recipient.update(
+        name: recipient_attributes[:name],
+        phone: recipient_attributes[:phone],
+        email: recipient_attributes[:email].downcase
+      )
+    end
   end
 
-  def item_attributes=(attributes)
-    self.item = Item.where("lower(name) = ? AND lower(category) = ?", attributes[:name].downcase, attributes[:category].downcase).find_or_create_by(name: attributes[:name]) if !attributes[:name].empty?
-    self.item.update(attributes)  # TODO: Unless attributes are empty
+  def item_attributes=(item_attributes)
+    if !item_attributes[:name].empty?
+      self.item = Item.where("lower(name) = ? AND lower(category) = ?", item_attributes[:name].downcase, item_attributes[:category].downcase).find_or_create_by(name: item_attributes[:name])
+      self.item.update(
+        name: item_attributes[:name],
+        category: item_attributes[:category].downcase
+      )
+    end
   end
 
   def self.inc_days
