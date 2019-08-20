@@ -202,19 +202,20 @@ select.form-control, input.form-control {
     font-size: inherit;
   }
 
-  input.submit-btn {
-    margin-top: 2rem;
+  input[type="submit"] {
+    margin: 2rem 0;
+    padding: 0.5rem 1rem;
     background: $main-color;
     color: $main-text;
     font-family: $heading-font;
     font-weight: 700;
+    border: none;
+    border-radius: 0.5rem;
   }
 
-  input.submit-btn:hover {
+  input[type="submit"]:hover {
     background: $accent-text;
     color: $white;
-    font-family: $heading-font;
-    font-weight: 700;
   }
 
   // Form Errors //
