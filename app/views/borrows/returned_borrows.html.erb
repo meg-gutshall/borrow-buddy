@@ -1,7 +1,13 @@
 <h1>Returned Borrows</h1>
 
-<%= link_to 'View All Borrows', lender_borrows_path(current_lender) %>
-<%= link_to 'View Only Current Borrows', lender_current_borrows_path(current_lender) %><br>
+<div class="row">
+  <div class="col-md-6 text-center">
+    <%= link_to 'View All Borrows', lender_borrows_path(current_lender) %>
+  </div>
+  <div class="col-md-6 text-center">
+    <%= link_to 'View Only Current Borrows', lender_current_borrows_path(current_lender) %>
+  </div>
+</div>
 
 <%= render 'borrows_index' %>
 
