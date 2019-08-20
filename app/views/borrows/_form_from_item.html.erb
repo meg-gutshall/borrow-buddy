@@ -27,7 +27,7 @@
     <div class="form-row">
       <div class="form-group col-12">
         <%= borrow_form.label "Recipient Name:", for: "borrow_recipient_id" %>
-        <%= borrow_form.collection_select :recipient_id, Recipient.form_collection(current_lender), :id, :name, { include_blank: "Select One" }, { class: "form-control" } %>
+        <%= borrow_form.collection_select :recipient_id, Recipient.abc_lender_scope(current_lender), :id, :name, { include_blank: "Select One" }, { class: "form-control" } %>
       </div>
     </div>
   </div>

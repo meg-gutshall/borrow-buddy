@@ -4,9 +4,7 @@ class Item < ApplicationRecord
 
   validates :name, presence: true
 
-  scope :lender_scope, -> (current) { joins(:borrows).where("lender_id = ?", current.id).distinct }
-  scope :abc_name, -> { order(:name) }
-  scope :form_collection, -> (current) { joins(:borrows).where("lender_id = ?", current.id).distinct.order(:name) }
+  # See `application_record.rb` for scope methods
 
   # Select category from dropdown
   def self.filter_by_category(current)
