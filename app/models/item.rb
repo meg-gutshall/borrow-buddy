@@ -14,7 +14,7 @@ class Item < ApplicationRecord
   end
 
   def name_with_category
-    "#{name} (#{category})"
+    "#{name} (#{category.downcase})"
   end
 
 end
