@@ -270,14 +270,18 @@ select.form-control, input.form-control {
     font-size: 1.4rem;
   }
 
-  td.table-content-link > a {
+  td.table-action-link > a {
     color: #212529;
     font-weight: 400;
   }
 
-  td.table-content-link > a:hover {
+  td.table-action-link > a:hover {
     color: $highlight-text;
     font-weight: 400;
+  }
+
+  div.nested-borrows-info-table {
+    padding: 2rem 0;
   }
 
   // Footer //
