@@ -255,6 +255,31 @@ select.form-control, input.form-control {
     color: $dark-shade;
   }
 
+  // Tables //
+
+  table {
+    margin: 3rem 0;
+  }
+
+  th {
+    font-size: 1.6rem;
+    color: $main-text;
+  }
+
+  td {
+    font-size: 1.4rem;
+  }
+
+  td.table-content-link > a {
+    color: #212529;
+    font-weight: 400;
+  }
+
+  td.table-content-link > a:hover {
+    color: $highlight-text;
+    font-weight: 400;
+  }
+
   // Footer //
 
   footer {
