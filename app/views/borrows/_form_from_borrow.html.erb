@@ -1,5 +1,12 @@
 <%= form_for([current_lender, @borrow]) do |borrow_form| %>
   
+  <div class="form-row">
+    <% @title = "Borrow Buddy | New Borrow" %>
+    <div class="form-group col-12">
+      <h1 class="form-page-heading">New Borrow</h1>
+    </div>
+  </div>
+
   <%= render partial: "partials/form_errors", locals: { object: @borrow } %>
 
   <div class="form-group row">
