@@ -5,26 +5,27 @@
   </div>
 </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Phone</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @recipients.each do |recipient| %>
-      <tr>
-        <td><%= recipient.name %></td>
-        <td><%= recipient.email %></td>
-        <td><%= recipient.phone %></td>
-        <td><%= link_to 'Show', lender_recipient_path(current_lender, recipient) %></td>
-        <td><%= link_to 'Edit', edit_lender_recipient_path(current_lender, recipient) %></td>
-        <td><%= link_to 'Destroy', lender_recipient_path(current_lender, recipient), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<div class="table-responsive-sm">
+  <table class="table">
+    <thead>
+      <tr class="row">
+        <th scope="col" class="col-3">Name</th>
+        <th scope="col" class="col-4">Email</th>
+        <th scope="col" class="col-3">Phone</th>
+        <th scope="col" class="col-2" colspan="2"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @recipients.each do |recipient| %>
+        <tr class="row">
+          <td class="col-3"><%= link_to recipient.name, lender_recipient_path(current_lender, recipient) %></td>
+          <td class="col-4"><%= recipient.email %></td>
+          <td class="col-3"><%= recipient.phone %></td>
+          <td class="col-1 text-right table-action-link"><%= link_to 'Edit', edit_lender_recipient_path(current_lender, recipient) %></td>
+          <td class="col-1 text-right table-action-link"><%= link_to 'Destroy', lender_recipient_path(current_lender, recipient), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

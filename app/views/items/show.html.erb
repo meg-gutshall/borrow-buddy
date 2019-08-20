@@ -5,47 +5,67 @@
   </div>
 </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @item.name %>
-</p>
+<div class="row">
+  <div class="col">
+    <p><strong>Name:</strong> <%= @item.name %></p>
+  </div>
+</div>
 
-<p>
-  <strong>Category:</strong>
-  <%= @item.category %>
-</p>
+<div class="row">
+  <div class="col">
+    <p><strong>Category:</strong> <%= @item.category %></p>
+  </div>
+</div>
 
-<br>
+<div class="nested-borrows-info-table">
+  <div class="row">
+    <div class="col">
+      <h2>Borrows Info for <%= @item.name %></h2>
+    </div>
+  </div>
 
-<h2>Borrows Info for <%= @item.name %></h2>
+  <div class="row">
+    <div class="col">
+      <%= link_to 'Create New Borrow', new_item_borrow_path(@item) %>
+    </div>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Recipient</th>
-      <th>No. Days Borrowed</th>
-      <th>No. Reminders Sent</th>
-      <th>Item Returned?</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="table-responsive-sm">
+    <table class="table">
+      <thead>
+        <tr class="row">
+          <th scope="col" class="col-5">Recipient</th>
+          <th scope="col" class="col-2 text-center">Days Borrowed</th>
+          <th scope="col" class="col-2 text-center">Reminders Sent</th>
+          <th scope="col" class="col-1 text-center">Returned?</th>
+          <th scope="col" class="col-2" colspan="2"></th>
+        </tr>
+      </thead>
 
-  <tbody>
-    <% @item.borrows.each do |borrow| %>
-      <tr>
-        <td><%= borrow.recipient.name %></td>
-        <td><%= borrow.days_borrowed %></td>
-        <td><%= borrow.reminders_sent %></td>
-        <td><%= boolean_display(borrow.returned) %></td>
-        <td><%= link_to 'Show', lender_borrow_path(current_lender, borrow) %></td>
-        <td><%= link_to 'Edit', edit_lender_borrow_path(current_lender, borrow) %></td>
-        <td><%= link_to 'Destroy', lender_borrow_path(current_lender, borrow), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tbody>
+        <% @item.borrows.each do |borrow| %>
+          <tr class="row">
+            <td class="col-5"><%= link_to borrow.recipient.name, lender_recipient_path(current_lender, borrow.recipient) %></td>
+            <td class="col-2 text-center"><%= borrow.days_borrowed %></td>
+            <td class="col-2 text-center"><%= borrow.reminders_sent %></td>
+            <td class="col-1 text-center"><%= boolean_display(borrow.returned) %></td>
+            <td class="col-1 text-right table-action-link"><%= link_to 'Edit', edit_lender_borrow_path(current_lender, borrow) %></td>
+            <td class="col-1 text-right table-action-link"><%= link_to 'Destroy', lender_borrow_path(current_lender, borrow), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
 
-<%= link_to 'Create New Borrow', new_item_borrow_path(@item) %><br>
+<div class="row">
+  <div class="col">
+    <%= link_to 'Edit', edit_lender_item_path(current_lender, @item) %>
+  </div>
+</div>
 
-<%= link_to 'Edit', edit_lender_item_path(current_lender, @item) %>
-<%= link_to 'Back', lender_items_path(current_lender) %><br>
+<div class="row">
+  <div class="col">
+    <%= link_to 'Back', lender_items_path(current_lender) %>
+  </div>
+</div>
