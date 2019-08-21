@@ -293,6 +293,14 @@ select.form-control, input.form-control {
     padding: 2rem 0;
   }
 
+  .table thead th {
+    border-color: $dark-accent;
+  }
+
+  .table td {
+    border-color: $main-color;
+  }
+
   // Footer //
 
   footer {
