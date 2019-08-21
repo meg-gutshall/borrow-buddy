@@ -1,14 +1,28 @@
 <%= form_for ([current_lender, @recipient]) do |recipient_form| %>
-  <%= render partial: "partials/form_errors", locals: { object: @recipient } %>
+  <%= render partial: "partials/form_errors", locals: { loan: @recipient } %>
 
-  <%= recipient_form.label :name %>
-  <%= recipient_form.text_field :name %><br>
+  <div class="form-section">
+    <div class="form-group row">
+      <%= recipient_form.label "Name:", { class: "col-2 col-form-label" } %>
+      <div class="col">
+      <%= recipient_form.text_field :name, { class: "form-control" } %>
+      </div>
+    </div>
 
-  <%= recipient_form.label :email %>
-  <%= recipient_form.text_field :email %><br>
+    <div class="form-group row">
+      <%= recipient_form.label "Email:", { class: "col-2 col-form-label" } %>
+      <div class="col">
+      <%= recipient_form.text_field :email, { class: "form-control" } %>
+      </div>
+    </div>
 
-  <%= recipient_form.label :phone %>
-  <%= recipient_form.text_field :phone %><br>
+    <div class="form-group row">
+      <%= recipient_form.label "Phone:", { class: "col-2 col-form-label" } %>
+      <div class="col">
+      <%= recipient_form.text_field :phone, { class: "form-control" } %>
+      </div>
+    </div>
+  </div>
 
   <%= recipient_form.submit %><br><br>
 <% end %>
