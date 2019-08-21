@@ -305,6 +305,13 @@ select.form-control, input.form-control {
     border-color: $main-color;
   }
 
+  td.empty-table {
+    font-size: 2rem;
+    color: $highlight-text;
+    border: none;
+    padding-top: 1.5rem;
+  }
+
   // Footer //
 
   footer {

@@ -10,4 +10,32 @@ module BorrowsHelper
     end
   end
 
+  def no_borrows_tracked
+    if current_lender.borrows.empty?
+      render partial: "borrows/index_partials/partial_segments/no_borrows"
+    else
+      render partial: "borrows/index_partials/partial_segments/borrows_table_body"
+    end
+  end
+
+  def no_returned_borrows
+    if !current_lender.borrows.show_returned.exists? && !current_lender.borrows.empty?
+      render partial: "borrows/index_partials/partial_segments/no_returned_borrows"
+    elsif current_lender.borrows.empty?
+      render partial: "borrows/index_partials/partial_segments/no_borrows"
+    else
+      render partial: "borrows/index_partials/partial_segments/scoped_borrows_table_body"
+    end
+  end
+
+  def no_current_borrows
+    if !current_lender.borrows.hide_returned.exists? && !current_lender.borrows.empty?
+      render partial: "borrows/index_partials/partial_segments/no_current_borrows"
+    elsif current_lender.borrows.empty?
+      render partial: "borrows/index_partials/partial_segments/no_borrows"
+    else
+      render partial: "borrows/index_partials/partial_segments/scoped_borrows_table_body"
+    end
+  end
+
 end
