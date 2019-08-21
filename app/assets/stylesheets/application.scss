@@ -91,6 +91,10 @@ select.form-control, input.form-control {
     box-shadow: 0 0 2rem $darker-shade;
   }
 
+  .media.row {
+    margin-bottom: 1.5rem;
+  }
+
   img {
     max-width: 100%;
     height: auto;
