@@ -1,15 +1,6 @@
-<%= form_for([@item, @borrow]) do |borrow_form| %>
-  
-  <div class="form-row">
-    <% @title = "Borrow Buddy | New Borrow" %>
-    <div class="form-group col-12">
-      <h1 class="form-page-heading">New Borrow</h1>
-    </div>
-  </div>
+<%= form_for([form_top_level, @borrow]) do |borrow_form| %>
 
-  <%= render partial: "partials/form_errors", locals: { object: @borrow } %>
-
-  <%= borrow_form.hidden_field(:item_id, :value => params[:item_id]) %>
+  <%= render partial: "partials/form_errors", locals: { loan: @borrow } %>
 
   <div class="form-row">
     <div class="form-group col-12">
@@ -56,6 +47,50 @@
         <div class="form-group col-11">
             <%= recipient_attributes.label "Recipient Phone:", class: "offset-1" %>
             <%= recipient_attributes.text_field :phone, { class: "form-control offset-1" } %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-12">
+      <h1 class="form-body-heading">Set the Item</h1>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-12">
+      <h2 class="form-body-heading">Select an Item from Your List</h2>
+    </div>
+  </div>
+
+  <div class="form-section">
+    <div class="form-row">
+      <div class="form-group col-12">
+        <%= borrow_form.label "Item Name:", for: "borrow_item_id" %>
+        <%= borrow_form.collection_select :item_id, Item.abc_lender_scope(current_lender), :id, :name_with_category, { include_blank: "Select One" }, { class: "form-control" } %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-12">
+      <h2 class="form-body-heading">Or Create a New Item</h2>
+    </div>
+  </div>
+
+  <div class="form-section">
+    <%= borrow_form.fields_for :item do |item_attributes| %>
+      <div class="form-row">
+        <div class="form-group col-11">
+            <%= item_attributes.label "Item Name:", class: "offset-1" %>
+            <%= item_attributes.text_field :name, { class: "form-control offset-1" } %>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-11">
+            <%= item_attributes.label "Item Category:", class: "offset-1" %>
+            <%= item_attributes.text_field :category, { class: "form-control offset-1" } %>
         </div>
       </div>
     <% end %>
