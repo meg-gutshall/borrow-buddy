@@ -1,10 +1,10 @@
 <div class="row">
-  <% if object.errors.any? %>
+  <% if loan.errors.any? %>
     <div id="error_explanation" class="col-11 offset-1">
-      <h2><%= pluralize(object.errors.count, "error") %> prohibited this object from being saved:</h2>
+      <h2><%= pluralize(loan.errors.count, "error") %> prohibited this borrow from being saved:</h2>
 
       <ul>
-        <% object.errors.full_messages.each do |message| %>
+        <% loan.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
