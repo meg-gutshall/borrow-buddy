@@ -25,14 +25,7 @@
     </thead>
 
     <tbody>
-      <% @items.each do |item| %>
-        <tr class="row">
-          <td class="col-7"><%= link_to item.name, lender_item_path(current_lender, item) %></td>
-          <td class="col-3 text-center"><%= item.category.downcase %></td>
-          <td class="col-1 text-right table-action-link"><%= link_to 'Edit', edit_lender_item_path(current_lender, item) %></td>
-          <td class="col-1 text-right table-action-link"><%= link_to 'Delete', lender_item_path(current_lender, item), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
+      <%= no_items_tracked %>
     </tbody>
   </table>
 </div>

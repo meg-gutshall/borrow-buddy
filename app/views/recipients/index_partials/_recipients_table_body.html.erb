@@ -1,0 +1,9 @@
+<% @recipients.each do |recipient| %>
+  <tr class="row">
+    <td class="col-3"><%= link_to recipient.name, lender_recipient_path(current_lender, recipient) %></td>
+    <td class="col-4"><%= recipient.email %></td>
+    <td class="col-3"><%= recipient.phone %></td>
+    <td class="col-1 text-right table-action-link"><%= link_to 'Edit', edit_lender_recipient_path(current_lender, recipient) %></td>
+    <td class="col-1 text-right table-action-link"><%= link_to 'Delete', lender_recipient_path(current_lender, recipient), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
