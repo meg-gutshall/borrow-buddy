@@ -50,7 +50,7 @@
             <td class="col-2 text-center"><%= borrow.reminders_sent %></td>
             <td class="col-1 text-center"><%= boolean_display(borrow.returned) %></td>
             <td class="col-1 text-right table-action-link"><%= link_to 'Edit', edit_lender_borrow_path(current_lender, borrow) %></td>
-            <td class="col-1 text-right table-action-link"><%= link_to 'Destroy', lender_borrow_path(current_lender, borrow), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td class="col-1 text-right table-action-link"><%= link_to 'Delete', lender_borrow_path(current_lender, borrow), method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
       </tbody>
