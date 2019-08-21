@@ -7,5 +7,14 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @item %>
-<%= link_to 'Cancel', lender_items_path(current_lender) %>
+<div class="row">
+  <div class="col">
+    <%= link_to 'Show', @item %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <%= link_to 'Cancel', lender_items_path(current_lender) %>
+  </div>
+</div>
