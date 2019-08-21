@@ -8,12 +8,6 @@
 
 require 'faker'
 
-Lender.destroy_all
-Item.destroy_all
-Recipient.destroy_all
-Borrow.destroy_all
-
-
 # Lender objects
 meg = Lender.create!(
   email: "meg@meg.com",
@@ -57,23 +51,6 @@ end
 end
 
 # Borrow objects
-Borrow.create!(
-  lender_id: 1,
-  recipient_id: 2,
-  item_id: 3,
-  days_borrowed: Faker::Number.between(1, 17),
-  reminders_sent: Faker::Number.between(1, 3),
-  returned: true
-)
-
-Borrow.create!(
-  lender_id: 2,
-  recipient_id: 5,
-  item_id: 6,
-  days_borrowed: Faker::Number.between(1, 17),
-  reminders_sent: Faker::Number.between(1, 3),
-  returned: true
-)
 
 Borrow.create!(
   lender_id: 1,
@@ -151,6 +128,24 @@ Borrow.create!(
   lender_id: 2,
   recipient_id: 1,
   item_id: 9,
+  days_borrowed: Faker::Number.between(1, 17),
+  reminders_sent: Faker::Number.between(1, 3),
+  returned: Faker::Boolean.boolean
+)
+
+Borrow.create!(
+  lender_id: 1,
+  recipient_id: 2,
+  item_id: 3,
+  days_borrowed: Faker::Number.between(1, 17),
+  reminders_sent: Faker::Number.between(1, 3),
+  returned: Faker::Boolean.boolean
+)
+
+Borrow.create!(
+  lender_id: 2,
+  recipient_id: 5,
+  item_id: 6,
   days_borrowed: Faker::Number.between(1, 17),
   reminders_sent: Faker::Number.between(1, 3),
   returned: Faker::Boolean.boolean
