@@ -49,7 +49,7 @@
       </thead>
 
       <tbody>
-        <% @recipient.borrows.each do |borrow| %>
+        <% @recipient.borrows.lender_scope(current_lender).each do |borrow| %>
           <tr class="row">
             <td class="col-5"><%= link_to borrow.item.name_with_category, lender_item_path(current_lender, borrow.item) %></td>
             <td class="col-2 text-center"><%= borrow.days_borrowed %></td>
