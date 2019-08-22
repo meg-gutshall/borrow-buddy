@@ -1,6 +1,14 @@
 # Project Title
 
-One Paragraph of project description goes here
+## Description
+
+### The What
+
+A little info about your project and/or overview that explains **what** the project is about.
+
+### The Why
+
+A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
 
 ## Getting Started
 
@@ -14,7 +22,7 @@ What things you need to install the software and how to install them
 Give examples
 ```
 
-### Installing
+### Installation
 
 A step by step series of examples that tell you how to get a development env running
 
@@ -30,13 +38,15 @@ And repeat
 until finished
 ```
 
+## Usage
+
 End with an example of getting some data out of the system or using it for a little demo
 
-## Running the tests
+## Tests
 
 Explain how to run the automated tests for this system
 
-### Break down into end to end tests
+### End to End Tests
 
 Explain what these tests test and why
 
@@ -44,7 +54,7 @@ Explain what these tests test and why
 Give an example
 ```
 
-### And coding style tests
+### Coding Style Tests
 
 Explain what these tests test and why
 
@@ -76,12 +86,13 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
 ## Acknowledgments
 
 * Hat tip to anyone whose code was used
 * Inspiration
 * etc
+<!-- Anything else that seems useful -->
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
