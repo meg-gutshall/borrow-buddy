@@ -16,7 +16,13 @@ class Borrow < ApplicationRecord
 
   def recipient_attributes=(recipient_attributes)
     if !recipient_attributes[:name].empty?
-      self.recipient = Recipient.where("lower(name) = ?", recipient_attributes[:name].downcase).find_or_create_by(name: recipient_attributes[:name])
+      self.recipient = 
+        Recipient.where(
+          "lower(name) = ? AND lower(phone) = ? AND lower(email) = ?", 
+          recipient_attributes[:name].downcase, 
+          phone: recipient_attributes[:phone], 
+          email: recipient_attributes[:email].downcase)
+          .find_or_create_by(name: recipient_attributes[:name])
       self.recipient.update(
         name: recipient_attributes[:name],
         phone: recipient_attributes[:phone],
@@ -27,7 +33,12 @@ class Borrow < ApplicationRecord
 
   def item_attributes=(item_attributes)
     if !item_attributes[:name].empty?
-      self.item = Item.where("lower(name) = ? AND lower(category) = ?", item_attributes[:name].downcase, item_attributes[:category].downcase).find_or_create_by(name: item_attributes[:name])
+      self.item = 
+        Item.where(
+          "lower(name) = ? AND lower(category) = ?", 
+          item_attributes[:name].downcase, 
+          item_attributes[:category].downcase)
+          .find_or_create_by(name: item_attributes[:name])
       self.item.update(
         name: item_attributes[:name],
         category: item_attributes[:category].downcase
