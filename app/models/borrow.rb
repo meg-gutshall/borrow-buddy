@@ -20,8 +20,8 @@ class Borrow < ApplicationRecord
         Recipient.where(
           "lower(name) = ? AND lower(phone) = ? AND lower(email) = ?", 
           recipient_attributes[:name].downcase, 
-          phone: recipient_attributes[:phone], 
-          email: recipient_attributes[:email].downcase)
+          recipient_attributes[:phone], 
+          recipient_attributes[:email].downcase)
           .find_or_create_by(name: recipient_attributes[:name])
       self.recipient.update(
         name: recipient_attributes[:name],
