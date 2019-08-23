@@ -26,7 +26,7 @@ class LoansController < ApplicationController
       @item = Item.find_by(id: params[:item_id])
       @loan.build_borrower
     elsif params[:borrower_id]
-      @borrower = Recipient.find_by(id: params[:borrower_id])
+      @borrower = Borrower.find_by(id: params[:borrower_id])
       @loan.build_item
     else
       @loan.build_borrower
@@ -47,7 +47,7 @@ class LoansController < ApplicationController
         @item = Item.find_by(id: params[:item_id])
         redirect_to item_path(@item), notice: 'Loan was successfully created.'
       elsif params[:borrower_id]
-        @borrower = Recipient.find_by(id: params[:borrower_id])
+        @borrower = Borrower.find_by(id: params[:borrower_id])
         redirect_to borrower_path(@borrower), notice: 'Loan was successfully created.'
       else
         redirect_to lender_loan_path(current_lender, @loan), notice: 'Loan was successfully created.'

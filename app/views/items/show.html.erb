@@ -17,7 +17,7 @@
   </div>
 </div>
 
-<div class="nested-borrows-info-table">
+<div class="nested-loans-info-table">
   <div class="row">
     <div class="col">
       <h2>Loans Info for <%= @item.name %></h2>
@@ -26,7 +26,7 @@
 
   <div class="row">
     <div class="col">
-      <%= link_to 'Create New Loan', new_item_borrow_path(@item) %>
+      <%= link_to 'Create New Loan', new_item_loan_path(@item) %>
     </div>
   </div>
 
@@ -43,14 +43,14 @@
       </thead>
 
       <tbody>
-        <% @item.borrows.lender_scope(current_lender).each do |borrow| %>
+        <% @item.loans.lender_scope(current_lender).each do |loan| %>
           <tr class="row">
-            <td class="col-5"><%= link_to borrow.borrower.name, lender_borrower_path(current_lender, borrow.borrower) %></td>
-            <td class="col-2 text-center"><%= borrow.days_borrowed %></td>
-            <td class="col-2 text-center"><%= borrow.reminders_sent %></td>
-            <td class="col-1 text-center"><%= boolean_display(borrow.returned) %></td>
-            <td class="col-1 text-right table-action-link"><%= link_to 'Edit', edit_lender_borrow_path(current_lender, borrow) %></td>
-            <td class="col-1 text-right table-action-link"><%= link_to 'Delete', lender_borrow_path(current_lender, borrow), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td class="col-5"><%= link_to loan.borrower.name, lender_borrower_path(current_lender, loan.borrower) %></td>
+            <td class="col-2 text-center"><%= loan.days_borrowed %></td>
+            <td class="col-2 text-center"><%= loan.reminders_sent %></td>
+            <td class="col-1 text-center"><%= boolean_display(loan.returned) %></td>
+            <td class="col-1 text-right table-action-link"><%= link_to 'Edit', edit_lender_loan_path(current_lender, loan) %></td>
+            <td class="col-1 text-right table-action-link"><%= link_to 'Delete', lender_loan_path(current_lender, loan), method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
       </tbody>

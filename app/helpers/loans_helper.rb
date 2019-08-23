@@ -3,8 +3,8 @@ module LoansHelper
   def loan_origin
     if params[:item_id]
       render partial: "loans/form_partials/form_from_item", locals: { form_top_level: @item }
-    elsif params[:recipient_id]
-      render partial: "loans/form_partials/form_from_recipient", locals: { form_top_level: @recipient }
+    elsif params[:borrower_id]
+      render partial: "loans/form_partials/form_from_borrower", locals: { form_top_level: @borrower }
     else
       render partial: "loans/form_partials/form_from_loan", locals: { form_top_level: current_lender }
     end
