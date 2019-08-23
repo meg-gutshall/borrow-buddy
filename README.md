@@ -31,15 +31,51 @@ If you send a reminder or the item is returned, just select the "Edit" link next
 
 ## Getting Started
 
-<!-- These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system. -->
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
-<!-- What things you need to install the software and how to install them
+#### Ruby
 
+BorrowBuddy uses Ruby version 2.5.3. In my opinion, the best way to install Ruby is by using a Ruby version management system. The two most popular tools for this are [RVM](https://rvm.io/) and [rbenv](https://github.com/rbenv/rbenv). I've used both and have found rbenv to be more well-documented and easier to navigate than RVM but the ultimate choice is yours.
+
+Since I use rbenv, I'm going to walk you through that installation. (_**NOTE:** If you decide to install rbenv and you used to use RVM, you must remove all RVM files or rbenv will **not** work!_)
+
+##### For Mac Users
+
+If you haven't done so already, download **[Homebrew](https://brew.sh/)**. It's an amazing macOS package manager that's built with Ruby. Just paste the following script in a new terminal window:
+
+```bash
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
-Give examples
-``` -->
+
+It will run through the installation, and explain the steps the script is taking along the way.
+
+Once Homebrew is installed (or if you already had it installed, you smarty pants!), it's time to install rbenv. Open a new terminal window that's running `bash` or `zsh` and `cd` into your home path (i.e. `Users/yourname`). Now type `brew install rbenv` _*Note: This command also installs `ruby-build`, so you'll be ready to install other Ruby versions out of the box._ Once rbenv is done installing, type `rbenv init` to begin the shell integration setup.
+
+##### For Windows and Linux Users
+
+To install rbenv on your system, open up a new window in your terminal and run the `rbenv-installer` script below which can also be found at [this link](https://github.com/rbenv/rbenv-installer#rbenv-installer):
+
+```bash
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-installer | bash
+```
+
+It will either install rbenv on your system or update your pre-existing version of rbenv, located under `~/.rbenv`. Additionally, [ruby-build](https://github.com/rbenv/ruby-build) is also installed if rbenv install is not already available.
+
+##### For All Users
+
+Restart your terminal for the installation changes to take effect. Make sure your setup is correct by running the `rbenv-doctor` script below which can also be found at [this link](https://github.com/rbenv/rbenv-installer#rbenv-installer):
+
+```bash
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
+```
+
+**NOW we install RUBY!** In your terminal, type `rbenv install 2.5.3` to download the version of Ruby you'll need to run BorrowBuddy.
+
+#### PostgreSQL
+
+#### Bundler
 
 ### Installation
 
