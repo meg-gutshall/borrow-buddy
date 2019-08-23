@@ -115,11 +115,11 @@ Password: password
 
 Both accounts have multiple loans, borrowers, and items already tracked upon login and you can manipulate the app from there, editing, creating, and deleting to your heart's content.
 
-## Tests
+<!-- ## Tests -->
 
 <!-- Explain how to run the automated tests for this system -->
 
-### End to End Tests
+<!-- ### End to End Tests -->
 
 <!-- Explain what these tests test and why
 
@@ -127,7 +127,7 @@ Both accounts have multiple loans, borrowers, and items already tracked upon log
 Give an example
 ``` -->
 
-### Coding Style Tests
+<!-- ### Coding Style Tests -->
 
 <!-- Explain what these tests test and why
 
@@ -135,7 +135,7 @@ Give an example
 Give an example
 ``` -->
 
-## Deployment
+<!-- ## Deployment -->
 
 <!-- Add additional notes about how to deploy this on a live system -->
 
@@ -149,7 +149,7 @@ Give an example
 
 <!-- Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us. -->
 
-## Versioning
+<!-- ## Versioning -->
 
 <!-- We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). -->
 
@@ -159,7 +159,7 @@ Give an example
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project. -->
 
-## Acknowledgments
+<!-- ## Acknowledgments -->
 
 <!-- * Hat tip to anyone whose code was used
 * Inspiration
