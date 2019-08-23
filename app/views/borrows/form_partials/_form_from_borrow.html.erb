@@ -1,6 +1,6 @@
 <%= form_for([form_top_level, @borrow]) do |borrow_form| %>
 
-  <%= render partial: "partials/form_errors", locals: { loan: @borrow } %>
+  <%= render partial: "partials/form_errors", locals: { save_error: @borrow } %>
 
   <div class="form-row">
     <div class="form-group col-12">

@@ -1,5 +1,5 @@
 <%= form_for ([current_lender, @item]) do |item_form| %>
-  <%= render partial: "partials/form_errors", locals: { loan: @item } %>
+  <%= render partial: "partials/form_errors", locals: { save_error: @item } %>
 
   <div class="form-section">
     <div class="form-group row">

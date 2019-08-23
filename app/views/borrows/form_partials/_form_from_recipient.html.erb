@@ -7,7 +7,7 @@
     </div>
   </div>
 
-  <%= render partial: "partials/form_errors", locals: { loan: @borrow } %>
+  <%= render partial: "partials/form_errors", locals: { save_error: @borrow } %>
 
   <%= borrow_form.hidden_field(:recipient_id, :value => params[:recipient_id]) %>
 
