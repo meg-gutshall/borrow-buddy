@@ -6,8 +6,9 @@ RSpec.describe "loans/edit", type: :view do
       :days_borrowed => 1,
       :reminders_sent => 1,
       :returned => false,
-      :recipient => nil,
-      :item => nil
+      :borrower => nil,
+      :item => nil,
+      :lender => nil
     ))
   end
 
@@ -22,9 +23,11 @@ RSpec.describe "loans/edit", type: :view do
 
       assert_select "input[name=?]", "loan[returned]"
 
-      assert_select "input[name=?]", "loan[recipient_id]"
+      assert_select "input[name=?]", "loan[borrower_id]"
 
       assert_select "input[name=?]", "loan[item_id]"
+
+      assert_select "input[name=?]", "loan[lender_id]"
     end
   end
 end

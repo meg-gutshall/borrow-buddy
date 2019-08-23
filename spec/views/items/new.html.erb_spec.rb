@@ -4,8 +4,7 @@ RSpec.describe "items/new", type: :view do
   before(:each) do
     assign(:item, Item.new(
       :name => "MyString",
-      :category => "MyString",
-      :lender => nil
+      :category => "MyString"
     ))
   end
 
@@ -17,8 +16,6 @@ RSpec.describe "items/new", type: :view do
       assert_select "input[name=?]", "item[name]"
 
       assert_select "input[name=?]", "item[category]"
-
-      assert_select "input[name=?]", "item[lender_id]"
     end
   end
 end

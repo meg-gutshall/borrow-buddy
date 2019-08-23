@@ -5,13 +5,11 @@ RSpec.describe "items/index", type: :view do
     assign(:items, [
       Item.create!(
         :name => "Name",
-        :category => "Category",
-        :lender => nil
+        :category => "Category"
       ),
       Item.create!(
         :name => "Name",
-        :category => "Category",
-        :lender => nil
+        :category => "Category"
       )
     ])
   end
@@ -20,6 +18,5 @@ RSpec.describe "items/index", type: :view do
     render
     assert_select "tr>td", :text => "Name".to_s, :count => 2
     assert_select "tr>td", :text => "Category".to_s, :count => 2
-    assert_select "tr>td", :text => nil.to_s, :count => 2
   end
 end
