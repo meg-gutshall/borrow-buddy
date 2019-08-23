@@ -1,6 +1,6 @@
 class Recipient < ApplicationRecord
-  has_many :borrows
-  has_many :items, through: :borrows
+  has_many :loans
+  has_many :items, through: :loans
 
   validates :name, presence: true
   validates :email, format: { with: /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i }, allow_blank: true

@@ -1,0 +1,48 @@
+<div class="row">
+  <% @title = "Borrow Buddy | Loan" %>
+  <div class="col text-center">
+    <h1>Loan</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <p><strong>Item:</strong> <%= @loan.item.name %></p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <p><strong>Recipient:</strong> <%= @loan.recipient.name %></p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <p><strong>Days Borrowed:</strong> <%= @loan.days_borrowed %></p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <p><strong>Reminders Sent:</strong> <%= @loan.reminders_sent %></p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <p><strong>Item Returned:</strong> <%= boolean_display(@loan.returned) %></p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <%= link_to 'Edit', edit_lender_loan_path(current_lender, @loan) %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <%= link_to 'Back', lender_loans_path(current_lender) %><br>
+  </div>
+</div>

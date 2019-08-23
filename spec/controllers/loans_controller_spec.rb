@@ -23,10 +23,10 @@ require 'rails_helper'
 # removed from Rails core in Rails 5, but can be added back in via the
 # `rails-controller-testing` gem.
 
-RSpec.describe BorrowsController, type: :controller do
+RSpec.describe LoansController, type: :controller do
 
   # This should return the minimal set of attributes required to create a valid
-  # Borrow. As you add validations to Borrow, be sure to
+  # Loan. As you add validations to Loan, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
     skip("Add a hash of attributes valid for your model")
@@ -38,12 +38,12 @@ RSpec.describe BorrowsController, type: :controller do
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
-  # BorrowsController. Be sure to keep this updated too.
+  # LoansController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
   describe "GET #index" do
     it "returns a success response" do
-      Borrow.create! valid_attributes
+      Loan.create! valid_attributes
       get :index, params: {}, session: valid_session
       expect(response).to be_successful
     end
@@ -51,8 +51,8 @@ RSpec.describe BorrowsController, type: :controller do
 
   describe "GET #show" do
     it "returns a success response" do
-      borrow = Borrow.create! valid_attributes
-      get :show, params: {id: borrow.to_param}, session: valid_session
+      loan = Loan.create! valid_attributes
+      get :show, params: {id: loan.to_param}, session: valid_session
       expect(response).to be_successful
     end
   end
@@ -66,29 +66,29 @@ RSpec.describe BorrowsController, type: :controller do
 
   describe "GET #edit" do
     it "returns a success response" do
-      borrow = Borrow.create! valid_attributes
-      get :edit, params: {id: borrow.to_param}, session: valid_session
+      loan = Loan.create! valid_attributes
+      get :edit, params: {id: loan.to_param}, session: valid_session
       expect(response).to be_successful
     end
   end
 
   describe "POST #create" do
     context "with valid params" do
-      it "creates a new Borrow" do
+      it "creates a new Loan" do
         expect {
-          post :create, params: {borrow: valid_attributes}, session: valid_session
-        }.to change(Borrow, :count).by(1)
+          post :create, params: {loan: valid_attributes}, session: valid_session
+        }.to change(Loan, :count).by(1)
       end
 
-      it "redirects to the created borrow" do
-        post :create, params: {borrow: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(Borrow.last)
+      it "redirects to the created loan" do
+        post :create, params: {loan: valid_attributes}, session: valid_session
+        expect(response).to redirect_to(Loan.last)
       end
     end
 
     context "with invalid params" do
       it "returns a success response (i.e. to display the 'new' template)" do
-        post :create, params: {borrow: invalid_attributes}, session: valid_session
+        post :create, params: {loan: invalid_attributes}, session: valid_session
         expect(response).to be_successful
       end
     end
@@ -100,41 +100,41 @@ RSpec.describe BorrowsController, type: :controller do
         skip("Add a hash of attributes valid for your model")
       }
 
-      it "updates the requested borrow" do
-        borrow = Borrow.create! valid_attributes
-        put :update, params: {id: borrow.to_param, borrow: new_attributes}, session: valid_session
-        borrow.reload
+      it "updates the requested loan" do
+        loan = Loan.create! valid_attributes
+        put :update, params: {id: loan.to_param, loan: new_attributes}, session: valid_session
+        loan.reload
         skip("Add assertions for updated state")
       end
 
-      it "redirects to the borrow" do
-        borrow = Borrow.create! valid_attributes
-        put :update, params: {id: borrow.to_param, borrow: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(borrow)
+      it "redirects to the loan" do
+        loan = Loan.create! valid_attributes
+        put :update, params: {id: loan.to_param, loan: valid_attributes}, session: valid_session
+        expect(response).to redirect_to(loan)
       end
     end
 
     context "with invalid params" do
       it "returns a success response (i.e. to display the 'edit' template)" do
-        borrow = Borrow.create! valid_attributes
-        put :update, params: {id: borrow.to_param, borrow: invalid_attributes}, session: valid_session
+        loan = Loan.create! valid_attributes
+        put :update, params: {id: loan.to_param, loan: invalid_attributes}, session: valid_session
         expect(response).to be_successful
       end
     end
   end
 
   describe "DELETE #destroy" do
-    it "destroys the requested borrow" do
-      borrow = Borrow.create! valid_attributes
+    it "destroys the requested loan" do
+      loan = Loan.create! valid_attributes
       expect {
-        delete :destroy, params: {id: borrow.to_param}, session: valid_session
-      }.to change(Borrow, :count).by(-1)
+        delete :destroy, params: {id: loan.to_param}, session: valid_session
+      }.to change(Loan, :count).by(-1)
     end
 
-    it "redirects to the borrows list" do
-      borrow = Borrow.create! valid_attributes
-      delete :destroy, params: {id: borrow.to_param}, session: valid_session
-      expect(response).to redirect_to(borrows_url)
+    it "redirects to the loans list" do
+      loan = Loan.create! valid_attributes
+      delete :destroy, params: {id: loan.to_param}, session: valid_session
+      expect(response).to redirect_to(loans_url)
     end
   end
 

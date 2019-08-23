@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
-  has_many :borrows
-  has_many :recipients, through: :borrows
+  has_many :loans
+  has_many :recipients, through: :loans
 
   validates :name, presence: true
 
@@ -8,7 +8,7 @@ class Item < ApplicationRecord
 
   # Select category from dropdown
   def self.filter_by_category(current)
-    joins(:borrows).where("lender_id = ?", current.id).where("category = ?", params[:cat]).order(:name)
+    joins(:loans).where("lender_id = ?", current.id).where("category = ?", params[:cat]).order(:name)
   end
 
   def name_with_category

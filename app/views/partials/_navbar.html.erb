@@ -9,7 +9,7 @@
     <ul class="navbar-nav mr-auto">
       <% if !!current_lender %>
         <li class="nav-item">
-          <a class="nav-link" href="<%= lender_borrows_path(current_lender) %>">My Borrows</a>
+          <a class="nav-link" href="<%= lender_loans_path(current_lender) %>">My Loans</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<%= lender_items_path(current_lender) %>">My Items</a>

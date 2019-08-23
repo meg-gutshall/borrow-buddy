@@ -50,9 +50,9 @@ end
   )
 end
 
-# Borrow objects
+# Loan objects
 
-Borrow.create!(
+Loan.create!(
   lender_id: 1,
   recipient_id: 1,
   item_id: 1,
@@ -61,7 +61,7 @@ Borrow.create!(
   returned: Faker::Boolean.boolean
 )
 
-Borrow.create!(
+Loan.create!(
   lender_id: 1,
   recipient_id: 2,
   item_id: 2,
@@ -70,7 +70,7 @@ Borrow.create!(
   returned: Faker::Boolean.boolean
 )
 
-Borrow.create!(
+Loan.create!(
   lender_id: 1,
   recipient_id: 3,
   item_id: 3,
@@ -79,7 +79,7 @@ Borrow.create!(
   returned: Faker::Boolean.boolean
 )
 
-Borrow.create!(
+Loan.create!(
   lender_id: 1,
   recipient_id: 4,
   item_id: 4,
@@ -88,7 +88,7 @@ Borrow.create!(
   returned: Faker::Boolean.boolean
 )
 
-Borrow.create!(
+Loan.create!(
   lender_id: 1,
   recipient_id: 5,
   item_id: 5,
@@ -97,7 +97,7 @@ Borrow.create!(
   returned: Faker::Boolean.boolean
 )
 
-Borrow.create!(
+Loan.create!(
   lender_id: 2,
   recipient_id: 6,
   item_id: 6,
@@ -106,7 +106,7 @@ Borrow.create!(
   returned: Faker::Boolean.boolean
 )
 
-Borrow.create!(
+Loan.create!(
   lender_id: 2,
   recipient_id: 7,
   item_id: 7,
@@ -115,7 +115,7 @@ Borrow.create!(
   returned: Faker::Boolean.boolean
 )
 
-Borrow.create!(
+Loan.create!(
   lender_id: 2,
   recipient_id: 6,
   item_id: 8,
@@ -124,7 +124,7 @@ Borrow.create!(
   returned: Faker::Boolean.boolean
 )
 
-Borrow.create!(
+Loan.create!(
   lender_id: 2,
   recipient_id: 1,
   item_id: 9,
@@ -133,7 +133,7 @@ Borrow.create!(
   returned: Faker::Boolean.boolean
 )
 
-Borrow.create!(
+Loan.create!(
   lender_id: 1,
   recipient_id: 2,
   item_id: 3,
@@ -142,7 +142,7 @@ Borrow.create!(
   returned: Faker::Boolean.boolean
 )
 
-Borrow.create!(
+Loan.create!(
   lender_id: 2,
   recipient_id: 5,
   item_id: 6,

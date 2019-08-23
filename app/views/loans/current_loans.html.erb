@@ -1,0 +1,17 @@
+<div class="row">
+  <% @title = "Borrow Buddy | Current Loans" %>
+  <div class="col text-center">
+    <h1>Current Loans</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6 text-center">
+    <%= link_to 'View All Loans', lender_loans_path(current_lender) %>
+  </div>
+  <div class="col-md-6 text-center">
+    <%= link_to 'View Only Returned Loans', lender_returned_loans_path(current_lender) %>
+  </div>
+</div>
+
+<%= render partial: "loans/index_partials/scoped_loans_index", locals: { helper_method: no_current_loans } %>

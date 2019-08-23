@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe "borrows/show", type: :view do
+RSpec.describe "loans/show", type: :view do
   before(:each) do
-    @borrow = assign(:borrow, Borrow.create!(
+    @loan = assign(:loan, Loan.create!(
       :days_borrowed => 2,
       :reminders_sent => 3,
       :returned => false,

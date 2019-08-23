@@ -1,0 +1,14 @@
+<div class="form-row">
+  <% @title = "Borrow Buddy | New Loan" %>
+  <div class="form-group col-12">
+    <h1 class="form-page-heading">New Loan</h1>
+  </div>
+</div>
+
+<%= loan_origin %>
+
+<div class="row">
+  <div class="col">
+    <%= link_to 'Cancel', lender_loans_path(current_lender) %>
+  </div>
+</div>

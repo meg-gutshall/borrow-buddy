@@ -1,4 +1,4 @@
-class Borrow < ApplicationRecord
+class Loan < ApplicationRecord
   belongs_to :lender
   belongs_to :item
   belongs_to :recipient
@@ -47,8 +47,8 @@ class Borrow < ApplicationRecord
   end
 
   def self.inc_days
-    where(returned: false).map do |borrow|
-      borrow.update(days_borrowed: borrow.days_borrowed += 1)
+    where(returned: false).map do |loan|
+      loan.update(days_borrowed: loan.days_borrowed += 1)
     end
   end
 

@@ -9,5 +9,5 @@
 set :output, "../log/cron_log.log"
 
 every :day do
-  runner "Borrow.inc_days"
+  runner "Loan.inc_days"
 end

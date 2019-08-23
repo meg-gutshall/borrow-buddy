@@ -1,0 +1,20 @@
+<div class="row">
+  <% @title = "Borrow Buddy | Edit Loan" %>
+  <div class="col text-center">
+    <h1>Edit Loan</h1>
+  </div>
+</div>
+
+<%= loan_origin %>
+
+<div class="row">
+  <div class="col">
+    <%= link_to 'Show', lender_loan_path(current_lender, @loan) %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <%= link_to 'Cancel', lender_loans_path(current_lender) %>
+  </div>
+</div>
