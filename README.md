@@ -79,6 +79,8 @@ The database for BorrowBuddy is PostgreSQL version 11.5. [Click this link](https
 
 #### Bundler
 
+Lastly, BorrowBuddy uses [Bundler](https://bundler.io/) to manage the Ruby Gems packaged in the app. Installing Bundler is as simple as opening a new terminal window and typing `gem install bundler` and you're ready to go!
+
 ### Installation
 
 <!-- A step by step series of examples that tell you how to get a development env running
