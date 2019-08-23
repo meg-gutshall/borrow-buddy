@@ -2,11 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "borrowers/edit", type: :view do
   before(:each) do
-    @borrower = assign(:borrower, Borrower.create!(
-      :name => "MyString",
-      :email => "MyString",
-      :phone => "MyString"
-    ))
+    @borrower = create(:borrower)
   end
 
   it "renders the edit borrower form" do

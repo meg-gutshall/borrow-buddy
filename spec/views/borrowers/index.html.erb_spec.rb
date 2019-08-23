@@ -2,18 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "borrowers/index", type: :view do
   before(:each) do
-    assign(:borrowers, [
-      Borrower.create!(
-        :name => "Name",
-        :email => "Email",
-        :phone => "Phone"
-      ),
-      Borrower.create!(
-        :name => "Name",
-        :email => "Email",
-        :phone => "Phone"
-      )
-    ])
+    assign(:borrowers, [create_list(:borrower, 2)])
   end
 
   it "renders a list of borrowers" do
