@@ -1,7 +1,7 @@
 <div class="row">
-  <% @title = "Borrow Buddy | Edit Recipient" %>
+  <% @title = "Borrow Buddy | Edit Borrower" %>
   <div class="col text-center">
-    <h1>Edit Recipient</h1>
+    <h1>Edit Borrower</h1>
   </div>
 </div>
 
@@ -9,12 +9,12 @@
 
 <div class="row">
   <div class="col">
-    <%= link_to 'Show', @recipient %>
+    <%= link_to 'Show', @borrower %>
   </div>
 </div>
 
 <div class="row">
   <div class="col">
-    <%= link_to 'Cancel', lender_recipients_path(current_lender) %>
+    <%= link_to 'Cancel', lender_borrowers_path(current_lender) %>
   </div>
 </div>

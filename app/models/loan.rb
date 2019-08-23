@@ -1,10 +1,10 @@
 class Loan < ApplicationRecord
   belongs_to :lender
   belongs_to :item
-  belongs_to :recipient
+  belongs_to :borrower
 
   validates_associated :item
-  validates_associated :recipient
+  validates_associated :borrower
   validates :days_borrowed, :reminders_sent, presence: true
   validates :returned, inclusion: { in: [true, false] }
   validates :days_borrowed, numericality: { only_integer: true, greater_than: 0 }
@@ -14,19 +14,19 @@ class Loan < ApplicationRecord
   scope :hide_returned, -> { where(returned: false) }
   scope :show_returned, -> { where(returned: true) }
 
-  def recipient_attributes=(recipient_attributes)
-    if !recipient_attributes[:name].empty?
-      self.recipient = 
-        Recipient.where(
+  def borrower_attributes=(borrower_attributes)
+    if !borrower_attributes[:name].empty?
+      self.borrower = 
+        Borrower.where(
           "lower(name) = ? AND lower(phone) = ? AND lower(email) = ?", 
-          recipient_attributes[:name].downcase, 
-          recipient_attributes[:phone], 
-          recipient_attributes[:email].downcase)
-          .find_or_create_by(name: recipient_attributes[:name])
-      self.recipient.update(
-        name: recipient_attributes[:name],
-        phone: recipient_attributes[:phone],
-        email: recipient_attributes[:email].downcase
+          borrower_attributes[:name].downcase, 
+          borrower_attributes[:phone], 
+          borrower_attributes[:email].downcase)
+          .find_or_create_by(name: borrower_attributes[:name])
+      self.borrower.update(
+        name: borrower_attributes[:name],
+        phone: borrower_attributes[:phone],
+        email: borrower_attributes[:email].downcase
       )
     end
   end

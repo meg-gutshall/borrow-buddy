@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "recipients/edit", type: :view do
   before(:each) do
-    @recipient = assign(:recipient, Recipient.create!(
+    @recipient = assign(:recipient, Borrower.create!(
       :name => "MyString",
       :email => "MyString",
       :phone => "MyString"

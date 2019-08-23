@@ -24,12 +24,12 @@ class LoansController < ApplicationController
     @loan = current_lender.loans.build
     if params[:item_id]
       @item = Item.find_by(id: params[:item_id])
-      @loan.build_recipient
-    elsif params[:recipient_id]
-      @recipient = Recipient.find_by(id: params[:recipient_id])
+      @loan.build_borrower
+    elsif params[:borrower_id]
+      @borrower = Recipient.find_by(id: params[:borrower_id])
       @loan.build_item
     else
-      @loan.build_recipient
+      @loan.build_borrower
       @loan.build_item
     end
   end
@@ -46,9 +46,9 @@ class LoansController < ApplicationController
       if params[:item_id]
         @item = Item.find_by(id: params[:item_id])
         redirect_to item_path(@item), notice: 'Loan was successfully created.'
-      elsif params[:recipient_id]
-        @recipient = Recipient.find_by(id: params[:recipient_id])
-        redirect_to recipient_path(@recipient), notice: 'Loan was successfully created.'
+      elsif params[:borrower_id]
+        @borrower = Recipient.find_by(id: params[:borrower_id])
+        redirect_to borrower_path(@borrower), notice: 'Loan was successfully created.'
       else
         redirect_to lender_loan_path(current_lender, @loan), notice: 'Loan was successfully created.'
       end
@@ -80,6 +80,6 @@ class LoansController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through
     def loan_params
-      params.require(:loan).permit(:days_borrowed, :reminders_sent, :returned, :lender_id, :item_id, :recipient_id, recipient_attributes: [:name, :email, :phone], item_attributes: [:name, :category])
+      params.require(:loan).permit(:days_borrowed, :reminders_sent, :returned, :lender_id, :item_id, :borrower_id, borrower_attributes: [:name, :email, :phone], item_attributes: [:name, :category])
     end
 end

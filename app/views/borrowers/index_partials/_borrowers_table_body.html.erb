@@ -1,0 +1,9 @@
+<% @borrowers.each do |borrower| %>
+  <tr class="row">
+    <td class="col-3"><%= link_to borrower.name, lender_borrower_path(current_lender, borrower) %></td>
+    <td class="col-4"><%= borrower.email %></td>
+    <td class="col-3"><%= borrower.phone %></td>
+    <td class="col-1 text-right table-action-link"><%= link_to 'Edit', edit_lender_borrower_path(current_lender, borrower) %></td>
+    <td class="col-1 text-right table-action-link"><%= link_to 'Delete', lender_borrower_path(current_lender, borrower), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>

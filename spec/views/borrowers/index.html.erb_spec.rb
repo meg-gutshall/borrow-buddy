@@ -3,12 +3,12 @@ require 'rails_helper'
 RSpec.describe "recipients/index", type: :view do
   before(:each) do
     assign(:recipients, [
-      Recipient.create!(
+      Borrower.create!(
         :name => "Name",
         :email => "Email",
         :phone => "Phone"
       ),
-      Recipient.create!(
+      Borrower.create!(
         :name => "Name",
         :email => "Email",
         :phone => "Phone"

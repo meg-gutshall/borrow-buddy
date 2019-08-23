@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   has_many :loans
-  has_many :recipients, through: :loans
+  has_many :borrowers, through: :loans
 
   validates :name, presence: true
 

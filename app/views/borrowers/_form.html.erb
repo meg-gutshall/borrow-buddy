@@ -1,0 +1,28 @@
+<%= form_for ([current_lender, @borrower]) do |borrower_form| %>
+  <%= render partial: "partials/form_errors", locals: { save_error: @borrower } %>
+
+  <div class="form-section">
+    <div class="form-group row">
+      <%= borrower_form.label "Name:", { class: "col-2 col-form-label" } %>
+      <div class="col">
+      <%= borrower_form.text_field :name, { class: "form-control" } %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <%= borrower_form.label "Email:", { class: "col-2 col-form-label" } %>
+      <div class="col">
+      <%= borrower_form.text_field :email, { class: "form-control" } %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <%= borrower_form.label "Phone:", { class: "col-2 col-form-label" } %>
+      <div class="col">
+      <%= borrower_form.text_field :phone, { class: "form-control" } %>
+      </div>
+    </div>
+  </div>
+
+  <%= borrower_form.submit %><br><br>
+<% end %>

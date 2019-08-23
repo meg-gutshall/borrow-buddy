@@ -1,38 +1,38 @@
 <div class="row">
-  <% @title = "Borrow Buddy | Recipient" %>
+  <% @title = "Borrow Buddy | Borrower" %>
   <div class="col text-center">
-    <h1>Recipient</h1>
+    <h1>Borrower</h1>
   </div>
 </div>
 
 <div class="row">
   <div class="col">
-    <p><strong>Name:</strong> <%= @recipient.name %></p>
+    <p><strong>Name:</strong> <%= @borrower.name %></p>
   </div>
 </div>
 
 <div class="row">
   <div class="col">
-    <p><strong>Email:</strong> <%= @recipient.email %></p>
+    <p><strong>Email:</strong> <%= @borrower.email %></p>
   </div>
 </div>
 
 <div class="row">
   <div class="col">
-    <p><strong>Phone:</strong> <%= @recipient.phone %></p>
+    <p><strong>Phone:</strong> <%= @borrower.phone %></p>
   </div>
 </div>
 
 <div class="nested-loans-info-table">
   <div class="row">
     <div class="col">
-      <h2>Loans Info for <%= @recipient.name %></h2>
+      <h2>Loans Info for <%= @borrower.name %></h2>
     </div>
   </div>
 
   <div class="row">
     <div class="col">
-      <%= link_to 'Create New Loan', new_recipient_loan_path(@recipient) %>
+      <%= link_to 'Create New Loan', new_borrower_loan_path(@borrower) %>
     </div>
   </div>
 
@@ -49,7 +49,7 @@
       </thead>
 
       <tbody>
-        <% @recipient.loans.lender_scope(current_lender).each do |loan| %>
+        <% @borrower.loans.lender_scope(current_lender).each do |loan| %>
           <tr class="row">
             <td class="col-5"><%= link_to loan.item.name_with_category, lender_item_path(current_lender, loan.item) %></td>
             <td class="col-2 text-center"><%= loan.days_borrowed %></td>
@@ -66,12 +66,12 @@
 
 <div class="row">
   <div class="col">
-    <%= link_to 'Edit', edit_lender_recipient_path(current_lender, @recipient) %>
+    <%= link_to 'Edit', edit_lender_borrower_path(current_lender, @borrower) %>
   </div>
 </div>
 
 <div class="row">
   <div class="col">
-    <%= link_to 'Back', lender_recipients_path(current_lender) %>
+    <%= link_to 'Back', lender_borrowers_path(current_lender) %>
   </div>
 </div>

@@ -1,6 +1,6 @@
-class CreateRecipients < ActiveRecord::Migration[5.0]
+class CreateBorrowers < ActiveRecord::Migration[5.0]
   def change
-    create_table :recipients do |t|
+    create_table :borrowers do |t|
       t.string :name
       t.string :email
       t.string :phone

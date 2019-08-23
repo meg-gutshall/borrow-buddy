@@ -8,11 +8,11 @@ Rails.application.routes.draw do
     get 'loans/current_loans', to: 'loans#current_loans', as: 'current_loans'
     get 'loans/returned_loans', to: 'loans#returned_loans', as: 'returned_loans'
     resources :loans
-    resources :recipients
+    resources :borrowers
     resources :items
   end
   
-  resources :recipients, only: [:show] do
+  resources :borrowers, only: [:show] do
     resources :loans, only: [:new, :create]
   end
 

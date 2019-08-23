@@ -1,4 +1,4 @@
-class Recipient < ApplicationRecord
+class Borrower < ApplicationRecord
   has_many :loans
   has_many :items, through: :loans
 

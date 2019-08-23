@@ -2,7 +2,7 @@
   
   <%= render partial: "partials/form_errors", locals: { save_error: @loan } %>
 
-  <%= loan_form.hidden_field(:recipient_id, :value => params[:recipient_id]) %>
+  <%= loan_form.hidden_field(:borrower_id, :value => params[:borrower_id]) %>
 
   <div class="form-row">
     <div class="form-group col-12">

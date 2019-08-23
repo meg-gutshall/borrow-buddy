@@ -4,49 +4,49 @@
 
   <div class="form-row">
     <div class="form-group col-12">
-      <h1 class="form-body-heading">Set the Recipient</h1>
+      <h1 class="form-body-heading">Set the Borrower</h1>
     </div>
   </div>
 
   <div class="form-row">
     <div class="form-group col-12">
-      <h2 class="form-body-heading">Select a Recipient from Your List</h2>
+      <h2 class="form-body-heading">Select a Borrower from Your List</h2>
     </div>
   </div>
 
   <div class="form-section">
     <div class="form-row">
       <div class="form-group col-12">
-        <%= loan_form.label "Recipient Name:", for: "loan_recipient_id" %>
-        <%= loan_form.collection_select :recipient_id, Recipient.abc_lender_scope(current_lender), :id, :name, { include_blank: "Select One" }, { class: "form-control" } %>
+        <%= loan_form.label "Borrower Name:", for: "loan_borrower_id" %>
+        <%= loan_form.collection_select :borrower_id, Borrower.abc_lender_scope(current_lender), :id, :name, { include_blank: "Select One" }, { class: "form-control" } %>
       </div>
     </div>
   </div>
 
   <div class="form-row">
     <div class="form-group col-12">
-      <h2 class="form-body-heading">Or Create a New Recipient</h2>
+      <h2 class="form-body-heading">Or Create a New Borrower</h2>
     </div>
   </div>
 
   <div class="form-section">
-    <%= loan_form.fields_for :recipient do |recipient_attributes| %>
+    <%= loan_form.fields_for :borrower do |borrower_attributes| %>
       <div class="form-row">
         <div class="form-group col-11">
-            <%= recipient_attributes.label "Recipient Name:", class: "offset-1" %>
-            <%= recipient_attributes.text_field :name, { class: "form-control offset-1" } %>
+            <%= borrower_attributes.label "Borrower Name:", class: "offset-1" %>
+            <%= borrower_attributes.text_field :name, { class: "form-control offset-1" } %>
         </div>
       </div>
       <div class="form-row">
         <div class="form-group col-11">
-            <%= recipient_attributes.label "Recipient Email:", class: "offset-1" %>
-            <%= recipient_attributes.text_field :email, { class: "form-control offset-1" } %>
+            <%= borrower_attributes.label "Borrower Email:", class: "offset-1" %>
+            <%= borrower_attributes.text_field :email, { class: "form-control offset-1" } %>
         </div>
       </div>
       <div class="form-row">
         <div class="form-group col-11">
-            <%= recipient_attributes.label "Recipient Phone:", class: "offset-1" %>
-            <%= recipient_attributes.text_field :phone, { class: "form-control offset-1" } %>
+            <%= borrower_attributes.label "Borrower Phone:", class: "offset-1" %>
+            <%= borrower_attributes.text_field :phone, { class: "form-control offset-1" } %>
         </div>
       </div>
     <% end %>

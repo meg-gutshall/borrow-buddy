@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class RecipientTest < ActionDispatch::IntegrationTest
+class BorrowerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

@@ -34,7 +34,7 @@
     <table class="table">
       <thead>
         <tr class="row">
-          <th scope="col" class="col-5">Recipient</th>
+          <th scope="col" class="col-5">Borrower</th>
           <th scope="col" class="col-2 text-center">Days Borrowed</th>
           <th scope="col" class="col-2 text-center">Reminders Sent</th>
           <th scope="col" class="col-1 text-center">Returned?</th>
@@ -45,7 +45,7 @@
       <tbody>
         <% @item.borrows.lender_scope(current_lender).each do |borrow| %>
           <tr class="row">
-            <td class="col-5"><%= link_to borrow.recipient.name, lender_recipient_path(current_lender, borrow.recipient) %></td>
+            <td class="col-5"><%= link_to borrow.borrower.name, lender_borrower_path(current_lender, borrow.borrower) %></td>
             <td class="col-2 text-center"><%= borrow.days_borrowed %></td>
             <td class="col-2 text-center"><%= borrow.reminders_sent %></td>
             <td class="col-1 text-center"><%= boolean_display(borrow.returned) %></td>

@@ -1,7 +1,7 @@
 class Lender < ApplicationRecord
   has_many :loans
   has_many :items, through: :loans
-  has_many :recipients, through: :loans
+  has_many :borrowers, through: :loans
   
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2]
 

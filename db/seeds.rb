@@ -41,9 +41,9 @@ end
   )
 end
 
-# Recipient objects
+# Borrower objects
 7.times do
-  Recipient.create!(
+  Borrower.create!(
     name: Faker::Name.first_name,
     email: Faker::Internet.free_email,
     phone: Faker::PhoneNumber.cell_phone
@@ -54,7 +54,7 @@ end
 
 Loan.create!(
   lender_id: 1,
-  recipient_id: 1,
+  borrower_id: 1,
   item_id: 1,
   days_borrowed: Faker::Number.between(1, 17),
   reminders_sent: Faker::Number.between(1, 3),
@@ -63,7 +63,7 @@ Loan.create!(
 
 Loan.create!(
   lender_id: 1,
-  recipient_id: 2,
+  borrower_id: 2,
   item_id: 2,
   days_borrowed: Faker::Number.between(1, 17),
   reminders_sent: Faker::Number.between(1, 3),
@@ -72,7 +72,7 @@ Loan.create!(
 
 Loan.create!(
   lender_id: 1,
-  recipient_id: 3,
+  borrower_id: 3,
   item_id: 3,
   days_borrowed: Faker::Number.between(1, 17),
   reminders_sent: Faker::Number.between(1, 3),
@@ -81,7 +81,7 @@ Loan.create!(
 
 Loan.create!(
   lender_id: 1,
-  recipient_id: 4,
+  borrower_id: 4,
   item_id: 4,
   days_borrowed: Faker::Number.between(1, 17),
   reminders_sent: Faker::Number.between(1, 3),
@@ -90,7 +90,7 @@ Loan.create!(
 
 Loan.create!(
   lender_id: 1,
-  recipient_id: 5,
+  borrower_id: 5,
   item_id: 5,
   days_borrowed: Faker::Number.between(1, 17),
   reminders_sent: Faker::Number.between(1, 3),
@@ -99,7 +99,7 @@ Loan.create!(
 
 Loan.create!(
   lender_id: 2,
-  recipient_id: 6,
+  borrower_id: 6,
   item_id: 6,
   days_borrowed: Faker::Number.between(1, 17),
   reminders_sent: Faker::Number.between(1, 3),
@@ -108,7 +108,7 @@ Loan.create!(
 
 Loan.create!(
   lender_id: 2,
-  recipient_id: 7,
+  borrower_id: 7,
   item_id: 7,
   days_borrowed: Faker::Number.between(1, 17),
   reminders_sent: Faker::Number.between(1, 3),
@@ -117,7 +117,7 @@ Loan.create!(
 
 Loan.create!(
   lender_id: 2,
-  recipient_id: 6,
+  borrower_id: 6,
   item_id: 8,
   days_borrowed: Faker::Number.between(1, 17),
   reminders_sent: Faker::Number.between(1, 3),
@@ -126,7 +126,7 @@ Loan.create!(
 
 Loan.create!(
   lender_id: 2,
-  recipient_id: 1,
+  borrower_id: 1,
   item_id: 9,
   days_borrowed: Faker::Number.between(1, 17),
   reminders_sent: Faker::Number.between(1, 3),
@@ -135,7 +135,7 @@ Loan.create!(
 
 Loan.create!(
   lender_id: 1,
-  recipient_id: 2,
+  borrower_id: 2,
   item_id: 3,
   days_borrowed: Faker::Number.between(1, 17),
   reminders_sent: Faker::Number.between(1, 3),
@@ -144,7 +144,7 @@ Loan.create!(
 
 Loan.create!(
   lender_id: 2,
-  recipient_id: 5,
+  borrower_id: 5,
   item_id: 6,
   days_borrowed: Faker::Number.between(1, 17),
   reminders_sent: Faker::Number.between(1, 3),
