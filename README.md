@@ -3,10 +3,6 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
 * Configuration
 
 * Database creation
@@ -31,7 +27,7 @@ If you send a reminder or the item is returned, just select the "Edit" link next
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
@@ -83,23 +79,41 @@ Lastly, BorrowBuddy uses [Bundler](https://bundler.io/) to manage the Ruby Gems 
 
 ### Installation
 
-<!-- A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+Fork [this repository](https://github.com/meg-gutshall/borrow-buddy) from GitHub and clone your forked copy down to your computer. Open a new terminal window and `cd` into the `borrow-buddy` root directory. Create a new file by typing `touch .env` and input the following text into this file:
 
 ```
-Give the example
+POSTGRES_USER=YOUR_USERNAME
+POSTGRES_PASSWORD=YOUR_PASSWORD
+POSTGRES_HOST='localhost'
+POSTGRES_DB='borrow-buddy'
+POSTGRES_TEST_DB='borrow-buddy_test'
 ```
 
-And repeat
+Replace `YOUR_USERNAME` with your computer's username—the name used in your terminal's root path (`$PATH`), or what you see when you type `PWD` in your terminal (i.e. `Users/yourname/`)—in single quotes and `YOUR_PASSWORD` with whatever you want it to be, again in single quotes.
 
-```
-until finished
-``` -->
+Type `bundle install` into the terminal to load all of the Ruby Gems and dependencies into your app. Start up the PostgreSQL server and type `rails db:setup` into the terminal. This allows PostgreSQL to create two new databases (development and test) using the `.env` file you just created in the BorrowBuddy app (in addition to pre-existing configurations). Next, type `rails db:migrate`. This step runs the table migrations in the app, which gives the database instructions on what kind of data it should look to receive and to which models and attributes the data corresponds.
+
+To start up the Rails server, which is in charge of rendering your app on the web, therefore allowing users to interact with it, type `rails s` in the terminal. You should now be able to open up a new browser window and navigate to [http://localhost:3000/](http://localhost:3000/) and see the BorrowBuddy homepage displayed. From there, either log in or sign up and have fun!
+
+When you're done, just type `Ctrl + C` in the terminal to stop your Rails session and remember to also shut down your PostgreSQL server. If you'd like to reset the database to delete any objects you've created and start over fresh, type `rails db:reset` into the terminal.
 
 ## Usage
 
-<!-- End with an example of getting some data out of the system or using it for a little demo -->
+I recorded a quick demo video on how to use BorrowBuddy which can be viewed here:
+
+[![BorrowBuddy demo video](https://img.youtube.com/vi/44WTSYbJbV8/0.jpg)](https://youtu.be/44WTSYbJbV8)
+
+I also created a seed file which holds randomized data to use specifically for app development and testing purposes. If you'd like to explore BorrowBuddy with data preloaded into the database, type `rails db:seed` in the terminal and log in using one of the following credentials:
+
+```
+Email: meg@meg.com
+Password: password
+
+Email: pip@pip.com
+Password: password
+```
+
+Both accounts have multiple loans, borrowers, and items already tracked upon login and you can manipulate the app from there, editing, creating, and deleting to your heart's content.
 
 ## Tests
 
