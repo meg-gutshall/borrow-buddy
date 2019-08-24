@@ -43,7 +43,7 @@ class BorrowersController < ApplicationController
   # DELETE /borrowers/1
   def destroy
     @borrower.destroy
-    redirect_to borrowers_url, notice: 'Borrower was successfully destroyed.'
+    redirect_to lender_borrowers_path(current_lender), notice: 'Borrower was successfully destroyed.'
   end
 
   private
