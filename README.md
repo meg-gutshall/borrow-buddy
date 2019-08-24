@@ -91,8 +91,6 @@ POSTGRES_TEST_DB='borrow-buddy_test'
 
 Replace `YOUR_USERNAME` with your computer's username—the name used in your terminal's root path (`$PATH`), or what you see when you type `PWD` in your terminal (i.e. `Users/yourname/`)—in single quotes and `YOUR_PASSWORD` with whatever you want it to be, again in single quotes.
 
-<!-- If you want to add Google OmniAuth login and registration capabilities -->
-
 Type `bundle install` into the terminal to load all of the Ruby Gems and dependencies into your app. Start up the PostgreSQL server and type `rails db:setup` into the terminal. This allows PostgreSQL to create two new databases (development and test) using the `.env` file you just created in the BorrowBuddy app (in addition to pre-existing configurations). Next, type `rails db:migrate`. This step runs the table migrations in the app, which gives the database instructions on what kind of data it should look to receive and to which models and attributes the data corresponds.
 
 To start up the Rails server, which is in charge of rendering your app on the web, therefore allowing users to interact with it, type `rails s` in the terminal. You should now be able to open up a new browser window and navigate to [http://localhost:3000/](http://localhost:3000/) and see the BorrowBuddy homepage displayed. From there, either log in or sign up and have fun!
@@ -139,7 +137,7 @@ Give an example
 
 <!-- ## Deployment -->
 
-<!-- Add additional notes about how to deploy this on a live system -->
+<!-- Add additional notes about how to deploy this on a live system (i.e. need to include GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET in `.env` file) -->
 
 ## Built With
 
@@ -152,7 +150,7 @@ Give an example
 
 ## Contributing
 
-<!-- Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us. -->
+Issues and pull requests are welcome at [https://github.com/meg-gutshall/borrow-buddy](https://github.com/meg-gutshall/borrow-buddy). This project as well as all other content on my GitHub are intended to be safe, welcoming, and open for collaboration. Users are expected to adhere to the [Contributor Covenant code of conduct](https://www.contributor-covenant.org/version/1/4/code-of-conduct) and those that do not will be reported and blocked. I got no time for that nonsense.
 
 <!-- ## Versioning -->
 
@@ -160,16 +158,13 @@ Give an example
 
 ## Authors
 
-<!-- * **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+**[Meg Gutshall](https://github.com/meg-gutshall/)**
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project. -->
+## Acknowledgments
 
-<!-- ## Acknowledgments -->
-
-<!-- * Hat tip to anyone whose code was used
-* Inspiration
-* etc
-* Anything else that seems useful -->
+* [Flatiron School](https://flatironschool.com/) for making my ass do this project in the first place
+* My wonderful neighbors Mark and Alexis, especially Mark who suggested the idea based on my original project design and thankfully doesn't give trombone lessons to middle schoolers anymore
+* Dwayne Harmon who coached me through the learning process with a collaborative attitude, an inquiring mind, and a smile on his face
 
 ## License
 
