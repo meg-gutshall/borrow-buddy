@@ -1,6 +1,7 @@
 class LoansController < ApplicationController
   before_action :authenticate_lender!
   before_action :set_loan, only: [:show, :edit, :update, :destroy]
+  before_action :check_stray, only: [:show, :edit, :update, :destroy]
 
   # GET /loans
   def index
@@ -75,11 +76,17 @@ class LoansController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions
     def set_loan
-      @loan = Loan.find_by(id: params[:id])
+      @loan = Loan.lender_scope(current_lender).find_by(id: params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through
     def loan_params
       params.require(:loan).permit(:days_borrowed, :reminders_sent, :returned, :lender_id, :item_id, :borrower_id, borrower_attributes: [:name, :email, :phone], item_attributes: [:name, :category])
+    end
+
+    def check_stray
+      if @loan.nil?
+        redirect_to lender_loans_path(current_lender), alert: "You do not have permission to view or edit other lenders' loans."
+      end
     end
 end
