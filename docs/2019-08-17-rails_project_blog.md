@@ -6,10 +6,16 @@ permalink:  rails_project_blog_post
 excerpt:    <p>Excerpt content goes here</p>
 ---
 
-Type blog content here. An embedded YouTube video is below for an example.
+Knowing when to quit.
 
-<iframe width="100%" frameborder="0" src="https://www.youtube.com/embed/Hvq6u0CW6R0" allowfullscreen></iframe>
+The value of starting over.
 
-<!-- This is a comment -->
+Research. Read the docs. Ask for help.
 
-![Don't forget images](relative link)
+My Rails portfolio project took a _loooooooong_ time to finish. Actually, my [BorrowBuddy app](https://github.com/meg-gutshall/borrow-buddy) is version 2.0 of my project which was required to complete the Rails section of [Flatiron's online software engineering program](https://flatironschool.com/career-courses/coding-bootcamp/online/). I had an amazing—and completely viable—idea to begin with and I worked really hard on trying to bring to life, but I found myself going in circles and eventually made the decision to start over. The most difficult part of this decision was determining whether to start fresh or press on.
+
+The project originally started out as BookBuddy. Add repo link. Talk about app concept. Read through commit log and pull tidbits of build progression.
+
+Get to main issues having to do with model associations and the Devise gem. Explain the process of reading through the documentation and researching online for help as well as attending every project study group available.
+
+Talk about the time put into the app and weighing the options of continuing versus starting anew. List the reasons I ultimately decided to start over and how I'm glad I made that decision.
