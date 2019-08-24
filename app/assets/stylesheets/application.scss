@@ -46,7 +46,7 @@ $highlight-text: #78a014;
 }
 
 select.form-control, input.form-control {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
 }
 
 // Custom bootstrap variables must be set or imported *before* bootstrap.
@@ -74,7 +74,7 @@ select.form-control, input.form-control {
     height: 100%;
     background-color: $dark-shade;
     font-family: $main-font;
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: $main-text;
   }
 
@@ -101,7 +101,7 @@ select.form-control, input.form-control {
   }
 
   p {
-    line-height: 2rem;
+    line-height: 2.75rem;
     margin-bottom: 1rem;
   }
 
@@ -191,7 +191,7 @@ select.form-control, input.form-control {
   }
   
   label.col-form-label {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   h1.form-page-heading {
@@ -199,13 +199,13 @@ select.form-control, input.form-control {
   }
 
   h1.form-body-heading {
-    font-size: 3rem;
+    font-size: 3.2rem;
     margin-top: 1rem;
     margin-bottom: 0.5rem;
   }
 
   h2.form-body-heading {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     margin-top: 1rem;
     margin-bottom: 0.5rem;
   }
@@ -310,6 +310,20 @@ select.form-control, input.form-control {
     color: $highlight-text;
     border: none;
     padding-top: 1.5rem;
+  }
+
+  // Alerts //
+  
+  .alert {
+    font-family: $heading-font;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .alert-dark {
+    color: $light-shade;
+    background-color: $accent-text;
+    border-color: $dark-accent;
   }
 
   // Footer //

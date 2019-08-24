@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_lender!
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :check_stray, only: [:show, :edit, :update, :destroy]
 
   # GET /items
   def index
@@ -49,11 +50,17 @@ class ItemsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions
     def set_item
-      @item = Item.find_by(id: params[:id])
+      @item = Item.lender_scope(current_lender).find_by(id: params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through
     def item_params
       params.require(:item).permit(:name, :category)
+    end
+
+    def check_stray
+      if @item.nil?
+        redirect_to lender_items_path(current_lender), alert: "You do not have permission to view or edit other lenders' items."
+      end
     end
 end
