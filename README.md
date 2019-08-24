@@ -1,27 +1,10 @@
-<!-- This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ... -->
-
 # BorrowBuddy
 
 ## Description
 
-Have you ever lent something to a friend or family member and never seen it again? Not with this app! BorrowBuddy tracks which item you lent out and to whom you lent the item. You simply select the "Create New Loan" button on the home screen to select a borrower and an item from your list or create a new one by completing the provided form fields. You then enter the number of days the item has been borrowed, the number of reminders you have sent the borrower about your loan, and whether or not the item has been returned.
+Have you ever lent something to a friend or family member and never seen it again? Not with this app!
+
+BorrowBuddy tracks which item you lent out and to whom you lent the item. You simply select the "Create New Loan" button on the home screen to select a borrower and an item from your list or create a new one by completing the provided form fields. You then enter the number of days the item has been borrowed, the number of reminders you have sent the borrower about your loan, and whether or not the item has been returned.
 
 If you send a reminder or the item is returned, just select the "Edit" link next to the loan, make the appropriate changes, and click the "Update Loan" button.
 
@@ -47,7 +30,7 @@ If you haven't done so already, download **[Homebrew](https://brew.sh/)**. It's 
 
 It will run through the installation, and explain the steps the script is taking along the way.
 
-Once Homebrew is installed (or if you already had it installed, you smarty pants!), it's time to install rbenv. Open a new terminal window that's running `bash` or `zsh` and `cd` into your home path (i.e. `Users/yourname`). Now type `brew install rbenv` _*Note: This command also installs `ruby-build`, so you'll be ready to install other Ruby versions out of the box._ Once rbenv is done installing, type `rbenv init` to begin the shell integration setup.
+Once Homebrew is installed (or if you already had it installed, you smarty pants!), it's time to install rbenv. Open a new terminal window running `bash` or `zsh` and `cd` into your home path (i.e. `Users/yourname/`). Now type `brew install rbenv` _*Note: This command also installs `ruby-build`, so you'll be ready to install other Ruby versions out of the box._ Once rbenv is done installing, type `rbenv init` to begin the shell integration setup.
 
 ##### For Windows and Linux Users
 
@@ -67,7 +50,8 @@ Restart your terminal for the installation changes to take effect. Make sure you
 curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
 ```
 
-**NOW we install RUBY!** In your terminal, type `rbenv install 2.5.3` to download the version of Ruby you'll need to run BorrowBuddy.
+**NOW we install RUBY!**
+In your terminal, type `rbenv install 2.5.3` to download the version of Ruby you'll need to run BorrowBuddy.
 
 #### PostgreSQL
 
@@ -99,7 +83,7 @@ When you're done, just type `Ctrl + C` in the terminal to stop your Rails sessio
 
 ## Usage
 
-I recorded a quick demo video on how to use BorrowBuddy which can be viewed here:
+I recorded a quick demo video (below) on how to use BorrowBuddy.
 
 [![BorrowBuddy demo video](https://img.youtube.com/vi/44WTSYbJbV8/0.jpg)](https://youtu.be/44WTSYbJbV8)
 
@@ -164,7 +148,7 @@ Issues and pull requests are welcome at [https://github.com/meg-gutshall/borrow-
 
 * [Flatiron School](https://flatironschool.com/) for making my ass do this project in the first place
 * My wonderful neighbors Mark and Alexis, especially Mark who suggested the idea based on my original project design and thankfully doesn't give trombone lessons to middle schoolers anymore
-* Dwayne Harmon who coached me through the learning process with a collaborative attitude, an inquiring mind, and a smile on his face
+* [Dwayne Harmon](https://github.com/dwyn) who coached me through the learning process with a collaborative attitude, an inquiring mind, and a smile on his face
 
 ## License
 
