@@ -4,9 +4,6 @@
 
 - Display `item.name_with_category` only if `item.category.exists?`
 - Don't allow inputs on `borrow.days_borrowed` and `borrow.reminders_sent` to go below the default values
-- Change terminology
-  - `Borrow` to `Loan`
-  - `Recipient` to `Borrow`
 
 ## Functioning
 
