@@ -1,5 +1,5 @@
 class Borrower < ApplicationRecord
-  has_many :loans
+  has_many :loans, dependent: :destroy
   has_many :items, through: :loans
 
   validates :name, presence: true
