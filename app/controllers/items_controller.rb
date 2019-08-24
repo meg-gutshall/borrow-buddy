@@ -43,7 +43,7 @@ class ItemsController < ApplicationController
   # DELETE /items/1
   def destroy
     @item.destroy
-    redirect_to items_url, notice: 'Item was successfully destroyed.'
+    redirect_to lender_items_path(current_lender), notice: 'Item was successfully destroyed.'
   end
 
   private

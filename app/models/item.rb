@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-  has_many :loans
+  has_many :loans, dependent: :destroy
   has_many :borrowers, through: :loans
 
   validates :name, presence: true
