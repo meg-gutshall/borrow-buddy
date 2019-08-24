@@ -91,6 +91,8 @@ POSTGRES_TEST_DB='borrow-buddy_test'
 
 Replace `YOUR_USERNAME` with your computer's username—the name used in your terminal's root path (`$PATH`), or what you see when you type `PWD` in your terminal (i.e. `Users/yourname/`)—in single quotes and `YOUR_PASSWORD` with whatever you want it to be, again in single quotes.
 
+<!-- If you want to add Google OmniAuth login and registration capabilities -->
+
 Type `bundle install` into the terminal to load all of the Ruby Gems and dependencies into your app. Start up the PostgreSQL server and type `rails db:setup` into the terminal. This allows PostgreSQL to create two new databases (development and test) using the `.env` file you just created in the BorrowBuddy app (in addition to pre-existing configurations). Next, type `rails db:migrate`. This step runs the table migrations in the app, which gives the database instructions on what kind of data it should look to receive and to which models and attributes the data corresponds.
 
 To start up the Rails server, which is in charge of rendering your app on the web, therefore allowing users to interact with it, type `rails s` in the terminal. You should now be able to open up a new browser window and navigate to [http://localhost:3000/](http://localhost:3000/) and see the BorrowBuddy homepage displayed. From there, either log in or sign up and have fun!
@@ -141,9 +143,12 @@ Give an example
 
 ## Built With
 
-<!-- * [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds -->
+* [Ruby](https://www.ruby-lang.org/en/) - The programming language used
+* [Rails](https://rubyonrails.org/) and [ActiveRecord](https://apidock.com/rails/ActiveRecord/Base) - The Ruby frameworks used
+* [PostgreSQL](https://www.postgresql.org/) - The relational database used
+* [Devise](http://devise.plataformatec.com.br/) - The user authentication system
+* [Bootstrap 4](https://getbootstrap.com/) and [GoogleFonts](https://fonts.google.com/) - The styling tools used
+* And don't forget good old HTML5 and CSS3! <3
 
 ## Contributing
 
