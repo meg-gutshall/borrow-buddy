@@ -11,3 +11,5 @@
   - Instead of having to edit the borrow, click a "Return" button (a la Rxeactions project)
 - Add a `quantity` attribute to `Item`
   - Don't allow an item to be loaned out when its quantity is 0
+- Sanitize input parameters
+  - Format phone numbers

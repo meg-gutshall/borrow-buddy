@@ -1,5 +1,5 @@
 <div class="row">
-  <% @title = "Borrow Buddy | Home" %>
+  <% @title = "BorrowBuddy | Home" %>
   <div class="col text-center">
     <h1>Welcome to BorrowBuddy!</h1>
   </div>
@@ -11,20 +11,20 @@
       <div class="card-body">
         <h1 class="card-title">Log In</h1>
         <p class="card-text">Great to see you again! Choose a login method below:</p>
-        <a href="<%= new_lender_session_path %>" class="card-link">Lender Login with Borrow Buddy</a><br>
+        <a href="<%= new_lender_session_path %>" class="card-link">Lender Login with BorrowBuddy</a><br>
         <a href="<%= lender_google_oauth2_omniauth_authorize_path %>" class="card-link">Lender Login with Google</a>
       </div>
     </div>
   </div>
   <div class="col-md-2 col-12 text-center">
-    <%= image_tag("bb-color.png", class: "img-fluid", alt: "Borrow Buddy Logo") %>
+    <%= image_tag("bb-color.png", class: "img-fluid", alt: "BorrowBuddy Logo") %>
   </div>
   <div class="col-md-5 col-12">
     <div class="card text-center">
       <div class="card-body">
         <h1 class="card-title">Sign Up</h1>
         <p class="card-text">Glad to have you! Choose a signup method below:</p>
-        <a href="<%= new_lender_registration_path %>" class="card-link">Lender Signup with Borrow Buddy</a><br>
+        <a href="<%= new_lender_registration_path %>" class="card-link">Lender Signup with BorrowBuddy</a><br>
         <a href="<%= lender_google_oauth2_omniauth_authorize_path %>" class="card-link">Lender Signup with Google</a>
       </div>
     </div>
