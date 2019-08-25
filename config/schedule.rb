@@ -5,7 +5,6 @@
 #
 # Learn more: http://github.com/javan/whenever
 
-
 set :output, "../log/cron_log.log"
 
 every :day do
