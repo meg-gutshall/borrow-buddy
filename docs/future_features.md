@@ -13,3 +13,6 @@
   - Don't allow an item to be loaned out when its quantity is 0
 - Sanitize input parameters
   - Format phone numbers
+- Look more into whenever gem
+  - Make it run in development environment
+  
