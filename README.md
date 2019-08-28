@@ -4,7 +4,7 @@
 
 Have you ever lent something to a friend or family member and never seen it again? Not with this app!
 
-BorrowBuddy tracks which item you lent out and to whom you lent the item. You simply select the "Create New Loan" button on the home screen to select a borrower and an item from your list or create a new one by completing the provided form fields. You then enter the number of days the item has been borrowed, the number of reminders you have sent the borrower about your loan, and whether or not the item has been returned.
+BorrowBuddy tracks which of your items you lent out and to whom you lent the item. You simply select the "Create New Loan" button on the home screen to select a borrower and an item from your list or create a new one by completing the provided form fields. You then enter the number of days the item has been borrowed, the number of reminders you have sent the borrower about your loan, and whether or not the item has been returned.
 
 If you send a reminder or the item is returned, just select the "Edit" link next to the loan, make the appropriate changes, and click the "Update Loan" button.
 
