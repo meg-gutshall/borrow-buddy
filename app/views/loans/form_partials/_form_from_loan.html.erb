@@ -18,7 +18,7 @@
     <div class="form-row">
       <div class="form-group col-12">
         <%= loan_form.label "Borrower Name:", for: "loan_borrower_id" %>
-        <%= loan_form.collection_select :borrower_id, Borrower.abc_lender_scope(current_lender), :id, :name, { include_blank: "Select One" }, { class: "form-control" } %>
+        <%= loan_form.collection_select :borrower_id, Borrower.lender_scope(current_lender).abc_name, :id, :name, { include_blank: "Select One" }, { class: "form-control" } %>
       </div>
     </div>
   </div>
@@ -68,7 +68,7 @@
     <div class="form-row">
       <div class="form-group col-12">
         <%= loan_form.label "Item Name:", for: "loan_item_id" %>
-        <%= loan_form.collection_select :item_id, Item.abc_lender_scope(current_lender), :id, :name_with_category, { include_blank: "Select One" }, { class: "form-control" } %>
+        <%= loan_form.collection_select :item_id, Item.lender_scope(current_lender).abc_name, :id, :name_with_category, { include_blank: "Select One" }, { class: "form-control" } %>
       </div>
     </div>
   </div>
