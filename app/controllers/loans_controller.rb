@@ -5,7 +5,7 @@ class LoansController < ApplicationController
 
   # GET /loans
   def index
-    @loans = Loan.lender_scope(current_lender)
+    @loans = Loan.loan_lender_scope(current_lender)
   end
 
   # GET /loans/1
@@ -13,11 +13,11 @@ class LoansController < ApplicationController
   end
 
   def current_loans
-    @loans = Loan.lender_scope(current_lender).hide_returned
+    @loans = Loan.loan_lender_scope(current_lender).hide_returned
   end
 
   def returned_loans
-    @loans = Loan.lender_scope(current_lender).show_returned
+    @loans = Loan.loan_lender_scope(current_lender).show_returned
   end
 
   # GET /loans/new
@@ -76,7 +76,7 @@ class LoansController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions
     def set_loan
-      @loan = Loan.lender_scope(current_lender).find_by(id: params[:id])
+      @loan = Loan.loan_lender_scope(current_lender).find_by(id: params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through

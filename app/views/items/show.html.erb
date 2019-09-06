@@ -43,7 +43,7 @@
       </thead>
 
       <tbody>
-        <% @item.loans.lender_scope(current_lender).each do |loan| %>
+        <% @item.loans.loan_lender_scope(current_lender).each do |loan| %>
           <tr class="row">
             <td class="col-5"><%= link_to loan.borrower.name, lender_borrower_path(current_lender, loan.borrower) %></td>
             <td class="col-2 text-center"><%= loan.days_borrowed %></td>
