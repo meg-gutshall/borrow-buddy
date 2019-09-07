@@ -3,6 +3,7 @@
 ## Display
 
 - Fix navbar expand display
+- Make web app fully responsive and accessible
 
 ## Functioning
 
