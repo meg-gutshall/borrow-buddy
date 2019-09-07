@@ -2,7 +2,6 @@
 
 ## Display
 
-- Display `item.name_with_category` only if `item.category.exists?`
 - Fix navbar expand display
 
 ## Functioning
