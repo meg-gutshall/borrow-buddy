@@ -1,7 +1,7 @@
 class LoansController < ApplicationController
   before_action :authenticate_lender!
-  before_action :set_loan, only: [:show, :edit, :update, :destroy]
-  before_action :check_stray, only: [:show, :edit, :update, :destroy]
+  before_action :set_loan, only: [:show, :edit, :return, :update, :destroy]
+  before_action :check_stray, only: [:show, :edit, :return, :update, :destroy]
 
   # GET /loans
   def index
@@ -58,6 +58,16 @@ class LoansController < ApplicationController
     end
   end
 
+  # GET /loans/1/return
+  def return
+    @loan.update(returned: true)
+    if @loan.update(loan_params)
+      redirect_to lender_loan_path(current_lender, @loan), notice: 'Loan was successfully returned.'
+    else
+      render :edit
+    end
+  end
+  
   # PATCH/PUT /loans/1
   def update
     if @loan.update(loan_params)
