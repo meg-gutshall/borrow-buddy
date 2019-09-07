@@ -4,7 +4,7 @@
     <td class="col-2"><%= link_to loan.borrower.name, lender_borrower_path(current_lender, loan.borrower) %></td>
     <td class="col text-center"><%= loan.days_borrowed %></td>
     <td class="col text-center"><%= loan.reminders_sent %></td>
-    <td class="col text-center"><%= boolean_display(loan.returned) %></td>
+    <td class="col-1 text-center"><%= return_button_display(loan) %></td>
     <td class="col-1 text-right table-action-link"><%= link_to 'Edit', edit_lender_loan_path(current_lender, loan) %></td>
     <td class="col-1 text-right table-action-link"><%= link_to 'Delete', lender_loan_path(current_lender, loan), method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
