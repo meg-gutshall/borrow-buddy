@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     get 'loans/current_loans', to: 'loans#current_loans', as: 'current_loans'
     get 'loans/returned_loans', to: 'loans#returned_loans', as: 'returned_loans'
     resources :loans
+    get 'loans/:id/return', to: 'loans#return', as: 'return'
     resources :borrowers
     resources :items
   end
