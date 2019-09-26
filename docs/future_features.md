@@ -22,3 +22,5 @@
 
 - Add a concerns folder
   - Move `Item` and `Borrower` scopes into concerns
+- Edit new loan forms
+  - Do I want to include default attributes on the new loan form?
