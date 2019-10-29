@@ -61,11 +61,7 @@ class LoansController < ApplicationController
   # GET /loans/1/return
   def return
     @loan.update(returned: true)
-    if @loan.update(loan_params)
-      redirect_to lender_loan_path(current_lender, @loan), notice: 'Loan was successfully returned.'
-    else
-      render :edit
-    end
+    redirect_to lender_loan_path(current_lender, @loan), notice: 'Loan was successfully returned.'
   end
   
   # PATCH/PUT /loans/1
