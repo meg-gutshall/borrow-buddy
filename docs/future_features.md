@@ -4,6 +4,7 @@
 
 - Fix navbar expand display
 - Make web app fully responsive and accessible
+  - Remove table display for breakpoints small and under
 
 ## Functioning
 
@@ -16,3 +17,8 @@
   - Format phone numbers
 - Look more into whenever gem and cron jobs
   - Make it run in development environment
+
+## Best Practices
+
+- Edit new loan forms
+  - Do I want to include default attributes on the new loan form?
