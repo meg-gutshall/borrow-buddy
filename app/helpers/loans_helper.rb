@@ -42,7 +42,7 @@ module LoansHelper
     if loan.returned
       "Yes"
     else
-      tag.a "Return Loan", href: lender_return_path(current_lender, loan)
+      tag.a "Return Item", href: lender_return_path(current_lender, loan)
     end
   end
 
