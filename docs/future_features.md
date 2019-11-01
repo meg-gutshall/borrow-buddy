@@ -5,6 +5,7 @@
 - Fix navbar expand display
 - Make web app fully responsive and accessible
   - Remove table display for breakpoints small and under
+- TODO: Change "Back" button verbiage
 
 ## Functioning
 
