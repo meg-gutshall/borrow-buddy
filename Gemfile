@@ -14,7 +14,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 # Use dotenv to hold your db secrets
 gem 'dotenv-rails', '~> 2.7'
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 3.12'
 # Use SCSS for stylesheets
 gem 'sassc-rails', '~> 2.1'
 # Use Uglifier as compressor for JavaScript assets
