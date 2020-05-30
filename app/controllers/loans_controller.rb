@@ -1,11 +1,11 @@
 class LoansController < ApplicationController
   before_action :authenticate_lender!
-  before_action :set_loan, only: [:show, :edit, :update, :destroy]
-  before_action :check_stray, only: [:show, :edit, :update, :destroy]
+  before_action :set_loan, only: [:show, :edit, :return, :update, :destroy]
+  before_action :check_stray, only: [:show, :edit, :return, :update, :destroy]
 
   # GET /loans
   def index
-    @loans = Loan.lender_scope(current_lender)
+    @loans = Loan.loan_lender_scope(current_lender)
   end
 
   # GET /loans/1
@@ -13,11 +13,11 @@ class LoansController < ApplicationController
   end
 
   def current_loans
-    @loans = Loan.lender_scope(current_lender).hide_returned
+    @loans = Loan.loan_lender_scope(current_lender).hide_returned
   end
 
   def returned_loans
-    @loans = Loan.lender_scope(current_lender).show_returned
+    @loans = Loan.loan_lender_scope(current_lender).show_returned
   end
 
   # GET /loans/new
@@ -58,6 +58,12 @@ class LoansController < ApplicationController
     end
   end
 
+  # GET /loans/1/return
+  def return
+    @loan.update(returned: true)
+    redirect_to lender_loan_path(current_lender, @loan), notice: 'Loan was successfully returned.'
+  end
+  
   # PATCH/PUT /loans/1
   def update
     if @loan.update(loan_params)
@@ -76,7 +82,7 @@ class LoansController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions
     def set_loan
-      @loan = Loan.lender_scope(current_lender).find_by(id: params[:id])
+      @loan = Loan.loan_lender_scope(current_lender).find_by(id: params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through
