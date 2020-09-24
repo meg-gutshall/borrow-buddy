@@ -15,7 +15,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'dotenv-rails', '~> 2.7'
 # Use Puma as the app server
 # Fix rack gem vulnerability
-gem 'puma', '>= 4.3.1'
+gem 'puma'
 # Use SCSS for stylesheets
 gem 'sassc-rails', '~> 2.1'
 # Use Uglifier as compressor for JavaScript assets
