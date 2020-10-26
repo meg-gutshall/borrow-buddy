@@ -15,9 +15,6 @@ class Sessions::SessionsController < Devise::SessionsController
 
   DELETE /resource/sign_out
   def destroy
-    @loan.destroy
-    redirect_to lender_loans_path(current_lender), notice: 'Loan was successfully destroyed.'
-    
     super
   end
 

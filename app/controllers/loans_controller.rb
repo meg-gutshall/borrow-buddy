@@ -75,7 +75,7 @@ class LoansController < ApplicationController
 
   # DELETE /loans/1
   def destroy
-    @loan.destroy
+    @loan.delete
     redirect_to lender_loans_path(current_lender), notice: 'Loan was successfully destroyed.'
   end
 
