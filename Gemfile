@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 ruby '2.5.3'
 
+# Use SCSS for stylesheets --> Call before everything else
+gem 'sassc-rails', '~> 2.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use postgresql as the database for Active Record
@@ -27,8 +29,6 @@ gem 'devise', '~> 4.2'
 gem 'omniauth-google-oauth2', '~> 0.7.0'
 
 ## Styling ##
-# Use SCSS for stylesheets
-gem 'sassc-rails', '~> 2.1'
 # Use bootstrap gem for styling
 gem 'bootstrap', '~> 4.5'
 # Supports bootstrap
