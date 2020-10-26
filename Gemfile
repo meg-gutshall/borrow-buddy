@@ -1,10 +1,5 @@
 source 'https://rubygems.org'
 
-git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
-  "https://github.com/#{repo_name}.git"
-end
-
 ruby '2.5.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -14,33 +9,34 @@ gem 'pg', '>= 0.18', '< 2.0'
 # Use dotenv to hold your db secrets
 gem 'dotenv-rails', '~> 2.7'
 # Use Puma as the app server
+gem 'puma', '~> 5.0'
 # Fix rack gem vulnerability
-gem 'puma'
-# Use SCSS for stylesheets
-gem 'sassc-rails', '~> 2.1'
+gem 'rack', '~> 2.2'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '~> 4.1'
+gem 'uglifier', '~> 4.2'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+gem 'turbolinks', '~> 5.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Runs cron jobs to kick off automated processes
-gem "whenever", "~> 1.0"
+gem 'whenever', '~> 1.0'
 # Security engine for Rails apps
 gem 'devise', '~> 4.2'
 # Use omniauth for third-party login
 gem 'omniauth-google-oauth2', '~> 0.7.0'
 
 ## Styling ##
+# Use SCSS for stylesheets
+gem 'sassc-rails', '~> 2.1'
 # Use bootstrap gem for styling
-gem 'bootstrap', '~> 4.3'
+gem 'bootstrap', '~> 4.5'
 # Supports bootstrap
 gem 'sprockets-rails', '~> 3.2'
 # Supports bootstrap
-gem 'jquery-rails', '~> 4.3'
+gem 'jquery-rails', '~> 4.4'
 # Use font awesome for icons
-gem 'font-awesome-rails', '~> 4.6'
+gem 'font-awesome-rails', '~> 4.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -51,8 +47,8 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry', '~> 0.12.2'
-  gem "better_errors"
-  gem "binding_of_caller"
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :development do
@@ -86,6 +82,3 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-# Fix rack gem vulnerability
-gem 'rack', '>= 2.0.8'
