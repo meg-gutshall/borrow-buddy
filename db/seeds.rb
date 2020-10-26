@@ -12,6 +12,7 @@ pip = Lender.create!(
   email: "pip@pip.com",
   password: "password"
 )
+puts "Created #{Lender.count} lenders."
 
 # Item objects
 3.times do
@@ -35,6 +36,8 @@ end
   )
 end
 
+puts "Created #{Item.count} items."
+
 # Borrower objects
 7.times do
   Borrower.create!(
@@ -44,8 +47,9 @@ end
   )
 end
 
-# Loan objects
+puts "Created #{Borrower.count} borrowers."
 
+# Loan objects
 Loan.create!(
   lender_id: 1,
   borrower_id: 1,
@@ -144,3 +148,5 @@ Loan.create!(
   reminders_sent: Faker::Number.between(1, 3),
   returned: Faker::Boolean.boolean
 )
+
+puts "Created #{Loan.count} loans."

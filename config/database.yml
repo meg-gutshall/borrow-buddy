@@ -9,22 +9,24 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
 
 development:
   <<: *default
-  database: <%= ENV['POSTGRES_DB'] %>
+  database: <%= ENV['POSTGRES_DEV_DB'] %>
 
   # The specified database role being used to connect to postgres. To create additional roles in postgres see `$ createuser --help`. When left blank, postgres will use the default role. This is the same name as the operating system user that initialized the database.
-  username: <%= ENV['POSTGRES_USER'] %>
+  # username:
 
   # The password associated with the postgres role (username).
-  password: <%= ENV['POSTGRES_PASSWORD'] %>
+  # password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a domain socket that doesn't need configuration. Windows does not have domain sockets, so uncomment these lines.
   host: <%= ENV['POSTGRES_HOST'] %>
 
   # The TCP port the server listens on. Defaults to 5432. If your server runs on a different port number, change accordingly.
-  port: 5432
+  port: <%= ENV['POSTGRES_TCP_PORT'] %>
 
   # Schema search path. The server defaults to $user,public
   # schema_search_path: myapp,sharedapp,public
@@ -47,6 +49,6 @@ test:
 #
 # You can use this database configuration with:
 #
-# production:
-#   <<: *default
-#   database: <%= ENV["POSTGRES_DB"] %>
+production:
+  <<: *default
+  database: <%= ENV["POSTGRES_DB"] %>
