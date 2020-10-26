@@ -4,11 +4,11 @@ Rails.application.routes.draw do
 
   devise_for :lenders, controllers: { omniauth_callbacks: 'lenders/omniauth_callbacks' }
 
-  resources :lenders, only: [:show] do
+  resources :lenders do
     get 'loans/current_loans', to: 'loans#current_loans', as: 'current_loans'
     get 'loans/returned_loans', to: 'loans#returned_loans', as: 'returned_loans'
-    resources :loans
     get 'loans/:id/return', to: 'loans#return', as: 'return'
+    resources :loans
     resources :borrowers
     resources :items
   end
