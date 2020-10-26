@@ -1,4 +1,4 @@
-# Future Features
+# Refactor
 
 ## Display
 
@@ -8,6 +8,10 @@
 - TODO: Change "Back" button verbiage
 
 ## Functioning
+
+- [ ] Go right to "All Loans" page if the user is already logged in
+- [ ] Implement a lender logout function
+- [ ] Allow loans to be deleted
 
 - Make it easier to return an item
   - Use [Enums](https://api.rubyonrails.org/v5.2.3/classes/ActiveRecord/Enum.html) to accomplish this
