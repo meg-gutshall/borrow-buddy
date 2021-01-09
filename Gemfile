@@ -40,6 +40,8 @@ gem 'font-awesome-rails', '~> 4.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# Use to create dummy data for test instances
+gem 'faker', '~> 1.9'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
@@ -70,8 +72,6 @@ group :test do
   gem 'rspec-rails', '~> 3.8'
   # Use to create test objects
   gem 'factory_bot_rails', '~> 5.0'
-  # Use to create dummy data for test instances
-  gem 'faker', '~> 1.9'
   # Creates a clean slate for testing
   gem 'database_cleaner', '~> 1.7'
   # Use to access sessions in tests
