@@ -33,15 +33,19 @@ class Loan < ApplicationRecord
 
   def item_attributes=(item_attributes)
     if !item_attributes[:name].empty?
+      # filling out the item part of a new loan
       self.item = 
         Item.where(
           "lower(name) = ? AND lower(category) = ?", 
           item_attributes[:name].downcase, 
           item_attributes[:category].downcase)
           .find_or_create_by(name: item_attributes[:name])
+          # Uses find_or_create_by method to either return pre-existing item or create a brand new one
       self.item.update(
         name: item_attributes[:name],
         category: item_attributes[:category].downcase
+        # Then updates item, which if item is new, it adds the rest of the attributes
+        # Check out docs for refactoring possibility: https://apidock.com/rails/v6.0.0/ActiveRecord/Relation/find_or_create_by
       )
     end
   end
