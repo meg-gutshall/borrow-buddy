@@ -24,7 +24,7 @@ gem "jbuilder", "~> 2.5"
 # Runs cron jobs to kick off automated processes
 gem "whenever", "~> 1.0"
 # Security engine for Rails apps
-gem "devise", "~> 4.2"
+gem "devise", "~> 4.7.3"
 # Use omniauth for third-party login
 gem "omniauth-google-oauth2", "~> 0.8.1"
 
