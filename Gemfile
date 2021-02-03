@@ -1,5 +1,10 @@
 source "https://rubygems.org"
 
+git_source(:github) do |repo_name|
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  "https://github.com/#{repo_name}.git"
+end
+
 ruby "2.5.3"
 
 # Use SCSS for stylesheets --> Call before everything else
@@ -24,7 +29,7 @@ gem "jbuilder", "~> 2.5"
 # Runs cron jobs to kick off automated processes
 gem "whenever", "~> 1.0"
 # Security engine for Rails apps
-gem "devise", "~> 4.7.3"
+gem "devise", "~> 4.7.3", github: "heartcombo/devise"
 # Use omniauth for third-party login
 gem "omniauth-google-oauth2", "~> 0.8.1"
 
