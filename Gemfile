@@ -26,7 +26,7 @@ gem "whenever", "~> 1.0"
 # Security engine for Rails apps
 gem "devise", "~> 4.2"
 # Use omniauth for third-party login
-gem "omniauth-google-oauth2", "~> 0.7.0"
+gem "omniauth-google-oauth2", "~> 0.8.1"
 
 ## Styling ##
 # Use bootstrap gem for styling
