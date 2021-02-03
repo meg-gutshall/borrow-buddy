@@ -4,8 +4,7 @@ RSpec.describe "items/show", type: :view do
   before(:each) do
     @item = assign(:item, Item.create!(
       :name => "Name",
-      :category => "Category",
-      :lender => nil
+      :category => "Category"
     ))
   end
 
@@ -13,6 +12,5 @@ RSpec.describe "items/show", type: :view do
     render
     expect(rendered).to match(/Name/)
     expect(rendered).to match(/Category/)
-    expect(rendered).to match(//)
   end
 end

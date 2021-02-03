@@ -1,24 +1,20 @@
 require 'rails_helper'
 
-RSpec.describe "recipients/edit", type: :view do
+RSpec.describe "borrowers/edit", type: :view do
   before(:each) do
-    @recipient = assign(:recipient, Borrower.create!(
-      :name => "MyString",
-      :email => "MyString",
-      :phone => "MyString"
-    ))
+    @borrower = create(:borrower)
   end
 
-  it "renders the edit recipient form" do
+  it "renders the edit borrower form" do
     render
 
-    assert_select "form[action=?][method=?]", recipient_path(@recipient), "post" do
+    assert_select "form[action=?][method=?]", borrower_path(@borrower), "post" do
 
-      assert_select "input[name=?]", "recipient[name]"
+      assert_select "input[name=?]", "borrower[name]"
 
-      assert_select "input[name=?]", "recipient[email]"
+      assert_select "input[name=?]", "borrower[email]"
 
-      assert_select "input[name=?]", "recipient[phone]"
+      assert_select "input[name=?]", "borrower[phone]"
     end
   end
 end

@@ -2,37 +2,36 @@ require "rails_helper"
 
 RSpec.describe ItemsController, type: :routing do
   describe "routing" do
-    it "routes to #index" do
-      expect(:get => "/items").to route_to("items#index")
+    it "routes to item#index as a nested resource of lender" do
+      expect(get: lender_items_path(2)).to route_to("items#index", lender_id: "2")
     end
 
-    it "routes to #new" do
-      expect(:get => "/items/new").to route_to("items#new")
+    it "routes to item#new as a nested resource of lender" do
+      expect(get: new_lender_item_path(2)).to route_to("items#new", lender_id: "2")
     end
 
-    it "routes to #show" do
-      expect(:get => "/items/1").to route_to("items#show", :id => "1")
+    it "routes to item#show as a nested resource of lender" do
+      expect(get: lender_item_path(2, 1)).to route_to("items#show", lender_id: "2", id: "1")
     end
 
-    it "routes to #edit" do
-      expect(:get => "/items/1/edit").to route_to("items#edit", :id => "1")
+    it "routes to item#edit as a nested resource of lender" do
+      expect(get: edit_lender_item_path(2, 1)).to route_to("items#edit", lender_id: "2", id: "1")
     end
 
-
-    it "routes to #create" do
-      expect(:post => "/items").to route_to("items#create")
+    it "routes to item#create as a nested resource of lender" do
+      expect(post: lender_items_path(2)).to route_to("items#create", lender_id: "2")
     end
 
-    it "routes to #update via PUT" do
-      expect(:put => "/items/1").to route_to("items#update", :id => "1")
+    it "routes to item#update via PUT as a nested resource of lender" do
+      expect(put: lender_item_path(2, 1)).to route_to("items#update", lender_id: "2", id: "1")
     end
 
-    it "routes to #update via PATCH" do
-      expect(:patch => "/items/1").to route_to("items#update", :id => "1")
+    it "routes to item#update via PATCH as a nested resource of lender" do
+      expect(patch: lender_item_path(2, 1)).to route_to("items#update", lender_id: "2", id: "1")
     end
 
-    it "routes to #destroy" do
-      expect(:delete => "/items/1").to route_to("items#destroy", :id => "1")
+    it "routes to item#destroy as a nested resource of lender" do
+      expect(delete: lender_item_path(2, 1)).to route_to("items#destroy", lender_id: "2", id: "1")
     end
   end
 end

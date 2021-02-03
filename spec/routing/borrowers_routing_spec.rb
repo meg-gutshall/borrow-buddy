@@ -2,37 +2,36 @@ require "rails_helper"
 
 RSpec.describe BorrowersController, type: :routing do
   describe "routing" do
-    it "routes to #index" do
-      expect(:get => "/borrowers").to route_to("borrowers#index")
+    it "routes to borrower#index as a nested resource of lender" do
+      expect(get: lender_borrowers_path(2)).to route_to("borrowers#index", lender_id: "2")
     end
 
-    it "routes to #new" do
-      expect(:get => "/borrowers/new").to route_to("borrowers#new")
+    it "routes to borrower#new as a nested resource of lender" do
+      expect(get: new_lender_borrower_path(2)).to route_to("borrowers#new", lender_id: "2")
     end
 
-    it "routes to #show" do
-      expect(:get => "/borrowers/1").to route_to("borrowers#show", :id => "1")
+    it "routes to borrower#show as a nested resource of lender" do
+      expect(get: lender_borrower_path(2, 1)).to route_to("borrowers#show", lender_id: "2", id: "1")
     end
 
-    it "routes to #edit" do
-      expect(:get => "/borrowers/1/edit").to route_to("borrowers#edit", :id => "1")
+    it "routes to borrower#edit as a nested resource of lender" do
+      expect(get: edit_lender_borrower_path(2, 1)).to route_to("borrowers#edit", lender_id: "2", id: "1")
     end
 
-
-    it "routes to #create" do
-      expect(:post => "/borrowers").to route_to("borrowers#create")
+    it "routes to borrower#create as a nested resource of lender" do
+      expect(post: lender_borrowers_path(2)).to route_to("borrowers#create", lender_id: "2")
     end
 
-    it "routes to #update via PUT" do
-      expect(:put => "/borrowers/1").to route_to("borrowers#update", :id => "1")
+    it "routes to borrower#update via PUT as a nested resource of lender" do
+      expect(put: lender_borrower_path(2, 1)).to route_to("borrowers#update", lender_id: "2", id: "1")
     end
 
-    it "routes to #update via PATCH" do
-      expect(:patch => "/borrowers/1").to route_to("borrowers#update", :id => "1")
+    it "routes to borrower#update via PATCH as a nested resource of lender" do
+      expect(patch: lender_borrower_path(2, 1)).to route_to("borrowers#update", lender_id: "2", id: "1")
     end
 
-    it "routes to #destroy" do
-      expect(:delete => "/borrowers/1").to route_to("borrowers#destroy", :id => "1")
+    it "routes to borrower#destroy as a nested resource of lender" do
+      expect(delete: lender_borrower_path(2, 1)).to route_to("borrowers#destroy", lender_id: "2", id: "1")
     end
   end
 end

@@ -1,22 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe "recipients/index", type: :view do
+RSpec.describe "borrowers/index", type: :view do
   before(:each) do
-    assign(:recipients, [
-      Borrower.create!(
-        :name => "Name",
-        :email => "Email",
-        :phone => "Phone"
-      ),
-      Borrower.create!(
-        :name => "Name",
-        :email => "Email",
-        :phone => "Phone"
-      )
-    ])
+    assign(:borrowers, [create_list(:borrower, 2)])
   end
 
-  it "renders a list of recipients" do
+  it "renders a list of borrowers" do
     render
     assert_select "tr>td", :text => "Name".to_s, :count => 2
     assert_select "tr>td", :text => "Email".to_s, :count => 2
