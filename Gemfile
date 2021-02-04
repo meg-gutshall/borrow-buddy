@@ -46,7 +46,7 @@ gem "font-awesome-rails", "~> 4.7"
 # gem "image_processing", "~> 1.2"
 
 # Use to create dummy data for test instances
-gem "faker", "~> 1.9"
+gem "faker", github: "faker-ruby/faker"
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.2", require: false
 
