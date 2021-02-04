@@ -4,3 +4,7 @@ FactoryBot.define do
     category { "book" }
   end
 end
+
+# Faker::Game.title
+# Faker::Movie.title
+# Faker::Music.album
