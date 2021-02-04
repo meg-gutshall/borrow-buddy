@@ -56,6 +56,8 @@ group :development, :test do
   gem "pry", "~> 0.12.2"
   # Use rspec for back-end testing
   gem "rspec-rails", "~> 4.0.0"
+    # Use to create test objects
+  gem "factory_bot_rails", "~> 6.1.0"
 end
 
 group :development do
@@ -75,8 +77,6 @@ group :test do
   gem "selenium-webdriver"
   # Easy installation and use of web drivers to run system tests with browsers
   gem "webdrivers"
-  # Use to create test objects
-  gem "factory_bot_rails", "~> 6.1.0"
   # Creates a clean slate for testing
   gem "database_cleaner-active_record", "~> 2.0"
   # Provides one-line test code
