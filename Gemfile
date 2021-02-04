@@ -77,10 +77,6 @@ group :test do
   gem "selenium-webdriver"
   # Easy installation and use of web drivers to run system tests with browsers
   gem "webdrivers"
-  # Creates a clean slate for testing
-  gem "database_cleaner-active_record", "~> 2.0"
-  # Provides one-line test code
-  gem "shoulda-matchers", "~> 4.0"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

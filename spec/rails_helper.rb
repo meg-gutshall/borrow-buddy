@@ -6,11 +6,9 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
-require 'support/database_cleaner'
 require 'support/devise'
 require 'support/faker'
 require 'support/factory_bot'
-require 'support/shoulda_matchers'
 require 'capybara/rspec'
 
 # Requires all files under spec/support
@@ -31,7 +29,7 @@ RSpec.configure do |config|
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your examples within a transaction, remove the following line or assign false instead of true.
   # This is set to false because I'm using database_cleaner-active_record gem.
-  config.use_transactional_fixtures = false
+  config.use_transactional_fixtures = true
 
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
