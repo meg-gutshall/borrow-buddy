@@ -10,20 +10,7 @@ require 'capybara/rspec'
 require 'support/factory_bot'
 require 'support/devise'
 require 'support/shoulda_matchers'
-require 'database_cleaner'
-
-# Requires supporting ruby files with custom matchers and macros, etc, in
-# spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
-# run as spec files by default. This means that files in spec/support that end
-# in _spec.rb will both be required and run as specs, causing the specs to be
-# run twice. It is recommended that you do not name files matching this glob to
-# end with _spec.rb. You can configure this pattern with the --pattern
-# option on the command line or in ~/.rspec, .rspec or `.rspec-local`.
-#
-# The following line is provided for convenience purposes. It has the downside
-# of increasing the boot-up time by auto-requiring all files in the support
-# directory. Alternatively, in the individual `*_spec.rb` files, manually
-# require only the support files necessary.
+require 'database_cleaner/active_record'
 
 # Requires all files under spec/support
 # Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
@@ -43,16 +30,27 @@ RSpec.configure do |config|
 
   ## Faker gem configurations ##
   ##--------------------------##
-  config.before(:all)  { Faker::Config.random = Random.new(config.seed) }
+  config.before(:all) { Faker::Config.random = Random.new(config.seed) }
 
-  # If you're not using ActiveRecord, or you'd prefer not to run each of your
-  # examples within a transaction, remove the following line or assign false
-  # instead of true.
+  # If you're not using ActiveRecord, or you'd prefer not to run each of your examples within a transaction, remove the following line or assign false instead of true.
+  # This is set to false because I'm using database_cleaner-active_record gem.
   config.use_transactional_fixtures = false
 
-  ## Database_cleaner gem configurations ##
-  ##-------------------------------------##
+  ## database_cleaner-active_record gem configurations ##
+  ##---------------------------------------------------##
   config.before(:suite) do
+    if config.use_transactional_fixtures?
+      raise(<<-MSG)
+        Delete line `config.use_transactional_fixtures = true` from rails_helper.rb
+        (or set it to false) to prevent uncommitted transactions being used in
+        JavaScript-dependent specs.
+
+        During testing, the app-under-test that the browser driver connects to
+        uses a different database connection to the database connection used by
+        the spec. The app's database connection would not be able to access
+        uncommitted transaction data setup over the spec's database connection.
+      MSG
+    end
     DatabaseCleaner.clean_with(:truncation)
   end
 
@@ -60,23 +58,24 @@ RSpec.configure do |config|
     DatabaseCleaner.strategy = :transaction
   end
 
-  config.before(:each, :js => true) do
-    DatabaseCleaner.strategy = :truncation
+  config.before(:each, type: :feature) do
+    # :rack_test driver's Rack app under test shares database connection
+    # with the specs, so continue to use transaction strategy for speed.
+    driver_shares_db_connection_with_specs = Capybara.current_driver == :rack_test
+
+    unless driver_shares_db_connection_with_specs
+      # Driver is probably for an external browser with an app
+      # under test that does *not* share a database connection with the
+      # specs, so use truncation strategy.
+      DatabaseCleaner.strategy = :truncation
+    end
   end
 
   config.before(:each) do
     DatabaseCleaner.start
   end
 
-  config.after(:each) do
-    DatabaseCleaner.clean
-  end
-
-  config.before(:all) do
-    DatabaseCleaner.start
-  end
-
-  config.after(:all) do
+  config.append_after(:each) do
     DatabaseCleaner.clean
   end
 
