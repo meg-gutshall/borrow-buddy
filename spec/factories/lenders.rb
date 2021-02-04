@@ -9,6 +9,6 @@ FactoryBot.define do
       end
     end
 
-    factory :lender_with_loans, traits: :with_loans
+    factory :lender_with_loans, traits: [:with_loans]
   end
 end
