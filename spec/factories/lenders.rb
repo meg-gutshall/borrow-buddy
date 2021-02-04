@@ -4,3 +4,9 @@ FactoryBot.define do
     password { Faker::Internet.password }
   end
 end
+
+def lender_with_loan
+  FactoryBot.create(:lender) do |lender|
+    FactoryBot.create(:loan, lender: lender)
+  end
+end
