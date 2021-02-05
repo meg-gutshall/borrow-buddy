@@ -6,6 +6,7 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
+require 'support/controller_macros'
 require 'support/devise'
 require 'support/faker'
 require 'support/factory_bot'
@@ -28,7 +29,6 @@ RSpec.configure do |config|
   # config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your examples within a transaction, remove the following line or assign false instead of true.
-  # This is set to false because I'm using database_cleaner-active_record gem.
   config.use_transactional_fixtures = true
 
   # The different available types are documented in the features, such as in
@@ -39,5 +39,7 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
-
+  config.expect_with :rspec do |c|
+    c.syntax = :expect
+  end
 end
