@@ -9,16 +9,14 @@ require 'rails_helper'
 RSpec.describe LoansController, type: :controller do
 
   # This should return the minimal set of attributes required to create a valid Loan. As you add validations to Loan, be sure to adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
+  let(:valid_attributes) { attributes_for(:loan) }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    attributes_for(:loan, days_borrowed: "two")
   }
 
   # This should return the minimal set of values that should be in the session in order to pass any filters (e.g. authentication) defined in LoansController. Be sure to keep this updated too.
-  let(:valid_session) { {} }
+  let(:valid_session) { login_lender }
 
   describe "GET #index" do
     it "returns a success response" do
