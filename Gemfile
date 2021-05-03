@@ -26,12 +26,15 @@ gem "uglifier", "~> 4.2"
 gem "turbolinks", "~> 5.2"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem "jbuilder", "~> 2.5"
+# Provides a sensible, easy-to-understand API for reading, writing, modifying, and querying documents
+gem "nokogiri", "~> 1.11.3"
 # Runs cron jobs to kick off automated processes
 gem "whenever", "~> 1.0"
 # Security engine for Rails apps
 gem "devise", "~> 4.8"
 # Use omniauth for third-party login
-gem "omniauth-google-oauth2", "~> 0.8.1"
+gem "omniauth", "~> 2.0.4"
+gem "omniauth-google-oauth2", "~> 1.0.0"
 
 ## Styling ##
 # Use bootstrap gem for styling
@@ -83,4 +86,4 @@ end
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Dependabot fixes
-gem 'omniauth-rails_csrf_protection'
+gem 'omniauth-rails_csrf_protection', "~> 1.0"
