@@ -5,12 +5,12 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby "2.5.3"
+ruby "2.5.4"
 
 # Use SCSS for stylesheets --> Call before everything else
 gem "sassc-rails", "~> 2.1"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails"
-gem "rails", "~> 5.2.3"
+gem "rails", "~> 5.2.4"
 # Use postgresql as the database for Active Record
 gem "pg", ">= 0.18", "< 2.0"
 # Use dotenv to hold your db secrets
@@ -29,7 +29,7 @@ gem "jbuilder", "~> 2.5"
 # Runs cron jobs to kick off automated processes
 gem "whenever", "~> 1.0"
 # Security engine for Rails apps
-gem "devise", "~> 4.7.3", github: "heartcombo/devise"
+gem "devise", "~> 4.8"
 # Use omniauth for third-party login
 gem "omniauth-google-oauth2", "~> 0.8.1"
 
@@ -81,3 +81,6 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Dependabot fixes
+gem 'omniauth-rails_csrf_protection'
