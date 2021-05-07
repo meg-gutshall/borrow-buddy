@@ -10,7 +10,7 @@ ruby "2.5.4"
 # Use SCSS for stylesheets --> Call before everything else
 gem "sassc-rails", "~> 2.1"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails"
-gem "rails", "~> 5.2.4"
+gem "rails", "~> 5.2.6"
 # Use postgresql as the database for Active Record
 gem "pg", ">= 0.18", "< 2.0"
 # Use dotenv to hold your db secrets
@@ -86,4 +86,5 @@ end
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Dependabot fixes
-gem 'omniauth-rails_csrf_protection', "~> 1.0"
+gem "omniauth-rails_csrf_protection", "~> 1.0"
+gem "actionpack", ">= 5.2.6"
