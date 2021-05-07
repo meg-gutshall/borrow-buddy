@@ -46,6 +46,7 @@ class Loan < ApplicationRecord
         category: item_attributes[:category].downcase
         # Then updates item, which if item is new, it adds the rest of the attributes
         # Check out docs for refactoring possibility: https://apidock.com/rails/v6.0.0/ActiveRecord/Relation/find_or_create_by
+        # ! This WILL NOT WORK once I add quantity to item!!!
       )
     end
   end
