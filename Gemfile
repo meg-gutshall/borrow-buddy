@@ -16,7 +16,7 @@ gem "pg", ">= 0.18", "< 2.0"
 # Use dotenv to hold your db secrets
 gem "dotenv-rails", "~> 2.7"
 # Use Puma as the app server
-gem "puma", "~> 5.0"
+gem "puma", "~> 5.3"
 # Fix rack gem vulnerability
 gem "rack", "~> 2.2"
 # Use Uglifier as compressor for JavaScript assets
@@ -27,7 +27,7 @@ gem "turbolinks", "~> 5.2"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem "jbuilder", "~> 2.5"
 # Provides a sensible, easy-to-understand API for reading, writing, modifying, and querying documents
-gem "nokogiri", "~> 1.11.3"
+gem "nokogiri", "~> 1.11.4"
 # Runs cron jobs to kick off automated processes
 gem "whenever", "~> 1.0"
 # Security engine for Rails apps
