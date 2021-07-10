@@ -27,7 +27,7 @@ gem "turbolinks", "~> 5.2"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem "jbuilder", "~> 2.5"
 # Provides a sensible, easy-to-understand API for reading, writing, modifying, and querying documents
-gem "nokogiri", "~> 1.11.3"
+gem "nokogiri", "~> 1.11.4"
 # Runs cron jobs to kick off automated processes
 gem "whenever", "~> 1.0"
 # Security engine for Rails apps
