@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
 
   def home
-    render "home/home"
+    render "pages/home"
   end
 
   private
