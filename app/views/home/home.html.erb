@@ -12,7 +12,7 @@
         <h1 class="card-title">Log In</h1>
         <p class="card-text">Great to see you again! Choose a login method below:</p>
         <%= link_to "Lender Login with BorrowBuddy", new_lender_session_path, class: "card-link" %><br />
-        <%= link_to "Lender Login with Google", "/lenders/auth/google_oauth2", method: :post, class: "card-link" %>
+        <%= link_to "Lender Login with Google", lender_google_oauth2_omniauth_authorize_path, method: :post, class: "card-link" %>
       </div>
     </div>
   </div>
@@ -25,7 +25,7 @@
         <h1 class="card-title">Sign Up</h1>
         <p class="card-text">Glad to have you! Choose a signup method below:</p>
         <%= link_to "Lender Signup with BorrowBuddy", new_lender_registration_path, class: "card-link" %><br />
-        <%= link_to "Lender Signup with Google", "/lenders/auth/google_oauth2", method: :post, class: "card-link" %>
+        <%= link_to "Lender Signup with Google", lender_google_oauth2_omniauth_authorize_path, method: :post, class: "card-link" %>
       </div>
     </div>
   </div>
