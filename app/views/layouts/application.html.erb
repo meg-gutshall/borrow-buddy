@@ -9,7 +9,7 @@
 
     <%# Add Apple touch icon, which is displayed when a user saves the web app to their home screen %>
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
@@ -24,7 +24,7 @@
         </header>
       </div> <%# End navbar %>
 
-      <div class="container-fluid wrapper"> <%# Start body %>      
+      <div class="container-fluid wrapper"> <%# Start body %>
         <div class="row">
           <%# Flash message for alerts and notices %>
           <% if flash[:alert] %>
@@ -46,8 +46,11 @@
     <div class="container-fluid d-flex flex-column"> <%# Start footer %>
       <div id="stick-footer"> <%# Add for sticky footer %>
         <footer class="row branding">
-          <div class="col">
-          <small>&copy; 2021 <strong>BorrowBuddy</strong></small>
+          <div class="col ml-auto">
+            <small>&copy; 2021 <strong>BorrowBuddy</strong></small>
+          </div>
+          <div class="col text-right">
+            <small><%= link_to "Privacy Policy", privacy_path %></small>
           </div>
         </footer>
       </div> <%# Add for sticky footer %>

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'application#home'
+  get 'privacy', to: 'application#privacy', as: 'privacy'
 
   devise_for :lenders, controllers: { omniauth_callbacks: 'lenders/omniauth_callbacks' }
 
@@ -12,7 +13,7 @@ Rails.application.routes.draw do
     resources :borrowers
     resources :items
   end
-  
+
   resources :borrowers, only: [:show] do
     resources :loans, only: [:new, :create]
   end
