@@ -6,7 +6,7 @@ BorrowBuddy tracks which of your items you lent out and to whom you lent the ite
 
 If you send a reminder or the item is returned, just select the "Edit" link next to the loan, make the appropriate changes, and click the "Update Loan" button.
 
-1. [Prerequisite technologies](#technology-prerequisites) needed with download instructions for each technology
+1. [Prerequisite technologies needed](#technology-prerequisites) with download instructions for each technology
     1. [Ruby](#ruby)
     2. [Bundler](#bundler)
     3. [PostgreSQL](#postgresql)
