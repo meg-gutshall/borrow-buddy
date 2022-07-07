@@ -16,7 +16,7 @@ gem "pg", ">= 0.18", "< 2.0"
 # Use dotenv to hold your db secrets
 gem "dotenv-rails", "~> 2.7"
 # Use Puma as the app server
-gem "puma", "~> 5.5"
+gem "puma", "~> 5.6"
 # Fix rack gem vulnerability
 gem "rack", "~> 2.2"
 # Use Uglifier as compressor for JavaScript assets
